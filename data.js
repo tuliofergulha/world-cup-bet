@@ -2,9 +2,19 @@
 // status: "pendente" | "ganhou" | "perdeu" | "anulada"
 // Estilo bet365: simples + "Criar Aposta" (combos correlacionados). Sem placar exato.
 const DATA = {
-  atualizadoEm: "2026-06-11T23:30:00-03:00",
+  atualizadoEm: "2026-06-11T18:50:00-03:00",
   unidade: "1u = 1% da banca (sugestão)",
   dias: [
+    {
+      data: "2026-06-11",
+      titulo: "Dia 1 — Abertura (sem apostas: estratégia criada após o jogo)",
+      jogos: [
+        { hora: "16h", partida: "México 2 × 0 África do Sul — ENCERRADO", grupo: "A", local: "Estádio Azteca, Cidade do México",
+          stats: "Modelo previu exatamente 2×0 (90% vitória, λ 2.76×0.18) ✓ · Primeiro teste do Elo-Poisson: aprovado" }
+      ],
+      contexto: "Jogo de abertura. A central de apostas foi criada na noite do dia 11, então não houve palpites pré-jogo — fica o registro: o modelo cravou resultado e placar. Apostas começam no dia 12.",
+      apostas: []
+    },
     {
       data: "2026-06-12",
       titulo: "Dia 2 — 1ª rodada: estreias de Canadá, Suíça e EUA",
