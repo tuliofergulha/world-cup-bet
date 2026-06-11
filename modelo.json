@@ -1,0 +1,1087 @@
+{
+ "descricao": "Modelo Elo-Poisson (premissas Klement). pM/pE/pV = prob. vitória mandante/empate/visitante. lM/lV = gols esperados.",
+ "elo": {
+  "México": {
+   "grupo": "A",
+   "elo": 1875,
+   "fifa": 14,
+   "sede": true
+  },
+  "Coreia do Sul": {
+   "grupo": "A",
+   "elo": 1758,
+   "fifa": 23,
+   "sede": false
+  },
+  "Tchéquia": {
+   "grupo": "A",
+   "elo": 1740,
+   "fifa": 42,
+   "sede": false
+  },
+  "África do Sul": {
+   "grupo": "A",
+   "elo": 1518,
+   "fifa": 60,
+   "sede": false
+  },
+  "Suíça": {
+   "grupo": "B",
+   "elo": 1891,
+   "fifa": 19,
+   "sede": false
+  },
+  "Canadá": {
+   "grupo": "B",
+   "elo": 1788,
+   "fifa": 30,
+   "sede": true
+  },
+  "Bósnia e Herz.": {
+   "grupo": "B",
+   "elo": 1595,
+   "fifa": 64,
+   "sede": false
+  },
+  "Catar": {
+   "grupo": "B",
+   "elo": 1421,
+   "fifa": 57,
+   "sede": false
+  },
+  "Brasil": {
+   "grupo": "C",
+   "elo": 1991,
+   "fifa": 6,
+   "sede": false
+  },
+  "Marrocos": {
+   "grupo": "C",
+   "elo": 1827,
+   "fifa": 7,
+   "sede": false
+  },
+  "Escócia": {
+   "grupo": "C",
+   "elo": 1738,
+   "fifa": 44,
+   "sede": false
+  },
+  "Haiti": {
+   "grupo": "C",
+   "elo": 1548,
+   "fifa": 83,
+   "sede": false
+  },
+  "Turquia": {
+   "grupo": "D",
+   "elo": 1880,
+   "fifa": 22,
+   "sede": false
+  },
+  "Paraguai": {
+   "grupo": "D",
+   "elo": 1833,
+   "fifa": 40,
+   "sede": false
+  },
+  "Estados Unidos": {
+   "grupo": "D",
+   "elo": 1726,
+   "fifa": 17,
+   "sede": true
+  },
+  "Austrália": {
+   "grupo": "D",
+   "elo": 1714,
+   "fifa": 26,
+   "sede": false
+  },
+  "Equador": {
+   "grupo": "E",
+   "elo": 1938,
+   "fifa": 23,
+   "sede": false
+  },
+  "Alemanha": {
+   "grupo": "E",
+   "elo": 1932,
+   "fifa": 10,
+   "sede": false
+  },
+  "Costa do Marfim": {
+   "grupo": "E",
+   "elo": 1793,
+   "fifa": 33,
+   "sede": false
+  },
+  "Curaçao": {
+   "grupo": "E",
+   "elo": 1545,
+   "fifa": 82,
+   "sede": false
+  },
+  "Holanda": {
+   "grupo": "F",
+   "elo": 1948,
+   "fifa": 8,
+   "sede": false
+  },
+  "Japão": {
+   "grupo": "F",
+   "elo": 1879,
+   "fifa": 18,
+   "sede": false
+  },
+  "Suécia": {
+   "grupo": "F",
+   "elo": 1815,
+   "fifa": 38,
+   "sede": false
+  },
+  "Tunísia": {
+   "grupo": "F",
+   "elo": 1697,
+   "fifa": 46,
+   "sede": false
+  },
+  "Bélgica": {
+   "grupo": "G",
+   "elo": 1849,
+   "fifa": 9,
+   "sede": false
+  },
+  "Irã": {
+   "grupo": "G",
+   "elo": 1797,
+   "fifa": 21,
+   "sede": false
+  },
+  "Egito": {
+   "grupo": "G",
+   "elo": 1737,
+   "fifa": 29,
+   "sede": false
+  },
+  "Nova Zelândia": {
+   "grupo": "G",
+   "elo": 1500,
+   "fifa": 85,
+   "sede": false
+  },
+  "Espanha": {
+   "grupo": "H",
+   "elo": 2157,
+   "fifa": 2,
+   "sede": false
+  },
+  "Uruguai": {
+   "grupo": "H",
+   "elo": 1890,
+   "fifa": 16,
+   "sede": false
+  },
+  "Arábia Saudita": {
+   "grupo": "H",
+   "elo": 1631,
+   "fifa": 61,
+   "sede": false
+  },
+  "Cabo Verde": {
+   "grupo": "H",
+   "elo": 1620,
+   "fifa": 67,
+   "sede": false
+  },
+  "França": {
+   "grupo": "I",
+   "elo": 2063,
+   "fifa": 3,
+   "sede": false
+  },
+  "Noruega": {
+   "grupo": "I",
+   "elo": 1914,
+   "fifa": 31,
+   "sede": false
+  },
+  "Senegal": {
+   "grupo": "I",
+   "elo": 1869,
+   "fifa": 15,
+   "sede": false
+  },
+  "Iraque": {
+   "grupo": "I",
+   "elo": 1650,
+   "fifa": 56,
+   "sede": false
+  },
+  "Argentina": {
+   "grupo": "J",
+   "elo": 2114,
+   "fifa": 1,
+   "sede": false
+  },
+  "Áustria": {
+   "grupo": "J",
+   "elo": 1790,
+   "fifa": 24,
+   "sede": false
+  },
+  "Argélia": {
+   "grupo": "J",
+   "elo": 1772,
+   "fifa": 28,
+   "sede": false
+  },
+  "Jordânia": {
+   "grupo": "J",
+   "elo": 1638,
+   "fifa": 63,
+   "sede": false
+  },
+  "Portugal": {
+   "grupo": "K",
+   "elo": 1986,
+   "fifa": 5,
+   "sede": false
+  },
+  "Colômbia": {
+   "grupo": "K",
+   "elo": 1982,
+   "fifa": 13,
+   "sede": false
+  },
+  "RD Congo": {
+   "grupo": "K",
+   "elo": 1710,
+   "fifa": 45,
+   "sede": false
+  },
+  "Uzbequistão": {
+   "grupo": "K",
+   "elo": 1680,
+   "fifa": 50,
+   "sede": false
+  },
+  "Inglaterra": {
+   "grupo": "L",
+   "elo": 2021,
+   "fifa": 4,
+   "sede": false
+  },
+  "Croácia": {
+   "grupo": "L",
+   "elo": 1912,
+   "fifa": 11,
+   "sede": false
+  },
+  "Panamá": {
+   "grupo": "L",
+   "elo": 1715,
+   "fifa": 34,
+   "sede": false
+  },
+  "Gana": {
+   "grupo": "L",
+   "elo": 1655,
+   "fifa": 73,
+   "sede": false
+  }
+ },
+ "jogos": [
+  {
+   "grupo": "A",
+   "j": 1,
+   "m": "México",
+   "v": "Coreia do Sul",
+   "lM": 2,
+   "lV": 0.72,
+   "pM": 0.673,
+   "pE": 0.201,
+   "pV": 0.125
+  },
+  {
+   "grupo": "A",
+   "j": 2,
+   "m": "México",
+   "v": "Tchéquia",
+   "lM": 2.06,
+   "lV": 0.67,
+   "pM": 0.697,
+   "pE": 0.192,
+   "pV": 0.111
+  },
+  {
+   "grupo": "A",
+   "j": 3,
+   "m": "México",
+   "v": "África do Sul",
+   "lM": 2.76,
+   "lV": 0.18,
+   "pM": 0.902,
+   "pE": 0.082,
+   "pV": 0.013
+  },
+  {
+   "grupo": "A",
+   "j": 4,
+   "m": "Coreia do Sul",
+   "v": "Tchéquia",
+   "lM": 1.37,
+   "lV": 1.26,
+   "pM": 0.394,
+   "pE": 0.262,
+   "pV": 0.344
+  },
+  {
+   "grupo": "A",
+   "j": 5,
+   "m": "Coreia do Sul",
+   "v": "África do Sul",
+   "lM": 2.07,
+   "lV": 0.66,
+   "pM": 0.703,
+   "pE": 0.19,
+   "pV": 0.107
+  },
+  {
+   "grupo": "A",
+   "j": 6,
+   "m": "Tchéquia",
+   "v": "África do Sul",
+   "lM": 2.02,
+   "lV": 0.71,
+   "pM": 0.68,
+   "pE": 0.199,
+   "pV": 0.121
+  },
+  {
+   "grupo": "B",
+   "j": 7,
+   "m": "Suíça",
+   "v": "Canadá",
+   "lM": 1.32,
+   "lV": 1.3,
+   "pM": 0.373,
+   "pE": 0.263,
+   "pV": 0.365
+  },
+  {
+   "grupo": "B",
+   "j": 8,
+   "m": "Suíça",
+   "v": "Bósnia e Herz.",
+   "lM": 2.25,
+   "lV": 0.51,
+   "pM": 0.771,
+   "pE": 0.16,
+   "pV": 0.069
+  },
+  {
+   "grupo": "B",
+   "j": 9,
+   "m": "Suíça",
+   "v": "Catar",
+   "lM": 2.8,
+   "lV": 0.18,
+   "pM": 0.905,
+   "pE": 0.08,
+   "pV": 0.013
+  },
+  {
+   "grupo": "B",
+   "j": 10,
+   "m": "Canadá",
+   "v": "Bósnia e Herz.",
+   "lM": 2.24,
+   "lV": 0.52,
+   "pM": 0.768,
+   "pE": 0.161,
+   "pV": 0.07
+  },
+  {
+   "grupo": "B",
+   "j": 11,
+   "m": "Canadá",
+   "v": "Catar",
+   "lM": 2.79,
+   "lV": 0.18,
+   "pM": 0.905,
+   "pE": 0.08,
+   "pV": 0.013
+  },
+  {
+   "grupo": "B",
+   "j": 12,
+   "m": "Bósnia e Herz.",
+   "v": "Catar",
+   "lM": 1.86,
+   "lV": 0.84,
+   "pM": 0.615,
+   "pE": 0.221,
+   "pV": 0.164
+  },
+  {
+   "grupo": "C",
+   "j": 13,
+   "m": "Brasil",
+   "v": "Marrocos",
+   "lM": 1.83,
+   "lV": 0.87,
+   "pM": 0.601,
+   "pE": 0.225,
+   "pV": 0.174
+  },
+  {
+   "grupo": "C",
+   "j": 14,
+   "m": "Brasil",
+   "v": "Escócia",
+   "lM": 2.11,
+   "lV": 0.63,
+   "pM": 0.72,
+   "pE": 0.183,
+   "pV": 0.097
+  },
+  {
+   "grupo": "C",
+   "j": 15,
+   "m": "Brasil",
+   "v": "Haiti",
+   "lM": 2.72,
+   "lV": 0.18,
+   "pM": 0.899,
+   "pE": 0.086,
+   "pV": 0.014
+  },
+  {
+   "grupo": "C",
+   "j": 16,
+   "m": "Marrocos",
+   "v": "Escócia",
+   "lM": 1.59,
+   "lV": 1.07,
+   "pM": 0.495,
+   "pE": 0.25,
+   "pV": 0.255
+  },
+  {
+   "grupo": "C",
+   "j": 17,
+   "m": "Marrocos",
+   "v": "Haiti",
+   "lM": 2.2,
+   "lV": 0.56,
+   "pM": 0.751,
+   "pE": 0.169,
+   "pV": 0.079
+  },
+  {
+   "grupo": "C",
+   "j": 18,
+   "m": "Escócia",
+   "v": "Haiti",
+   "lM": 1.91,
+   "lV": 0.8,
+   "pM": 0.637,
+   "pE": 0.214,
+   "pV": 0.149
+  },
+  {
+   "grupo": "D",
+   "j": 19,
+   "m": "Turquia",
+   "v": "Paraguai",
+   "lM": 1.46,
+   "lV": 1.18,
+   "pM": 0.435,
+   "pE": 0.259,
+   "pV": 0.307
+  },
+  {
+   "grupo": "D",
+   "j": 20,
+   "m": "Turquia",
+   "v": "Estados Unidos",
+   "lM": 1.48,
+   "lV": 1.16,
+   "pM": 0.445,
+   "pE": 0.257,
+   "pV": 0.298
+  },
+  {
+   "grupo": "D",
+   "j": 21,
+   "m": "Turquia",
+   "v": "Austrália",
+   "lM": 1.84,
+   "lV": 0.86,
+   "pM": 0.604,
+   "pE": 0.224,
+   "pV": 0.172
+  },
+  {
+   "grupo": "D",
+   "j": 22,
+   "m": "Paraguai",
+   "v": "Estados Unidos",
+   "lM": 1.33,
+   "lV": 1.29,
+   "pM": 0.378,
+   "pE": 0.262,
+   "pV": 0.359
+  },
+  {
+   "grupo": "D",
+   "j": 23,
+   "m": "Paraguai",
+   "v": "Austrália",
+   "lM": 1.69,
+   "lV": 0.99,
+   "pM": 0.538,
+   "pE": 0.241,
+   "pV": 0.221
+  },
+  {
+   "grupo": "D",
+   "j": 24,
+   "m": "Estados Unidos",
+   "v": "Austrália",
+   "lM": 1.67,
+   "lV": 1.01,
+   "pM": 0.528,
+   "pE": 0.244,
+   "pV": 0.228
+  },
+  {
+   "grupo": "E",
+   "j": 25,
+   "m": "Equador",
+   "v": "Alemanha",
+   "lM": 1.33,
+   "lV": 1.29,
+   "pM": 0.377,
+   "pE": 0.263,
+   "pV": 0.36
+  },
+  {
+   "grupo": "E",
+   "j": 26,
+   "m": "Equador",
+   "v": "Costa do Marfim",
+   "lM": 1.77,
+   "lV": 0.92,
+   "pM": 0.575,
+   "pE": 0.232,
+   "pV": 0.193
+  },
+  {
+   "grupo": "E",
+   "j": 27,
+   "m": "Equador",
+   "v": "Curaçao",
+   "lM": 2.56,
+   "lV": 0.25,
+   "pM": 0.871,
+   "pE": 0.105,
+   "pV": 0.023
+  },
+  {
+   "grupo": "E",
+   "j": 28,
+   "m": "Alemanha",
+   "v": "Costa do Marfim",
+   "lM": 1.75,
+   "lV": 0.93,
+   "pM": 0.566,
+   "pE": 0.235,
+   "pV": 0.199
+  },
+  {
+   "grupo": "E",
+   "j": 29,
+   "m": "Alemanha",
+   "v": "Curaçao",
+   "lM": 2.54,
+   "lV": 0.26,
+   "pM": 0.866,
+   "pE": 0.108,
+   "pV": 0.025
+  },
+  {
+   "grupo": "E",
+   "j": 30,
+   "m": "Costa do Marfim",
+   "v": "Curaçao",
+   "lM": 2.1,
+   "lV": 0.64,
+   "pM": 0.713,
+   "pE": 0.185,
+   "pV": 0.101
+  },
+  {
+   "grupo": "F",
+   "j": 31,
+   "m": "Holanda",
+   "v": "Japão",
+   "lM": 1.53,
+   "lV": 1.12,
+   "pM": 0.466,
+   "pE": 0.255,
+   "pV": 0.279
+  },
+  {
+   "grupo": "F",
+   "j": 32,
+   "m": "Holanda",
+   "v": "Suécia",
+   "lM": 1.73,
+   "lV": 0.95,
+   "pM": 0.558,
+   "pE": 0.237,
+   "pV": 0.205
+  },
+  {
+   "grupo": "F",
+   "j": 33,
+   "m": "Holanda",
+   "v": "Tunísia",
+   "lM": 2.11,
+   "lV": 0.63,
+   "pM": 0.717,
+   "pE": 0.184,
+   "pV": 0.099
+  },
+  {
+   "grupo": "F",
+   "j": 34,
+   "m": "Japão",
+   "v": "Suécia",
+   "lM": 1.51,
+   "lV": 1.14,
+   "pM": 0.459,
+   "pE": 0.256,
+   "pV": 0.285
+  },
+  {
+   "grupo": "F",
+   "j": 35,
+   "m": "Japão",
+   "v": "Tunísia",
+   "lM": 1.89,
+   "lV": 0.82,
+   "pM": 0.626,
+   "pE": 0.217,
+   "pV": 0.156
+  },
+  {
+   "grupo": "F",
+   "j": 36,
+   "m": "Suécia",
+   "v": "Tunísia",
+   "lM": 1.68,
+   "lV": 0.99,
+   "pM": 0.536,
+   "pE": 0.242,
+   "pV": 0.222
+  },
+  {
+   "grupo": "G",
+   "j": 37,
+   "m": "Bélgica",
+   "v": "Irã",
+   "lM": 1.48,
+   "lV": 1.17,
+   "pM": 0.442,
+   "pE": 0.258,
+   "pV": 0.3
+  },
+  {
+   "grupo": "G",
+   "j": 38,
+   "m": "Bélgica",
+   "v": "Egito",
+   "lM": 1.67,
+   "lV": 1.01,
+   "pM": 0.528,
+   "pE": 0.244,
+   "pV": 0.228
+  },
+  {
+   "grupo": "G",
+   "j": 39,
+   "m": "Bélgica",
+   "v": "Nova Zelândia",
+   "lM": 2.42,
+   "lV": 0.37,
+   "pM": 0.829,
+   "pE": 0.13,
+   "pV": 0.04
+  },
+  {
+   "grupo": "G",
+   "j": 40,
+   "m": "Irã",
+   "v": "Egito",
+   "lM": 1.5,
+   "lV": 1.15,
+   "pM": 0.453,
+   "pE": 0.256,
+   "pV": 0.29
+  },
+  {
+   "grupo": "G",
+   "j": 41,
+   "m": "Irã",
+   "v": "Nova Zelândia",
+   "lM": 2.25,
+   "lV": 0.51,
+   "pM": 0.773,
+   "pE": 0.159,
+   "pV": 0.068
+  },
+  {
+   "grupo": "G",
+   "j": 42,
+   "m": "Egito",
+   "v": "Nova Zelândia",
+   "lM": 2.06,
+   "lV": 0.67,
+   "pM": 0.699,
+   "pE": 0.191,
+   "pV": 0.109
+  },
+  {
+   "grupo": "H",
+   "j": 43,
+   "m": "Espanha",
+   "v": "Uruguai",
+   "lM": 2.16,
+   "lV": 0.59,
+   "pM": 0.737,
+   "pE": 0.175,
+   "pV": 0.087
+  },
+  {
+   "grupo": "H",
+   "j": 44,
+   "m": "Espanha",
+   "v": "Arábia Saudita",
+   "lM": 2.93,
+   "lV": 0.18,
+   "pM": 0.914,
+   "pE": 0.071,
+   "pV": 0.011
+  },
+  {
+   "grupo": "H",
+   "j": 45,
+   "m": "Espanha",
+   "v": "Cabo Verde",
+   "lM": 2.93,
+   "lV": 0.18,
+   "pM": 0.914,
+   "pE": 0.071,
+   "pV": 0.011
+  },
+  {
+   "grupo": "H",
+   "j": 46,
+   "m": "Uruguai",
+   "v": "Arábia Saudita",
+   "lM": 2.13,
+   "lV": 0.61,
+   "pM": 0.727,
+   "pE": 0.18,
+   "pV": 0.093
+  },
+  {
+   "grupo": "H",
+   "j": 47,
+   "m": "Uruguai",
+   "v": "Cabo Verde",
+   "lM": 2.17,
+   "lV": 0.58,
+   "pM": 0.741,
+   "pE": 0.174,
+   "pV": 0.085
+  },
+  {
+   "grupo": "H",
+   "j": 48,
+   "m": "Arábia Saudita",
+   "v": "Cabo Verde",
+   "lM": 1.34,
+   "lV": 1.28,
+   "pM": 0.384,
+   "pE": 0.262,
+   "pV": 0.354
+  },
+  {
+   "grupo": "I",
+   "j": 49,
+   "m": "França",
+   "v": "Noruega",
+   "lM": 1.78,
+   "lV": 0.91,
+   "pM": 0.58,
+   "pE": 0.231,
+   "pV": 0.189
+  },
+  {
+   "grupo": "I",
+   "j": 50,
+   "m": "França",
+   "v": "Senegal",
+   "lM": 1.93,
+   "lV": 0.79,
+   "pM": 0.643,
+   "pE": 0.212,
+   "pV": 0.145
+  },
+  {
+   "grupo": "I",
+   "j": 51,
+   "m": "França",
+   "v": "Iraque",
+   "lM": 2.62,
+   "lV": 0.19,
+   "pM": 0.888,
+   "pE": 0.094,
+   "pV": 0.016
+  },
+  {
+   "grupo": "I",
+   "j": 52,
+   "m": "Noruega",
+   "v": "Senegal",
+   "lM": 1.45,
+   "lV": 1.19,
+   "pM": 0.432,
+   "pE": 0.259,
+   "pV": 0.309
+  },
+  {
+   "grupo": "I",
+   "j": 53,
+   "m": "Noruega",
+   "v": "Iraque",
+   "lM": 2.15,
+   "lV": 0.6,
+   "pM": 0.733,
+   "pE": 0.177,
+   "pV": 0.089
+  },
+  {
+   "grupo": "I",
+   "j": 54,
+   "m": "Senegal",
+   "v": "Iraque",
+   "lM": 2.01,
+   "lV": 0.72,
+   "pM": 0.676,
+   "pE": 0.2,
+   "pV": 0.124
+  },
+  {
+   "grupo": "J",
+   "j": 55,
+   "m": "Argentina",
+   "v": "Áustria",
+   "lM": 2.34,
+   "lV": 0.43,
+   "pM": 0.803,
+   "pE": 0.144,
+   "pV": 0.053
+  },
+  {
+   "grupo": "J",
+   "j": 56,
+   "m": "Argentina",
+   "v": "Argélia",
+   "lM": 2.4,
+   "lV": 0.38,
+   "pM": 0.822,
+   "pE": 0.134,
+   "pV": 0.044
+  },
+  {
+   "grupo": "J",
+   "j": 57,
+   "m": "Argentina",
+   "v": "Jordânia",
+   "lM": 2.82,
+   "lV": 0.18,
+   "pM": 0.907,
+   "pE": 0.078,
+   "pV": 0.012
+  },
+  {
+   "grupo": "J",
+   "j": 58,
+   "m": "Áustria",
+   "v": "Argélia",
+   "lM": 1.37,
+   "lV": 1.26,
+   "pM": 0.394,
+   "pE": 0.262,
+   "pV": 0.344
+  },
+  {
+   "grupo": "J",
+   "j": 59,
+   "m": "Áustria",
+   "v": "Jordânia",
+   "lM": 1.79,
+   "lV": 0.9,
+   "pM": 0.585,
+   "pE": 0.23,
+   "pV": 0.186
+  },
+  {
+   "grupo": "J",
+   "j": 60,
+   "m": "Argélia",
+   "v": "Jordânia",
+   "lM": 1.74,
+   "lV": 0.95,
+   "pM": 0.559,
+   "pE": 0.236,
+   "pV": 0.204
+  },
+  {
+   "grupo": "K",
+   "j": 61,
+   "m": "Portugal",
+   "v": "Colômbia",
+   "lM": 1.32,
+   "lV": 1.3,
+   "pM": 0.374,
+   "pE": 0.263,
+   "pV": 0.363
+  },
+  {
+   "grupo": "K",
+   "j": 62,
+   "m": "Portugal",
+   "v": "RD Congo",
+   "lM": 2.19,
+   "lV": 0.56,
+   "pM": 0.748,
+   "pE": 0.17,
+   "pV": 0.081
+  },
+  {
+   "grupo": "K",
+   "j": 63,
+   "m": "Portugal",
+   "v": "Uzbequistão",
+   "lM": 2.28,
+   "lV": 0.48,
+   "pM": 0.783,
+   "pE": 0.154,
+   "pV": 0.063
+  },
+  {
+   "grupo": "K",
+   "j": 64,
+   "m": "Colômbia",
+   "v": "RD Congo",
+   "lM": 2.17,
+   "lV": 0.57,
+   "pM": 0.743,
+   "pE": 0.173,
+   "pV": 0.084
+  },
+  {
+   "grupo": "K",
+   "j": 65,
+   "m": "Colômbia",
+   "v": "Uzbequistão",
+   "lM": 2.27,
+   "lV": 0.49,
+   "pM": 0.778,
+   "pE": 0.156,
+   "pV": 0.065
+  },
+  {
+   "grupo": "K",
+   "j": 66,
+   "m": "RD Congo",
+   "v": "Uzbequistão",
+   "lM": 1.41,
+   "lV": 1.23,
+   "pM": 0.411,
+   "pE": 0.261,
+   "pV": 0.329
+  },
+  {
+   "grupo": "L",
+   "j": 67,
+   "m": "Inglaterra",
+   "v": "Croácia",
+   "lM": 1.66,
+   "lV": 1.02,
+   "pM": 0.524,
+   "pE": 0.244,
+   "pV": 0.232
+  },
+  {
+   "grupo": "L",
+   "j": 68,
+   "m": "Inglaterra",
+   "v": "Panamá",
+   "lM": 2.28,
+   "lV": 0.48,
+   "pM": 0.783,
+   "pE": 0.154,
+   "pV": 0.063
+  },
+  {
+   "grupo": "L",
+   "j": 69,
+   "m": "Inglaterra",
+   "v": "Gana",
+   "lM": 2.47,
+   "lV": 0.32,
+   "pM": 0.846,
+   "pE": 0.12,
+   "pV": 0.033
+  },
+  {
+   "grupo": "L",
+   "j": 70,
+   "m": "Croácia",
+   "v": "Panamá",
+   "lM": 1.94,
+   "lV": 0.78,
+   "pM": 0.647,
+   "pE": 0.211,
+   "pV": 0.143
+  },
+  {
+   "grupo": "L",
+   "j": 71,
+   "m": "Croácia",
+   "v": "Gana",
+   "lM": 2.13,
+   "lV": 0.61,
+   "pM": 0.725,
+   "pE": 0.181,
+   "pV": 0.094
+  },
+  {
+   "grupo": "L",
+   "j": 72,
+   "m": "Panamá",
+   "v": "Gana",
+   "lM": 1.5,
+   "lV": 1.15,
+   "pM": 0.453,
+   "pE": 0.256,
+   "pV": 0.29
+  }
+ ]
+}
