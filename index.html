@@ -83,7 +83,7 @@ const root=document.getElementById('days');
 [...DATA.dias].sort((a,b)=>b.data.localeCompare(a.data)).forEach((d,idx)=>{
   const day=document.createElement('div');day.className='day'+(idx===0?' open':'');
   const dt=new Date(d.data+'T12:00:00').toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
-  let games=d.jogos.map(g=>`<div class="game"><span class="t">${g.hora}</span><span>${g.partida}</span><span class="g">Grupo ${g.grupo} · ${g.local}</span></div>`).join('');
+  let games=d.jogos.map(g=>`<div class="game"><span class="t">${g.hora}</span><span><strong>${g.partida}</strong> <span class="g">Grupo ${g.grupo} · ${g.local}</span>${g.stats?`<div class="g" style="font-size:.78rem;margin:2px 0 8px">📊 ${g.stats}</div>`:''}</span></div>`).join('');
   let cats='';
   for(const[key,[cls,label]]of Object.entries(CATS)){
     const bets=d.apostas.filter(b=>b.cat===key);
