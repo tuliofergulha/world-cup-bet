@@ -3,342 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Copa 2026 — Painel de Análise</title>
-<style>
-  :root{
-    --bg:#080f08;
-    --card:#0d160d;
-    --card2:#111e11;
-    --border:#1e3020;
-    --text:#edf5ec;
-    --muted:#6b8f6e;
-    --green:#22c55e;
-    --red:#ef4444;
-    --amber:#f59e0b;
-    --blue:#60a5fa;
-    --purple:#c084fc;
-    --br-green:#009c3b;
-    --br-yellow:#ffdf00;
-    --br-blue:#002776;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;padding:24px 16px;max-width:900px;margin:0 auto}
-
-  /* ── Header ── */
-  header{
-    background:linear-gradient(135deg,#0d1a0d 0%,#091209 100%);
-    border:1px solid var(--border);border-radius:14px;
-    margin-bottom:24px;overflow:hidden;
-  }
-  .header-stripe{
-    height:5px;
-    background:linear-gradient(90deg,
-      var(--br-green) 0%,var(--br-green) 33%,
-      var(--br-yellow) 33%,var(--br-yellow) 66%,
-      var(--br-blue) 66%,var(--br-blue) 100%);
-  }
-  .header-body{padding:20px 24px 22px}
-  .copa-label{
-    display:inline-flex;align-items:center;gap:6px;
-    background:rgba(255,223,0,.1);color:var(--br-yellow);
-    border:1px solid rgba(255,223,0,.25);border-radius:99px;
-    padding:3px 12px;font-size:.72rem;font-weight:700;letter-spacing:.08em;
-    margin-bottom:10px;
-  }
-  header h1{font-size:1.85rem;font-weight:800;line-height:1.2;margin-bottom:6px}
-  header h1 span{color:var(--br-yellow)}
-  .header-hosts{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted);margin-bottom:8px}
-  .header-hosts .sep{color:var(--border)}
-  .sub{color:var(--muted);font-size:.84rem;margin-top:2px}
-
-  /* ── Tournament stats strip ── */
-  .tourney-stats{
-    display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;
-  }
-  .ts{
-    background:var(--card);border:1px solid var(--border);border-radius:8px;
-    padding:8px 14px;font-size:.8rem;display:flex;align-items:center;gap:7px;
-    flex:1;min-width:130px;
-  }
-  .ts .ti{font-size:1.1rem}
-  .ts .tv{font-weight:700;color:var(--text)}
-  .ts .tl{color:var(--muted);font-size:.75rem}
-
-  /* ── Day cards ── */
-  .day{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden}
-  .day-h{
-    padding:14px 18px;border-bottom:1px solid var(--border);
-    cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;
-    background:linear-gradient(90deg,rgba(0,156,59,.07) 0%,transparent 55%);
-    transition:background .15s;
-  }
-  .day-h:hover{background:linear-gradient(90deg,rgba(0,156,59,.13) 0%,transparent 55%)}
-  .day-h h2{font-size:1.05rem;display:flex;align-items:center;gap:8px}
-  .day-h .d{color:var(--br-yellow);font-size:.85rem;font-weight:600;white-space:nowrap}
-  .day-body{padding:14px}
-
-  /* ── Context ── */
-  .ctx{
-    background:rgba(0,156,59,.05);border-left:3px solid var(--br-green);
-    padding:9px 12px;border-radius:0 6px 6px 0;
-    font-size:.84rem;color:var(--muted);margin-bottom:14px;
-  }
-
-  /* ── Game card ── */
-  .game-card{
-    background:var(--card2);border:1px solid var(--border);border-radius:10px;
-    margin-bottom:12px;overflow:hidden;
-  }
-  .game-card.has-tips{border-left:3px solid rgba(255,223,0,.4)}
-  .game-card:last-child{margin-bottom:0}
-
-  .g-hdr{
-    padding:12px 14px 10px;
-    border-bottom:1px solid var(--border);
-  }
-  .g-matchup{
-    display:flex;align-items:center;gap:8px;
-    font-size:1rem;font-weight:700;margin-bottom:4px;flex-wrap:wrap;
-  }
-  .g-team{display:flex;align-items:center;gap:5px}
-  .g-sep{color:var(--muted);font-size:.85rem;font-weight:400}
-  .g-score{color:var(--br-yellow);font-variant-numeric:tabular-nums}
-  .g-meta{
-    font-size:.78rem;color:var(--muted);
-    display:flex;align-items:center;gap:5px;flex-wrap:wrap;
-  }
-  .g-time{color:var(--br-yellow);font-weight:700;font-variant-numeric:tabular-nums}
-  .g-dot{color:var(--border)}
-
-  .g-body{padding:12px 14px}
-
-  /* ── Stats block ── */
-  .g-stats{
-    color:var(--muted);font-size:.8rem;line-height:1.7;
-    margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);
-  }
-  .g-stats:only-child,.g-stats.no-tips{border-bottom:none;margin-bottom:0;padding-bottom:0}
-
-  /* ── Key numbers grid ── */
-  .g-nums{
-    display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;padding-bottom:10px;
-    border-bottom:1px solid var(--border);
-  }
-  .g-nums.no-tips{border-bottom:none;margin-bottom:0;padding-bottom:0}
-  .num-pill{
-    background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;
-    padding:5px 10px;font-size:.78rem;display:flex;flex-direction:column;align-items:center;gap:1px;
-    min-width:72px;flex:1;
-  }
-  .num-pill .np-v{font-weight:700;font-size:.95rem;color:var(--text)}
-  .num-pill .np-l{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;text-align:center}
-
-  /* ── Tips ── */
-  .tips-section{margin-top:2px}
-  .tips-title{
-    font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;
-    color:var(--br-yellow);font-weight:700;
-    margin-bottom:8px;display:flex;align-items:center;gap:6px;
-  }
-
-  /* ── Categories ── */
-  .cat{margin-bottom:10px}
-  .cat:last-child{margin-bottom:0}
-  .cat h3{
-    font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;
-    margin-bottom:6px;padding-bottom:5px;
-    display:flex;align-items:center;gap:8px;
-    border-bottom:1px solid var(--border);
-  }
-  .cat.c h3{color:var(--green)}
-  .cat.i h3{color:var(--amber)}
-  .cat.l h3{color:var(--purple)}
-
-  /* ── Tip cards ── */
-  .tip{
-    border:1px solid var(--border);border-radius:7px;padding:9px 12px;margin-bottom:6px;
-    background:rgba(255,255,255,.02);transition:background .1s;
-  }
-  .tip:last-child{margin-bottom:0}
-  .tip:hover{background:rgba(255,255,255,.04)}
-  .tip-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px;flex-wrap:wrap}
-  .tip .m{font-weight:600;font-size:.9rem}
-  .tip .o{
-    font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.82rem;
-    color:var(--br-yellow);background:rgba(255,223,0,.08);
-    border:1px solid rgba(255,223,0,.15);border-radius:5px;padding:1px 7px;
-  }
-  .tip .j{color:var(--muted);font-size:.8rem;line-height:1.55}
-
-  /* ── Footer ── */
-  footer{
-    color:var(--muted);font-size:.77rem;margin-top:28px;
-    border-top:1px solid var(--border);padding-top:14px;
-    display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;
-  }
-
-  /* ── Utils ── */
-  .hidden{display:none}
-  .chev{color:var(--br-green);font-size:.75rem;transition:transform .15s;flex-shrink:0}
-  .open .chev{transform:rotate(90deg)}
-</style>
+<meta name="theme-color" content="#0f172a">
+<title>Copa 2026 — Painel de Analise</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<div class="header">
   <div class="header-stripe"></div>
   <div class="header-body">
-    <div class="copa-label">⚽ COPA DO MUNDO FIFA 2026™</div>
-    <h1>Painel de <span>Análise</span></h1>
-    <div class="header-hosts">
-      <span>🇺🇸 EUA</span><span class="sep">·</span>
-      <span>🇲🇽 México</span><span class="sep">·</span>
-      <span>🇨🇦 Canadá</span>
+    <div class="header-left">
+      <div class="copa-label">⚽ COPA DO MUNDO FIFA 2026</div>
+      <h1>Painel de <span>Analise</span></h1>
+      <div class="header-hosts">
+        <span>🇺🇸 EUA</span><span class="sep">·</span>
+        <span>🇲🇽 Mexico</span><span class="sep">·</span>
+        <span>🇨🇦 Canada</span>
+      </div>
+      <div class="header-sub" id="updated"></div>
+      <div class="header-sub">Horarios em BRT — Brasilia (UTC−3)</div>
     </div>
-    <div class="sub" id="updated"></div>
-    <div class="sub">Horários em BRT — Brasília (UTC−3)</div>
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" aria-label="Alternar tema">☀️</button>
+    </div>
   </div>
-</header>
+</div>
+
+<div class="sticky-bar" id="sticky-bar"></div>
+
+<div id="scorecard" class="scorecard"></div>
 
 <div class="tourney-stats" id="tourney-stats"></div>
-<div id="days"></div>
 
-<footer>
-  <span>Modelo Elo-Poisson. Odds são estimativas de referência — confirme na sua casa.</span>
-  <span>Painel informativo. Análise estatística + dicas baseadas em histórico e dados reais.</span>
+<nav class="nav-tabs">
+  <button class="nav-tab active" data-tab="jogos">⚽ Jogos</button>
+  <button class="nav-tab" data-tab="grupos">📊 Grupos</button>
+  <button class="nav-tab" data-tab="performance">📈 Performance</button>
+</nav>
+
+<!-- ── Panel: Jogos ── -->
+<div id="panel-jogos" class="panel active">
+  <div class="controls-bar">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="Buscar time, mercado, estadio...">
+    </div>
+    <select class="filter-select" id="filter-grupo"></select>
+    <div class="filter-chips">
+      <span class="chip" data-cat="conservadora">🟢 Alta Confianca</span>
+      <span class="chip" data-cat="intermediaria">🟡 Valor</span>
+      <span class="chip" data-cat="loucura">🟣 Especulativa</span>
+      <span class="chip" data-status="finished">✅ Encerrados</span>
+      <span class="chip" data-status="upcoming">⏳ Proximos</span>
+    </div>
+  </div>
+  <div id="days-content"></div>
+</div>
+
+<!-- ── Panel: Grupos ── -->
+<div id="panel-grupos" class="panel">
+  <div id="standings"></div>
+</div>
+
+<!-- ── Panel: Performance ── -->
+<div id="panel-performance" class="panel">
+  <div id="perf-content"></div>
+</div>
+
+<footer class="footer">
+  <span>Modelo Elo-Poisson. Odds sao estimativas — confirme na sua casa.</span>
+  <span>Painel informativo. Analise estatistica + dicas baseadas em dados reais.</span>
 </footer>
 
+<!-- ── Bottom nav (mobile) ── -->
+<nav class="bottom-nav">
+  <button class="bnav-item active" data-tab="jogos">
+    <span class="bnav-icon">⚽</span>
+    <span>Jogos</span>
+  </button>
+  <button class="bnav-item" data-tab="grupos">
+    <span class="bnav-icon">📊</span>
+    <span>Grupos</span>
+  </button>
+  <button class="bnav-item" data-tab="performance">
+    <span class="bnav-icon">📈</span>
+    <span>Performance</span>
+  </button>
+  <button class="bnav-item" onclick="toggleTheme()">
+    <span class="bnav-icon" id="theme-btn-mobile">☀️</span>
+    <span>Tema</span>
+  </button>
+</nav>
+
 <script src="data.js"></script>
-<script>
-const CATS = {
-  conservadora: ["c", "🟢 Alta Confiança"],
-  intermediaria: ["i", "🟡 Valor"],
-  loucura:       ["l", "🟣 Especulativa"]
-};
-
-const FLAGS = {
-  "México":"🇲🇽","África do Sul":"🇿🇦","Coreia do Sul":"🇰🇷","Tchéquia":"🇨🇿",
-  "Canadá":"🇨🇦","Bósnia e Herz.":"🇧🇦","Suíça":"🇨🇭","Catar":"🇶🇦",
-  "Brasil":"🇧🇷","Marrocos":"🇲🇦","Escócia":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","Haiti":"🇭🇹",
-  "EUA":"🇺🇸","Paraguai":"🇵🇾","Turquia":"🇹🇷","Austrália":"🇦🇺",
-  "Alemanha":"🇩🇪","Equador":"🇪🇨","Holanda":"🇳🇱","Japão":"🇯🇵",
-  "Bélgica":"🇧🇪","Espanha":"🇪🇸","França":"🇫🇷","Argentina":"🇦🇷",
-  "Portugal":"🇵🇹","Colômbia":"🇨🇴","Inglaterra":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","Croácia":"🇭🇷",
-  "Uruguai":"🇺🇾","Senegal":"🇸🇳","Noruega":"🇳🇴","Irã":"🇮🇷","Egito":"🇪🇬"
-};
-const flag = t => FLAGS[t] ?? "🏳";
-
-document.getElementById('updated').textContent =
-  'Atualizado em ' + new Date(DATA.atualizadoEm).toLocaleString('pt-BR');
-
-// Tournament-level stats strip
-const ts = DATA.estatisticas || {};
-const tsEl = document.getElementById('tourney-stats');
-const tsItems = [
-  ts.totalJogos    ? { i:'📅', v: ts.totalJogos,    l:'Jogos disputados' } : null,
-  ts.totalGols     ? { i:'⚽', v: ts.totalGols,     l:'Gols no torneio' } : null,
-  ts.mediaPorJogo  ? { i:'📊', v: ts.mediaPorJogo,  l:'Média gols/jogo' } : null,
-  ts.cartoesAmarelos ? { i:'🟨', v: ts.cartoesAmarelos, l:'Cartões amarelos' } : null,
-  ts.escanteiosMed ? { i:'🚩', v: ts.escanteiosMed, l:'Média escanteios' } : null,
-].filter(Boolean);
-if (tsItems.length) {
-  tsEl.innerHTML = tsItems.map(x =>
-    `<div class="ts"><span class="ti">${x.i}</span><div><div class="tv">${x.v}</div><div class="tl">${x.l}</div></div></div>`
-  ).join('');
-} else {
-  tsEl.style.display = 'none';
-}
-
-function renderGame(g) {
-  const dicas = g.dicas || g.apostas || [];
-  const hasTips = dicas.length > 0;
-
-  const sep = g.placar
-    ? `<span class="g-score">${g.placar}</span>`
-    : `<span class="g-sep">×</span>`;
-  const matchup = `
-    <span class="g-team">${flag(g.mandante)} ${g.mandante}</span>
-    ${sep}
-    <span class="g-team">${flag(g.visitante)} ${g.visitante}</span>`;
-
-  // Key numbers pills (if provided)
-  let numsHtml = '';
-  if (g.numeros && g.numeros.length) {
-    numsHtml = `<div class="g-nums${hasTips ? '' : ' no-tips'}">` +
-      g.numeros.map(n => `<div class="num-pill"><span class="np-v">${n.v}</span><span class="np-l">${n.l}</span></div>`).join('') +
-      '</div>';
-  }
-
-  // Tips grouped by category
-  let tipsHtml = '';
-  if (hasTips) {
-    const grouped = Object.entries(CATS).map(([key, [cls, label]]) => {
-      const items = dicas.filter(b => b.cat === key);
-      if (!items.length) return '';
-      return `<div class="cat ${cls}"><h3>${label}</h3>` +
-        items.map(b => `
-          <div class="tip">
-            <div class="tip-top">
-              <span class="m">${b.mercado}</span>
-              ${b.odd ? `<span class="o">@${typeof b.odd === 'number' ? b.odd.toFixed(2) : b.odd}</span>` : ''}
-            </div>
-            <div class="j">${b.justificativa}</div>
-          </div>`).join('') + '</div>';
-    }).join('');
-    if (grouped.trim()) {
-      tipsHtml = `<div class="tips-section">
-        <div class="tips-title">💡 Dicas & Análise</div>
-        ${grouped}
-      </div>`;
-    }
-  }
-
-  const hasBody = g.stats || numsHtml || tipsHtml;
-  return `
-    <div class="game-card${hasTips ? ' has-tips' : ''}">
-      <div class="g-hdr">
-        <div class="g-matchup">${matchup}</div>
-        <div class="g-meta">
-          <span class="g-time">${g.hora}</span>
-          <span class="g-dot">·</span>
-          <span>Grupo ${g.grupo}</span>
-          <span class="g-dot">·</span>
-          <span>${g.local}</span>
-        </div>
-      </div>
-      ${hasBody ? `<div class="g-body">
-        ${g.stats ? `<div class="g-stats${numsHtml || tipsHtml ? '' : ' no-tips'}">📊 ${g.stats}</div>` : ''}
-        ${numsHtml}
-        ${tipsHtml}
-      </div>` : ''}
-    </div>`;
-}
-
-// Render days (newest first)
-const root = document.getElementById('days');
-[...DATA.dias].sort((a, b) => b.data.localeCompare(a.data)).forEach((d, idx) => {
-  const day = document.createElement('div');
-  day.className = 'day' + (idx === 0 ? ' open' : '');
-
-  const dt = new Date(d.data + 'T12:00:00')
-    .toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
-
-  day.innerHTML = `
-    <div class="day-h">
-      <h2><span class="chev">▶</span> ${d.titulo}</h2>
-      <span class="d">${dt}</span>
-    </div>
-    <div class="day-body ${idx === 0 ? '' : 'hidden'}">
-      ${d.contexto ? `<div class="ctx">${d.contexto}</div>` : ''}
-      ${d.jogos.map(renderGame).join('')}
-    </div>`;
-
-  day.querySelector('.day-h').onclick = () => {
-    day.classList.toggle('open');
-    day.querySelector('.day-body').classList.toggle('hidden');
-  };
-  root.appendChild(day);
-});
-</script>
+<script src="app.js"></script>
 </body>
 </html>
