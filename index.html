@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Copa 2026 — Central de Apostas</title>
+<title>Copa 2026 — Painel de Análise</title>
 <style>
   :root{
     --bg:#080f08;
@@ -22,7 +22,7 @@
     --br-blue:#002776;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;padding:24px 16px;max-width:860px;margin:0 auto}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;padding:24px 16px;max-width:900px;margin:0 auto}
 
   /* ── Header ── */
   header{
@@ -51,19 +51,18 @@
   .header-hosts .sep{color:var(--border)}
   .sub{color:var(--muted);font-size:.84rem;margin-top:2px}
 
-  /* ── Stats ── */
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:0 0 20px}
-  .stat{
-    background:var(--card);border:1px solid var(--border);border-radius:10px;
-    padding:14px;position:relative;overflow:hidden;
+  /* ── Tournament stats strip ── */
+  .tourney-stats{
+    display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;
   }
-  .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-  .stat:nth-child(1)::before{background:var(--br-yellow)}
-  .stat:nth-child(2)::before{background:var(--br-green)}
-  .stat:nth-child(3)::before{background:var(--red)}
-  .stat:nth-child(4)::before{background:var(--br-blue)}
-  .stat .v{font-size:1.5rem;font-weight:700}
-  .stat .l{color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+  .ts{
+    background:var(--card);border:1px solid var(--border);border-radius:8px;
+    padding:8px 14px;font-size:.8rem;display:flex;align-items:center;gap:7px;
+    flex:1;min-width:130px;
+  }
+  .ts .ti{font-size:1.1rem}
+  .ts .tv{font-weight:700;color:var(--text)}
+  .ts .tl{color:var(--muted);font-size:.75rem}
 
   /* ── Day cards ── */
   .day{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden}
@@ -90,7 +89,7 @@
     background:var(--card2);border:1px solid var(--border);border-radius:10px;
     margin-bottom:12px;overflow:hidden;
   }
-  .game-card.has-bets{border-left:3px solid rgba(0,156,59,.5)}
+  .game-card.has-tips{border-left:3px solid rgba(255,223,0,.4)}
   .game-card:last-child{margin-bottom:0}
 
   .g-hdr{
@@ -112,46 +111,64 @@
   .g-dot{color:var(--border)}
 
   .g-body{padding:12px 14px}
+
+  /* ── Stats block ── */
   .g-stats{
-    color:var(--muted);font-size:.78rem;line-height:1.65;
+    color:var(--muted);font-size:.8rem;line-height:1.7;
     margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);
   }
-  .g-stats:only-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .g-stats:only-child,.g-stats.no-tips{border-bottom:none;margin-bottom:0;padding-bottom:0}
+
+  /* ── Key numbers grid ── */
+  .g-nums{
+    display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;padding-bottom:10px;
+    border-bottom:1px solid var(--border);
+  }
+  .g-nums.no-tips{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .num-pill{
+    background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;
+    padding:5px 10px;font-size:.78rem;display:flex;flex-direction:column;align-items:center;gap:1px;
+    min-width:72px;flex:1;
+  }
+  .num-pill .np-v{font-weight:700;font-size:.95rem;color:var(--text)}
+  .num-pill .np-l{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;text-align:center}
+
+  /* ── Tips ── */
+  .tips-section{margin-top:2px}
+  .tips-title{
+    font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--br-yellow);font-weight:700;
+    margin-bottom:8px;display:flex;align-items:center;gap:6px;
+  }
 
   /* ── Categories ── */
   .cat{margin-bottom:10px}
   .cat:last-child{margin-bottom:0}
   .cat h3{
-    font-size:.76rem;text-transform:uppercase;letter-spacing:.07em;
+    font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;
     margin-bottom:6px;padding-bottom:5px;
     display:flex;align-items:center;gap:8px;
     border-bottom:1px solid var(--border);
   }
   .cat.c h3{color:var(--green)}
-  .cat.i h3{color:var(--br-yellow)}
+  .cat.i h3{color:var(--amber)}
   .cat.l h3{color:var(--purple)}
 
-  /* ── Bets ── */
-  .bet{
-    border:1px solid var(--border);border-radius:7px;padding:10px 12px;margin-bottom:6px;
-    display:grid;grid-template-columns:1fr auto;gap:3px 12px;
+  /* ── Tip cards ── */
+  .tip{
+    border:1px solid var(--border);border-radius:7px;padding:9px 12px;margin-bottom:6px;
     background:rgba(255,255,255,.02);transition:background .1s;
   }
-  .bet:last-child{margin-bottom:0}
-  .bet:hover{background:rgba(255,255,255,.04)}
-  .bet .m{font-weight:600;font-size:.92rem;display:flex;align-items:baseline;gap:5px;flex-wrap:wrap}
-  .bet .j{grid-column:1/-1;color:var(--muted);font-size:.81rem;margin-top:2px;line-height:1.5}
-  .bet .o{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.88rem}
-
-  /* ── Badges ── */
-  .badge{
-    display:inline-block;padding:1px 7px;border-radius:99px;
-    font-size:.68rem;font-weight:700;vertical-align:2px;
+  .tip:last-child{margin-bottom:0}
+  .tip:hover{background:rgba(255,255,255,.04)}
+  .tip-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+  .tip .m{font-weight:600;font-size:.9rem}
+  .tip .o{
+    font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.82rem;
+    color:var(--br-yellow);background:rgba(255,223,0,.08);
+    border:1px solid rgba(255,223,0,.15);border-radius:5px;padding:1px 7px;
   }
-  .b-pendente{background:rgba(96,165,250,.1);color:var(--blue);border:1px solid rgba(96,165,250,.2)}
-  .b-ganhou{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
-  .b-perdeu{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
-  .b-anulada{background:rgba(102,125,153,.1);color:var(--muted);border:1px solid rgba(102,125,153,.2)}
+  .tip .j{color:var(--muted);font-size:.8rem;line-height:1.55}
 
   /* ── Footer ── */
   footer{
@@ -161,7 +178,6 @@
   }
 
   /* ── Utils ── */
-  .pos{color:var(--green)} .neg{color:var(--red)}
   .hidden{display:none}
   .chev{color:var(--br-green);font-size:.75rem;transition:transform .15s;flex-shrink:0}
   .open .chev{transform:rotate(90deg)}
@@ -173,7 +189,7 @@
   <div class="header-stripe"></div>
   <div class="header-body">
     <div class="copa-label">⚽ COPA DO MUNDO FIFA 2026™</div>
-    <h1>Central de <span>Apostas</span></h1>
+    <h1>Painel de <span>Análise</span></h1>
     <div class="header-hosts">
       <span>🇺🇸 EUA</span><span class="sep">·</span>
       <span>🇲🇽 México</span><span class="sep">·</span>
@@ -184,20 +200,20 @@
   </div>
 </header>
 
-<div class="stats" id="stats"></div>
+<div class="tourney-stats" id="tourney-stats"></div>
 <div id="days"></div>
 
 <footer>
-  <span>Modelo Elo-Poisson (premissas Klement). Odds são estimativas — confirme na casa antes.</span>
-  <span>~50% do resultado é sorte. Aposte só o que pode perder. Unidade: <span id="unit"></span>.</span>
+  <span>Modelo Elo-Poisson. Odds são estimativas de referência — confirme na sua casa.</span>
+  <span>Painel informativo. Análise estatística + dicas baseadas em histórico e dados reais.</span>
 </footer>
 
 <script src="data.js"></script>
 <script>
 const CATS = {
-  conservadora: ["c", "🟢 Conservadoras (1.5–3.0)"],
-  intermediaria: ["i", "🟡 Intermediárias (3.0–6.0)"],
-  loucura:       ["l", "🟣 Loucura (10+)"]
+  conservadora: ["c", "🟢 Alta Confiança"],
+  intermediaria: ["i", "🟡 Valor"],
+  loucura:       ["l", "🟣 Especulativa"]
 };
 
 const FLAGS = {
@@ -214,27 +230,29 @@ const flag = t => FLAGS[t] ?? "🏳";
 
 document.getElementById('updated').textContent =
   'Atualizado em ' + new Date(DATA.atualizadoEm).toLocaleString('pt-BR');
-document.getElementById('unit').textContent = DATA.unidade;
 
-// P&L global — apostas agora estão dentro de cada jogo
-let staked = 0, returned = 0, won = 0, lost = 0, pend = 0;
-DATA.dias.forEach(d => d.jogos.forEach(j => (j.apostas || []).forEach(b => {
-  if (b.status === 'anulada') return;
-  if (b.status === 'pendente') { pend++; return; }
-  staked += b.stake;
-  if (b.status === 'ganhou') { returned += b.stake * b.odd; won++; } else { lost++; }
-})));
-const pl = returned - staked;
-document.getElementById('stats').innerHTML = `
-  <div class="stat"><div class="v ${pl >= 0 ? 'pos' : 'neg'}">${pl >= 0 ? '+' : ''}${pl.toFixed(2)}u</div><div class="l">Lucro / Prejuízo</div></div>
-  <div class="stat"><div class="v">${won}–${lost}</div><div class="l">Ganhas – Perdidas</div></div>
-  <div class="stat"><div class="v">${staked.toFixed(2)}u</div><div class="l">Total apostado</div></div>
-  <div class="stat"><div class="v">${pend}</div><div class="l">Pendentes</div></div>`;
+// Tournament-level stats strip
+const ts = DATA.estatisticas || {};
+const tsEl = document.getElementById('tourney-stats');
+const tsItems = [
+  ts.totalJogos    ? { i:'📅', v: ts.totalJogos,    l:'Jogos disputados' } : null,
+  ts.totalGols     ? { i:'⚽', v: ts.totalGols,     l:'Gols no torneio' } : null,
+  ts.mediaPorJogo  ? { i:'📊', v: ts.mediaPorJogo,  l:'Média gols/jogo' } : null,
+  ts.cartoesAmarelos ? { i:'🟨', v: ts.cartoesAmarelos, l:'Cartões amarelos' } : null,
+  ts.escanteiosMed ? { i:'🚩', v: ts.escanteiosMed, l:'Média escanteios' } : null,
+].filter(Boolean);
+if (tsItems.length) {
+  tsEl.innerHTML = tsItems.map(x =>
+    `<div class="ts"><span class="ti">${x.i}</span><div><div class="tv">${x.v}</div><div class="tl">${x.l}</div></div></div>`
+  ).join('');
+} else {
+  tsEl.style.display = 'none';
+}
 
 function renderGame(g) {
-  const hasBets = g.apostas && g.apostas.length > 0;
+  const dicas = g.dicas || g.apostas || [];
+  const hasTips = dicas.length > 0;
 
-  // Matchup line: flags + names + score (or ×)
   const sep = g.placar
     ? `<span class="g-score">${g.placar}</span>`
     : `<span class="g-sep">×</span>`;
@@ -243,24 +261,41 @@ function renderGame(g) {
     ${sep}
     <span class="g-team">${flag(g.visitante)} ${g.visitante}</span>`;
 
-  // Bets grouped by category
-  let betsHtml = '';
-  if (hasBets) {
-    for (const [key, [cls, label]] of Object.entries(CATS)) {
-      const catBets = g.apostas.filter(b => b.cat === key);
-      if (!catBets.length) continue;
-      betsHtml += `<div class="cat ${cls}"><h3>${label}</h3>` +
-        catBets.map(b => `
-          <div class="bet">
-            <div class="m">${b.mercado}<span class="badge b-${b.status}">${b.status}</span></div>
-            <div class="o">@${b.odd.toFixed(2)} · ${b.stake}u</div>
+  // Key numbers pills (if provided)
+  let numsHtml = '';
+  if (g.numeros && g.numeros.length) {
+    numsHtml = `<div class="g-nums${hasTips ? '' : ' no-tips'}">` +
+      g.numeros.map(n => `<div class="num-pill"><span class="np-v">${n.v}</span><span class="np-l">${n.l}</span></div>`).join('') +
+      '</div>';
+  }
+
+  // Tips grouped by category
+  let tipsHtml = '';
+  if (hasTips) {
+    const grouped = Object.entries(CATS).map(([key, [cls, label]]) => {
+      const items = dicas.filter(b => b.cat === key);
+      if (!items.length) return '';
+      return `<div class="cat ${cls}"><h3>${label}</h3>` +
+        items.map(b => `
+          <div class="tip">
+            <div class="tip-top">
+              <span class="m">${b.mercado}</span>
+              ${b.odd ? `<span class="o">@${typeof b.odd === 'number' ? b.odd.toFixed(2) : b.odd}</span>` : ''}
+            </div>
             <div class="j">${b.justificativa}</div>
           </div>`).join('') + '</div>';
+    }).join('');
+    if (grouped.trim()) {
+      tipsHtml = `<div class="tips-section">
+        <div class="tips-title">💡 Dicas & Análise</div>
+        ${grouped}
+      </div>`;
     }
   }
 
+  const hasBody = g.stats || numsHtml || tipsHtml;
   return `
-    <div class="game-card${hasBets ? ' has-bets' : ''}">
+    <div class="game-card${hasTips ? ' has-tips' : ''}">
       <div class="g-hdr">
         <div class="g-matchup">${matchup}</div>
         <div class="g-meta">
@@ -271,9 +306,10 @@ function renderGame(g) {
           <span>${g.local}</span>
         </div>
       </div>
-      ${g.stats || hasBets ? `<div class="g-body">
-        ${g.stats ? `<div class="g-stats">📊 ${g.stats}</div>` : ''}
-        ${betsHtml}
+      ${hasBody ? `<div class="g-body">
+        ${g.stats ? `<div class="g-stats${numsHtml || tipsHtml ? '' : ' no-tips'}">📊 ${g.stats}</div>` : ''}
+        ${numsHtml}
+        ${tipsHtml}
       </div>` : ''}
     </div>`;
 }
