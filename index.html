@@ -71,7 +71,7 @@
 </div>
 
 <footer class="footer">
-  <span>Modelo Elo-Poisson. Odds sao estimativas — confirme na sua casa.</span>
+  <span>Modelo Elo-Poisson com Brier score (calibração) e re-rating dinâmico.</span>
   <span>Painel informativo. Analise estatistica + dicas baseadas em dados reais.</span>
 </footer>
 
@@ -96,6 +96,14 @@
 </nav>
 
 <script src="data.js"></script>
+<script>
+  // Modelo Elo-Poisson — carregado antes do app.js para o cálculo automático
+  // de acerto de resultado e Brier score.
+  window.MODELO_READY = fetch("modelo.json")
+    .then(r => r.ok ? r.json() : null)
+    .then(m => { window.MODELO = m; })
+    .catch(() => { window.MODELO = null; });
+</script>
 <script src="app.js"></script>
 </body>
 </html>

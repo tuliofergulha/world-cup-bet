@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════
    Copa 2026 — Painel de Análise
-   App v2
+   App v3 — scorecard via modelo.json, Brier score, estatísticas derivadas
    ══════════════════════════════════════════ */
 
 const CATS = {
@@ -41,7 +41,6 @@ const GROUP_TEAMS = {
   L: ["Inglaterra", "Croácia", "Panamá", "Gana"]
 };
 
-// ── State ──
 let state = {
   tab: "jogos",
   search: "",
@@ -61,68 +60,91 @@ function applyTheme() {
   if (btn) btn.textContent = icon;
   if (btnM) btnM.textContent = icon;
 }
-
 function toggleTheme() {
   state.theme = state.theme === "dark" ? "light" : "dark";
   applyTheme();
 }
 
+// ── Helpers de placar ──
+function parsePlacar(p) {
+  if (!p) return null;
+  const parts = p.replace(/\s/g, "").split("×");
+  if (parts.length !== 2) return null;
+  const gm = parseInt(parts[0]), gv = parseInt(parts[1]);
+  if (isNaN(gm) || isNaN(gv)) return null;
+  return { gm, gv, outcome: gm > gv ? "M" : gm < gv ? "V" : "E" };
+}
+
+// Busca no modelo.json o jogo correspondente — match exato por nomes.
+function modelMatch(g) {
+  if (!window.MODELO || !window.MODELO.jogos) return null;
+  return window.MODELO.jogos.find(j => j.m === g.mandante && j.v === g.visitante) || null;
+}
+
 // ── Scorecard ──
 function computeScorecard() {
   const byCat = {
-    conservadora: { total: 0, hits: 0, misses: 0, pending: 0, stakeWin: 0, stakeLoss: 0 },
-    intermediaria: { total: 0, hits: 0, misses: 0, pending: 0, stakeWin: 0, stakeLoss: 0 },
-    loucura: { total: 0, hits: 0, misses: 0, pending: 0, stakeWin: 0, stakeLoss: 0 }
+    conservadora: { total: 0, hits: 0, misses: 0, voids: 0, pending: 0 },
+    intermediaria: { total: 0, hits: 0, misses: 0, voids: 0, pending: 0 },
+    loucura: { total: 0, hits: 0, misses: 0, voids: 0, pending: 0 }
   };
-  let resultadosTotal = 0, resultadosHit = 0;
+  let modeloTotal = 0, modeloHits = 0;
+  let brierSum = 0, brierN = 0;
 
   DATA.dias.forEach(d => {
     d.jogos.forEach(g => {
-      if (g.placar) {
-        resultadosTotal++;
-        const statsLower = (g.stats || "").toLowerCase();
-        if (statsLower.includes("✓") || statsLower.includes("acertou") || statsLower.includes("cravou") || statsLower.includes("aprovado"))
-          resultadosHit++;
+      const placar = parsePlacar(g.placar);
+      if (placar) {
+        const mj = modelMatch(g);
+        if (mj) {
+          modeloTotal++;
+          // Usa snapshot pré-jogo se existir (preservado pelo update-model.js antes do re-rate).
+          const probs = mj.pM_pre != null
+            ? { M: mj.pM_pre, E: mj.pE_pre, V: mj.pV_pre }
+            : { M: mj.pM, E: mj.pE, V: mj.pV };
+          // argmax
+          const pred = Object.entries(probs).sort((a,b) => b[1]-a[1])[0][0];
+          if (pred === placar.outcome) modeloHits++;
+          // Brier score multiclasse: Σ(p_i - o_i)²  (o = 1 para outcome real, 0 senão)
+          const outcomes = { M: 0, E: 0, V: 0 }; outcomes[placar.outcome] = 1;
+          brierSum += (probs.M - outcomes.M)**2 + (probs.E - outcomes.E)**2 + (probs.V - outcomes.V)**2;
+          brierN++;
+        }
       }
       const dicas = g.dicas || g.apostas || [];
       dicas.forEach(tip => {
         const cat = byCat[tip.cat];
         if (!cat) return;
         cat.total++;
-        const txt = (tip.justificativa || "").toLowerCase();
-        const isHit = txt.includes("✓") || txt.includes("acertou");
-        const isMiss = txt.includes("✗") || txt.includes("errou");
-        if (isHit) {
-          cat.hits++;
-          if (tip.odd) cat.stakeWin += (tip.odd - 1);
-        } else if (isMiss) {
-          cat.misses++;
-          if (tip.odd) cat.stakeLoss += 1;
-        } else {
-          cat.pending++;
-        }
+        if (tip.resultado === "hit") cat.hits++;
+        else if (tip.resultado === "miss") cat.misses++;
+        else if (tip.resultado === "void") cat.voids++;
+        else cat.pending++;
       });
     });
   });
 
-  const allResolved = Object.values(byCat).reduce((s, c) => s + c.hits + c.misses, 0);
   const allHits = Object.values(byCat).reduce((s, c) => s + c.hits, 0);
-  const allTotal = Object.values(byCat).reduce((s, c) => s + c.total, 0);
+  const allResolved = Object.values(byCat).reduce((s, c) => s + c.hits + c.misses, 0);
   const allPending = Object.values(byCat).reduce((s, c) => s + c.pending, 0);
+  const brierAvg = brierN > 0 ? brierSum / brierN : null;
 
-  return { byCat, allResolved, allHits, allTotal, allPending, resultadosTotal, resultadosHit };
+  return { byCat, allHits, allResolved, allPending, modeloTotal, modeloHits, brierAvg, brierN };
 }
 
-function catRoi(cat) {
-  const resolved = cat.hits + cat.misses;
-  if (!resolved) return 0;
-  return (cat.stakeWin - cat.stakeLoss) / resolved * 100;
+// Brier score: 0 = perfeito · 0.667 = chute aleatório (1/3) · <0.5 = skill real
+function brierVerdict(b) {
+  if (b == null) return "—";
+  if (b < 0.45) return "ótimo";
+  if (b < 0.55) return "bom";
+  if (b < 0.65) return "fraco";
+  return "ruim";
 }
 
 function renderScorecard() {
   const el = document.getElementById("scorecard");
   const sc = computeScorecard();
-  if (sc.allResolved === 0 && sc.resultadosTotal === 0) {
+  if (sc.allResolved === 0 && sc.modeloTotal === 0) {
     el.innerHTML = "";
     el.style.display = "none";
     return;
@@ -135,11 +157,17 @@ function renderScorecard() {
 
   let html = "";
 
-  if (sc.resultadosTotal > 0) {
-    const resPct = Math.round(sc.resultadosHit / sc.resultadosTotal * 100);
+  if (sc.modeloTotal > 0) {
+    const resPct = Math.round(sc.modeloHits / sc.modeloTotal * 100);
     html += `<div class="sc-item">
       <div class="sc-value ${resPct >= 50 ? 'positive' : 'negative'}">${resPct}%</div>
-      <div class="sc-label">Modelo: resultado <span style="font-weight:400">(${sc.resultadosHit}/${sc.resultadosTotal})</span></div>
+      <div class="sc-label">Modelo: resultado <span style="font-weight:400">(${sc.modeloHits}/${sc.modeloTotal})</span></div>
+    </div>`;
+  }
+  if (sc.brierAvg != null) {
+    html += `<div class="sc-item">
+      <div class="sc-value">${sc.brierAvg.toFixed(3)}</div>
+      <div class="sc-label">Brier score <span style="font-weight:400">(${brierVerdict(sc.brierAvg)})</span></div>
     </div>`;
   }
 
@@ -163,21 +191,20 @@ function renderScorecard() {
   el.innerHTML = html;
 }
 
-// ── Standings ──
+// ── Standings (com top-3 qualificados destacados) ──
 function computeStandings() {
   const groups = {};
   DATA.dias.forEach(d => {
     d.jogos.forEach(g => {
-      if (!g.placar) return;
+      const placar = parsePlacar(g.placar);
+      if (!placar) return;
       const grp = g.grupo;
+      if (!grp) return;
       if (!groups[grp]) groups[grp] = {};
       [g.mandante, g.visitante].forEach(t => {
         if (!groups[grp][t]) groups[grp][t] = { team: t, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0 };
       });
-      const parts = g.placar.replace(/\s/g, "").split("×");
-      if (parts.length !== 2) return;
-      const gm = parseInt(parts[0]), gv = parseInt(parts[1]);
-      if (isNaN(gm) || isNaN(gv)) return;
+      const { gm, gv } = placar;
       const home = groups[grp][g.mandante], away = groups[grp][g.visitante];
       home.gf += gm; home.ga += gv;
       away.gf += gv; away.ga += gm;
@@ -189,18 +216,35 @@ function computeStandings() {
   return groups;
 }
 
+// Top-8 melhores 3ºs colocados (formato 32→48 da Copa 2026)
+function computeBestThirds(perGroup) {
+  const thirds = [];
+  Object.entries(perGroup).forEach(([grp, list]) => {
+    if (list.length >= 3) thirds.push({ grp, ...list[2] });
+  });
+  thirds.sort((a, b) => b.p - a.p || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+  const qualified = new Set(thirds.slice(0, 8).map(t => grp_team_key(t.grp, t.team)));
+  return qualified;
+}
+const grp_team_key = (g, t) => g + "::" + t;
+
 function renderStandings() {
   const el = document.getElementById("standings");
   const results = computeStandings();
-
   const sortedGroupKeys = Object.keys(GROUP_TEAMS).sort();
 
-  el.innerHTML = '<div class="standings-grid">' + sortedGroupKeys.map(grp => {
-    const teams = GROUP_TEAMS[grp].map(t => {
+  const perGroup = {};
+  sortedGroupKeys.forEach(grp => {
+    perGroup[grp] = GROUP_TEAMS[grp].map(t => {
       if (results[grp] && results[grp][t]) return results[grp][t];
       return { team: t, p: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0 };
     }).sort((a, b) => b.p - a.p || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf);
+  });
 
+  const bestThirds = computeBestThirds(perGroup);
+
+  el.innerHTML = '<div class="standings-grid">' + sortedGroupKeys.map(grp => {
+    const teams = perGroup[grp];
     return `<div class="group-table">
       <div class="group-table-header">Grupo ${grp}</div>
       <table>
@@ -208,8 +252,11 @@ function renderStandings() {
         <tbody>${teams.map((t, i) => {
           const j = t.w + t.d + t.l;
           const sg = t.gf - t.ga;
-          return `<tr class="${i < 2 && j > 0 ? 'qualified' : ''}">
-            <td>${flag(t.team)} ${t.team}</td>
+          const isTop2 = i < 2 && j > 0;
+          const isBestThird = i === 2 && j > 0 && bestThirds.has(grp_team_key(grp, t.team));
+          const cls = isTop2 ? "qualified" : isBestThird ? "qualified third" : "";
+          return `<tr class="${cls}">
+            <td>${flag(t.team)} ${t.team}${isBestThird ? ' <span style="opacity:.6;font-size:.7em">3º+</span>' : ''}</td>
             <td>${j}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td>
             <td>${t.gf}</td><td>${t.ga}</td>
             <td>${sg > 0 ? '+' + sg : sg}</td>
@@ -222,22 +269,18 @@ function renderStandings() {
 }
 
 // ── Tip badge ──
-function tipBadge(tip) {
-  const txt = (tip.justificativa || "").toLowerCase();
-  if (txt.includes("✓") || txt.includes("acertou")) return '<span class="badge badge-hit">Acertou</span>';
-  if (txt.includes("✗") || txt.includes("errou")) return '<span class="badge badge-miss">Errou</span>';
-  if (tip._gameFinished) return '<span class="badge badge-pending">—</span>';
+function tipBadge(tip, isFinished) {
+  if (tip.resultado === "hit") return '<span class="badge badge-hit">Acertou</span>';
+  if (tip.resultado === "miss") return '<span class="badge badge-miss">Errou</span>';
+  if (tip.resultado === "void") return '<span class="badge badge-pending">Anulada</span>';
+  if (isFinished) return '<span class="badge badge-pending">—</span>';
   return '<span class="badge badge-pending">Pendente</span>';
 }
 
 // ── Countdown ──
 function getCountdown(dateStr, timeStr) {
-  const match = timeStr.match(/(\d+)h(\d*)/);
-  if (!match) return null;
-  const h = parseInt(match[1]), m = parseInt(match[2] || "0");
-  const gameDate = new Date(dateStr + "T" + String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0") + ":00-03:00");
-  const now = new Date();
-  const diff = gameDate - now;
+  const ts = gameToTimestamp(dateStr, timeStr);
+  const diff = ts - Date.now();
   if (diff <= 0) return null;
   const hours = Math.floor(diff / 3600000);
   const mins = Math.floor((diff % 3600000) / 60000);
@@ -266,13 +309,7 @@ function getNextGame() {
       if (ts <= now) return;
       if (ts < nextTs) {
         nextTs = ts;
-        const diff = ts - now;
-        const hours = Math.floor(diff / 3600000);
-        const mins = Math.floor((diff % 3600000) / 60000);
-        let cd;
-        if (hours >= 24) { const days = Math.floor(hours / 24); cd = days + "d " + (hours % 24) + "h"; }
-        else cd = hours + "h" + String(mins).padStart(2, "0") + "m";
-        next = { game: g, day: d, cd };
+        next = { game: g, day: d, cd: getCountdown(d.data, g.hora) };
       }
     });
   });
@@ -296,7 +333,7 @@ function renderGame(g, dayData) {
   let countdownHtml = "";
   if (!isFinished && dayData) {
     const cd = getCountdown(dayData.data, g.hora);
-    if (cd) countdownHtml = `<span class="g-countdown">em ${cd}</span>`;
+    if (cd) countdownHtml = `<span class="g-countdown" data-cd-date="${dayData.data}" data-cd-time="${g.hora}">em ${cd}</span>`;
   }
 
   let numsHtml = "";
@@ -313,12 +350,11 @@ function renderGame(g, dayData) {
       if (!items.length) return "";
       return `<div class="cat ${cls}"><div class="cat-header">${CAT_ICONS[cls]} ${label} <span style="color:var(--muted);font-weight:400">(${items.length})</span></div>` +
         items.map(b => {
-          const tipData = { ...b, _gameFinished: isFinished };
           return `<div class="tip">
             <div class="tip-top">
               <span class="m">${b.mercado}</span>
               <span style="display:flex;align-items:center;gap:6px">
-                ${tipBadge(tipData)}
+                ${tipBadge(b, isFinished)}
                 ${b.odd ? `<span class="o">@${typeof b.odd === "number" ? b.odd.toFixed(2) : b.odd}</span>` : ""}
               </span>
             </div>
@@ -336,15 +372,15 @@ function renderGame(g, dayData) {
 
   const hasBody = g.stats || numsHtml || tipsHtml;
   const cardClass = `game-card${hasTips ? " has-tips" : ""}${isFinished ? " finished" : ""}`;
+  const grupoLabel = g.grupo ? `Grupo ${g.grupo}` : (g.fase || "");
 
-  return `<div class="${cardClass}" data-mandante="${g.mandante}" data-visitante="${g.visitante}" data-grupo="${g.grupo}">
+  return `<div class="${cardClass}" data-mandante="${g.mandante}" data-visitante="${g.visitante}" data-grupo="${g.grupo || ''}">
     <div class="g-hdr">
       <div class="g-matchup">${matchup}</div>
       <div class="g-meta">
         <span class="g-time">${g.hora}</span>
         ${countdownHtml}
-        <span class="g-dot">·</span>
-        <span>Grupo ${g.grupo}</span>
+        ${grupoLabel ? `<span class="g-dot">·</span><span>${grupoLabel}</span>` : ""}
         <span class="g-dot">·</span>
         <span>${g.local}</span>
       </div>
@@ -430,9 +466,25 @@ function toggleDay(el) {
   day.querySelector(".day-body").classList.toggle("hidden");
 }
 
-// ── Tournament stats ──
+// ── Tournament stats (auto-derivadas do placar + campos manuais) ──
+function deriveStats() {
+  let totalJogos = 0, totalGols = 0;
+  DATA.dias.forEach(d => d.jogos.forEach(g => {
+    const p = parsePlacar(g.placar);
+    if (p) { totalJogos++; totalGols += p.gm + p.gv; }
+  }));
+  const manuais = DATA.estatisticasManuais || DATA.estatisticas || {};
+  return {
+    totalJogos,
+    totalGols,
+    mediaPorJogo: totalJogos > 0 ? (totalGols / totalJogos).toFixed(1) : null,
+    cartoesAmarelos: manuais.cartoesAmarelos,
+    escanteiosMed: manuais.escanteiosMed
+  };
+}
+
 function renderTourneyStats() {
-  const ts = DATA.estatisticas || {};
+  const ts = deriveStats();
   const el = document.getElementById("tourney-stats");
   const items = [
     ts.totalJogos ? { i: "📅", v: ts.totalJogos, l: "Jogos disputados" } : null,
@@ -451,7 +503,7 @@ function renderTourneyStats() {
 function updateStickyBar() {
   const bar = document.getElementById("sticky-bar");
   const next = getNextGame();
-  if (!next) { bar.classList.remove("visible"); return; }
+  if (!next || !next.cd) { bar.classList.remove("visible"); return; }
   bar.classList.add("visible");
   bar.innerHTML = `
     <div class="sticky-next">
@@ -459,6 +511,15 @@ function updateStickyBar() {
       <span class="teams">${flag(next.game.mandante)} ${next.game.mandante} vs ${flag(next.game.visitante)} ${next.game.visitante}</span>
     </div>
     <span class="sticky-countdown">⏱ ${next.cd}</span>`;
+}
+
+// Atualização leve dos countdowns dos cards sem re-render completo.
+function tickCountdowns() {
+  document.querySelectorAll(".g-countdown[data-cd-date]").forEach(el => {
+    const cd = getCountdown(el.dataset.cdDate, el.dataset.cdTime);
+    if (cd) el.textContent = "em " + cd;
+    else el.remove();
+  });
 }
 
 // ── Tabs ──
@@ -482,7 +543,7 @@ function switchTab(tab) {
 function renderPerformancePanel() {
   const el = document.getElementById("perf-content");
   const sc = computeScorecard();
-  if (sc.allResolved === 0 && sc.resultadosTotal === 0) {
+  if (sc.allResolved === 0 && sc.modeloTotal === 0) {
     el.innerHTML = '<div class="no-results"><div class="nr-icon">📈</div><div class="nr-text">Sem dicas resolvidas ainda — volte apos os primeiros jogos</div></div>';
     return;
   }
@@ -493,29 +554,39 @@ function renderPerformancePanel() {
     loucura: { icon: "🟣", label: "Especulativa", color: "var(--purple)", desc: "Alto risco, alta recompensa" }
   };
 
-  let resultadoHtml = "";
-  if (sc.resultadosTotal > 0) {
-    const resPct = Math.round(sc.resultadosHit / sc.resultadosTotal * 100);
-    resultadoHtml = `
+  let modeloHtml = "";
+  if (sc.modeloTotal > 0) {
+    const resPct = Math.round(sc.modeloHits / sc.modeloTotal * 100);
+    const brierTxt = sc.brierAvg != null
+      ? `${sc.brierAvg.toFixed(3)} <span style="font-weight:400;color:var(--muted)">(${brierVerdict(sc.brierAvg)})</span>`
+      : "—";
+    modeloHtml = `
       <div class="perf-section">
-        <h3 class="perf-section-title">🎯 Acerto de Resultado (Modelo)</h3>
-        <p class="perf-section-desc">O modelo previu corretamente o vencedor/empate?</p>
+        <h3 class="perf-section-title">🎯 Modelo Elo-Poisson</h3>
+        <p class="perf-section-desc">
+          <strong>Resultado:</strong> argmax de p(M/E/V) vs placar real.
+          <strong>Brier score:</strong> mede a calibração das probabilidades — 0 é perfeito, 0.667 é chute aleatório (1/3 em cada). Abaixo de 0.5 = skill real; acima de 0.65 = ruim.
+        </p>
         <div class="scorecard">
           <div class="sc-item">
             <div class="sc-value ${resPct >= 50 ? 'positive' : 'negative'}">${resPct}%</div>
-            <div class="sc-label">Taxa de acerto</div>
+            <div class="sc-label">Acerto de resultado</div>
           </div>
           <div class="sc-item">
-            <div class="sc-value positive">${sc.resultadosHit}</div>
+            <div class="sc-value">${brierTxt}</div>
+            <div class="sc-label">Brier score (média)</div>
+          </div>
+          <div class="sc-item">
+            <div class="sc-value positive">${sc.modeloHits}</div>
             <div class="sc-label">Acertos</div>
           </div>
           <div class="sc-item">
-            <div class="sc-value negative">${sc.resultadosTotal - sc.resultadosHit}</div>
+            <div class="sc-value negative">${sc.modeloTotal - sc.modeloHits}</div>
             <div class="sc-label">Erros</div>
           </div>
           <div class="sc-item">
-            <div class="sc-value">${sc.resultadosTotal}</div>
-            <div class="sc-label">Jogos encerrados</div>
+            <div class="sc-value">${sc.modeloTotal}</div>
+            <div class="sc-label">Jogos avaliados</div>
           </div>
         </div>
       </div>`;
@@ -524,7 +595,6 @@ function renderPerformancePanel() {
   let catSections = Object.entries(catMeta).map(([key, meta]) => {
     const cat = sc.byCat[key];
     const resolved = cat.hits + cat.misses;
-    const roi = catRoi(cat);
     const pct = resolved > 0 ? Math.round(cat.hits / resolved * 100) : null;
 
     let statusLine = "";
@@ -548,11 +618,8 @@ function renderPerformancePanel() {
           <div class="sc-value negative">${cat.misses}</div>
           <div class="sc-label">Erros</div>
         </div>
-        <div class="sc-item">
-          <div class="sc-value ${roi >= 0 ? 'positive' : 'negative'}">${roi >= 0 ? '+' : ''}${roi.toFixed(1)}%</div>
-          <div class="sc-label">ROI (flat stake)</div>
-        </div>
         ${cat.pending > 0 ? `<div class="sc-item"><div class="sc-value neutral">${cat.pending}</div><div class="sc-label">Pendentes</div></div>` : ""}
+        ${cat.voids > 0 ? `<div class="sc-item"><div class="sc-value neutral">${cat.voids}</div><div class="sc-label">Anuladas</div></div>` : ""}
       </div>
       <div class="perf-bar">
         <div class="perf-bar-fill perf-bar-hit" style="width:${Math.round(cat.hits / cat.total * 100)}%"></div>
@@ -561,13 +628,13 @@ function renderPerformancePanel() {
     </div>`;
   }).join("");
 
-  el.innerHTML = resultadoHtml + catSections;
+  el.innerHTML = modeloHtml + catSections;
 }
 
 // ── Filters UI ──
 function buildFilters() {
   const grupos = new Set();
-  DATA.dias.forEach(d => d.jogos.forEach(g => grupos.add(g.grupo)));
+  DATA.dias.forEach(d => d.jogos.forEach(g => { if (g.grupo) grupos.add(g.grupo); }));
   const sorted = [...grupos].sort();
 
   const grupoSelect = document.getElementById("filter-grupo");
@@ -623,14 +690,15 @@ function init() {
     t.addEventListener("click", () => switchTab(t.dataset.tab));
   });
 
+  // Atualização periódica: sticky bar a cada 30s, countdowns dos cards junto.
   setInterval(() => {
     updateStickyBar();
-    if (state.tab === "jogos") {
-      document.querySelectorAll(".g-countdown").forEach(el => {
-        // Lightweight update — full re-render every 5 min
-      });
-    }
-  }, 60000);
+    if (state.tab === "jogos") tickCountdowns();
+  }, 30000);
 }
 
-document.addEventListener("DOMContentLoaded", init);
+// Espera o modelo.json carregar antes do init — necessário para o scorecard.
+document.addEventListener("DOMContentLoaded", () => {
+  const ready = window.MODELO_READY || Promise.resolve();
+  ready.then(init).catch(init);
+});
