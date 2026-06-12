@@ -248,23 +248,31 @@ function getCountdown(dateStr, timeStr) {
   return hours + "h" + String(mins).padStart(2, "0") + "m";
 }
 
+function gameToTimestamp(dateStr, timeStr) {
+  const match = timeStr.match(/(\d+)h(\d*)/);
+  if (!match) return Infinity;
+  const h = parseInt(match[1]), m = parseInt(match[2] || "0");
+  return new Date(dateStr + "T" + String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0") + ":00-03:00").getTime();
+}
+
 function getNextGame() {
   let next = null;
+  let nextTs = Infinity;
+  const now = Date.now();
   DATA.dias.forEach(d => {
     d.jogos.forEach(g => {
       if (g.placar) return;
-      const cd = getCountdown(d.data, g.hora);
-      if (cd) {
-        if (!next) next = { game: g, day: d, cd };
-        else {
-          const match1 = g.hora.match(/(\d+)h(\d*)/);
-          const match2 = next.game.hora.match(/(\d+)h(\d*)/);
-          if (match1 && match2) {
-            const t1 = parseInt(match1[1]) * 60 + parseInt(match1[2] || 0);
-            const t2 = parseInt(match2[1]) * 60 + parseInt(match2[2] || 0);
-            if (d.data + t1 < next.day.data + t2) next = { game: g, day: d, cd };
-          }
-        }
+      const ts = gameToTimestamp(d.data, g.hora);
+      if (ts <= now) return;
+      if (ts < nextTs) {
+        nextTs = ts;
+        const diff = ts - now;
+        const hours = Math.floor(diff / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        let cd;
+        if (hours >= 24) { const days = Math.floor(hours / 24); cd = days + "d " + (hours % 24) + "h"; }
+        else cd = hours + "h" + String(mins).padStart(2, "0") + "m";
+        next = { game: g, day: d, cd };
       }
     });
   });
