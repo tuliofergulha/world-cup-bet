@@ -63,7 +63,7 @@ const DATA = {
     {
       data: "2026-06-12",
       titulo: "Dia 2 — Canadá e EUA estreiam",
-      contexto: "Canadá e EUA estreiam em casa. Alphonso Davies é dúvida (lesão), mas Bombito confirmou estar 100%. No Paraguai, Julio Enciso saiu de maca contra a Nicarágua (05/jun) e é dúvida — deve ficar de fora. EUA vem de 3-2 vs Senegal e 1-2 vs Alemanha nos amistosos.",
+      contexto: "Canadá e EUA estreiam em casa. Alphonso Davies é dúvida (lesão), mas Bombito confirmou estar 100%. No Paraguai, Julio Enciso saiu de maca contra a Nicarágua (05/jun) e deve ficar de fora. EUA vem de 3-2 vs Senegal e 1-2 vs Alemanha nos amistosos. Árbitros: Facundo Tello (ARG, 4.7 amarelos/jogo!) no Canadá×Bósnia e Danny Makkelie (NED, 3.4 amarelos/jogo) no EUA×Paraguai.",
       jogos: [
         {
           hora: "16h",
@@ -72,26 +72,39 @@ const DATA = {
           grupo: "B",
           local: "BMO Field, Toronto",
           placar: null,
-          stats: "1ª vez que essas seleções se enfrentam · Canadá invicto nos últimos 8 jogos (Jesse Marsch) · Apenas 1 derrota em 28 jogos no BMO Field (W18 D9) · Bósnia eliminou a Itália nos pênaltis nas Eliminatórias e joga sua 2ª Copa da história · Dzeko (40 anos, 146 jogos, 72 gols pela seleção) lidera o ataque com Demirovic · Bósnia empatou 0-0 com Macedônia do Norte e 1-1 com Panamá nos amistosos pré-Copa",
+          stats: "1ª vez que essas seleções se enfrentam · Canadá invicto nos últimos 8 jogos (Jesse Marsch) · Apenas 1 derrota em 28 jogos no BMO Field (W18 D9) · Bósnia eliminou a Itália nos pênaltis nas Eliminatórias — 2ª Copa da história · Dzeko (40 anos, 146 caps, 72 gols pela seleção, 6 gols pelo Schalke 25/26 — todos em casa) · Bósnia empatou 0-0 com N. Macedônia e 1-1 com Panamá nos amistosos · Árbitro Tello: 4.7 amarelos/jogo de média",
           numeros: [
             { v: "77%", l: "Prob. Canadá" },
             { v: "2.24", l: "λ Canadá" },
             { v: "0.52", l: "λ Bósnia" },
-            { v: "22%", l: "Prob. Bósnia" },
             { v: "39", l: "Gols J. David seleção" },
-            { v: "<10.5", l: "Escanteios tend. (8/8 Bósnia)" }
+            { v: "30", l: "Gols C. Larin seleção" },
+            { v: "4.7", l: "Amarelos/jogo árbitro" }
           ],
           dicas: [
+            // ── Alta Confiança ──
             { cat: "conservadora", mercado: "Canadá vence", odd: 1.45,
               justificativa: "Modelo dá 77% pro Canadá. Invicto em 8 jogos, jogando em casa no BMO Field (W18 D9 L1 nos últimos 28). Bósnia empatou os dois amistosos pré-Copa (0-0 e 1-1) — falta de ritmo ofensivo." },
             { cat: "conservadora", mercado: "Jonathan David marca a qualquer momento", odd: 2.10,
-              justificativa: "39 gols pela seleção, cobrador de pênaltis, camisa 9 titular. Na Juventus 25/26: 6 gols em 35 jogos (0.30/90min), mas pela seleção é outro nível de protagonismo. Se o Canadá vence, David tende a estar no placar." },
-            { cat: "intermediaria", mercado: "Under 2.5 gols", odd: 2.30,
-              justificativa: "O placar mais provável segundo simulações é 1-0. Bósnia deve jogar fechada (λ 0.52) com Dzeko como referência isolada. Estreias de Copa são historicamente travadas. 8 dos últimos 8 jogos da Bósnia tiveram under 10.5 escanteios — perfil de jogo controlado." },
+              justificativa: "39 gols pela seleção, cobrador de pênaltis, camisa 9 titular. Na Juventus 25/26: 6 gols em 35 jogos, mas pela seleção é outra história — é o cara. λ Canadá de 2.24 concentrado nele." },
+            { cat: "conservadora", mercado: "Under 2.5 gols", odd: 2.30,
+              justificativa: "Placar mais provável nas simulações: 1-0. Bósnia joga fechada (λ 0.52) com Dzeko isolado. 8/8 últimos jogos da Bósnia tiveram under 10.5 escanteios — perfil de jogo controlado e travado. Estreias de Copa são historicamente baixas em gols." },
+
+            // ── Valor ──
             { cat: "intermediaria", mercado: "Canadá vence a zero", odd: 2.50,
-              justificativa: "λ Bósnia de 0.52 dá ~60% de clean sheet pro Canadá. Bósnia não marcou contra Macedônia do Norte no último amistoso. Dzeko tem 40 anos e joga a 2. Bundesliga — ritmo é diferente." },
+              justificativa: "λ Bósnia de 0.52 dá ~60% de clean sheet pro Canadá. Bósnia não marcou contra N. Macedônia no último amistoso. Dzeko tem 40 anos e joga a 2. Bundesliga — seus 6 gols no Schalke foram TODOS em casa." },
+            { cat: "intermediaria", mercado: "Over 4.5 cartões no jogo", odd: 2.20,
+              justificativa: "Árbitro Facundo Tello é um dos mais cartoleiros do mundo: 4.7 amarelos/jogo de média. Famoso por dar 10 vermelhos numa final Boca×Racing em 2022. Bósnia média 2.3 amarelos/jogo nas Eliminatórias. Estreia de Copa = tensão + faltas táticas." },
+            { cat: "intermediaria", mercado: "Cyle Larin marca a qualquer momento", odd: 3.50,
+              justificativa: "30 gols pela seleção (2º maior artilheiro do Canadá). No Southampton 25/26: 7 gols em 15 jogos no Championship (0.87 G+A/90min). Com Davies fora, Larin ganha mais protagonismo ofensivo ao lado de David." },
+
+            // ── Especulativa ──
+            { cat: "loucura", mercado: "Canadá vence + J. David marca + under 2.5", odd: 5.50,
+              justificativa: "Combo correlacionado: se o Canadá vence por 1-0 ou 2-0 (cenário mais provável), David tende a estar no placar (39 gols, pênaltis) e o jogo é naturalmente under. As três pernas andam juntas." },
             { cat: "loucura", mercado: "Canadá −2.5 handicap", odd: 5.50,
-              justificativa: "Roteiro goleada: Canadá precisa de saldo de gols para desempate contra a Suíça no grupo. Se o 1º gol sair cedo, Bósnia terá que se abrir contra um time muito superior tecnicamente." }
+              justificativa: "Roteiro goleada: Canadá precisa de saldo de gols para desempate contra a Suíça no grupo. Se o 1º gol sair cedo, Bósnia terá que se abrir contra um time muito superior. Canadá tem profundidade no banco." },
+            { cat: "loucura", mercado: "Canadá vence + over 4.5 cartões + under 8.5 escanteios", odd: 8.00,
+              justificativa: "'Vitória controlada com pancada': Canadá domina (77%), Tello distribui cartões (4.7/jogo), mas Bósnia fechada não gera escanteios (8/8 jogos under 10.5). Jogo travado no meio com muita falta e poucos cruzamentos." }
           ]
         },
         {
@@ -101,28 +114,39 @@ const DATA = {
           grupo: "D",
           local: "SoFi Stadium, Los Angeles",
           placar: null,
-          stats: "10º confronto histórico (EUA lidera com 5 vitórias) · Último encontro: amistoso nov/2025, EUA 2-1 · 1ª vez na Copa desde 1930 (Patenaude fez o 1º hat-trick da história das Copas) · Paraguai: 14 gols sofridos em 18 jogos nas Eliminatórias CONMEBOL (0.78/jogo) · Invictos em 8 jogos (incl. vitórias vs Brasil, Argentina e Uruguai) · Julio Enciso é dúvida (lesão muscular 05/jun) · EUA: Pochettino monta ataque com Pulisic-Balogun-Weah · Paraguai joga em bloco baixo 4-4-2, absorve pressão e contra-ataca",
+          stats: "10º confronto histórico (EUA 5W) · Último: amistoso nov/2025, EUA 2-1 · Na Copa: 1930 foi a última vez (Patenaude fez o 1º hat-trick da história) · Paraguai: 14 gols marcados e 10 sofridos em 18 jogos nas Eliminatórias (0.78 sofridos/jogo) — invictos em 8 incl. vitórias vs Brasil, Argentina e Uruguai · Enciso dúvida (lesão muscular) · EUA: Pulisic (8 gols, 3.01 chutes/90min no Milan), Balogun (13 gols, 77 chutes no Monaco) · D. Gómez: 9 amarelos + 48 faltas em 2.137min na PL · Makkelie apita: 3.4 amarelos/jogo",
           numeros: [
             { v: "38%", l: "Prob. EUA" },
             { v: "26%", l: "Empate" },
             { v: "36%", l: "Prob. Paraguai" },
-            { v: "0.78", l: "Gols sofridos/jogo PAR" },
-            { v: "9", l: "Amarelos D. Gómez PL" },
-            { v: ">9.5", l: "Escanteios esperados" }
+            { v: "13.7", l: "Faltas/jogo Paraguai" },
+            { v: "13+4", l: "G+A Balogun 25/26" },
+            { v: "3.4", l: "Amarelos/jogo árbitro" }
           ],
           dicas: [
+            // ── Alta Confiança ──
             { cat: "conservadora", mercado: "Under 2.5 gols", odd: 1.85,
-              justificativa: "Paraguai sofreu apenas 14 gols em 18 jogos nas Eliminatórias CONMEBOL (0.78/jogo). Bloco baixo 4-4-2 com Gustavo Gómez e Alderete — defesa compacta. Alfaro é especialista em jogos fechados. Estreias de Copa são historicamente travadas." },
+              justificativa: "Paraguai sofreu apenas 10 gols em 18 jogos nas Eliminatórias CONMEBOL (0.56/jogo). Bloco baixo 4-4-2 de Alfaro — especialista em jogos fechados. Venceu Brasil e Argentina jogando assim. Estreias de Copa são historicamente travadas." },
             { cat: "conservadora", mercado: "Over 9.5 escanteios no jogo", odd: 1.80,
-              justificativa: "Paraguai limpa cruzamentos pela linha de fundo em vez de arriscar no centro. EUA vai dominar pelos lados com Robinson/Dest — volume de cruzamento alto contra bloco baixo gera escanteios naturalmente." },
-            { cat: "intermediaria", mercado: "Diego Gómez recebe cartão amarelo", odd: 2.80,
-              justificativa: "9 amarelos e 48 faltas em 2.137 min pelo Brighton na PL 25/26 (2.06 faltas/90min). Vai marcar Pulisic no meio — perfil de cartão clássico em jogo de estreia de Copa com tensão alta." },
+              justificativa: "Paraguai limpa cruzamentos pela linha de fundo em vez de arriscar no centro. EUA vai dominar pelos lados com Robinson/Dest — Pulisic corta pra dentro, gera cruzamento, gera escanteio. Volume alto contra bloco baixo." },
+            { cat: "conservadora", mercado: "Diego Gómez recebe cartão amarelo", odd: 2.80,
+              justificativa: "9 amarelos e 48 faltas em 2.137 min pelo Brighton na PL 25/26 (2.06 faltas/90min). Vai marcar Pulisic no meio — perfil de cartão clássico. Makkelie dá 3.4 amarelos/jogo. Paraguai comete 13.7 faltas/jogo." },
+
+            // ── Valor ──
             { cat: "intermediaria", mercado: "Empate", odd: 3.40,
-              justificativa: "Modelo vê coin-flip (38/26/36). Mercado superprecifica o mando dos EUA. Paraguai invicto em 8 jogos, venceu Brasil e Argentina nas Eliminatórias. Se empatar, quase certamente 0-0 ou 1-1 (perfil under do Paraguai)." },
-            { cat: "intermediaria", mercado: "Paraguai classificação (dupla hipótese)", odd: 3.00,
-              justificativa: "Paraguai invicto em 8, venceu as 3 maiores seleções da América do Sul. Enciso é dúvida mas tem Almiron, Sanabria e D. Gómez. Valor alto se o mercado subestimar o Alfaro-ball." },
-            { cat: "loucura", mercado: "Empate + under 2.5 + over 4.5 cartões", odd: 10.0,
-              justificativa: "'Jogo feio completo': Paraguai 13.7 faltas/jogo nas Eliminatórias, bloco baixo, sem gols e muita pancada. Se o roteiro truncado se confirma, as três pernas andam juntas." }
+              justificativa: "Modelo vê coin-flip (38/26/36). Paraguai invicto em 8 jogos, venceu as 3 maiores da América do Sul. Mercado superprecifica o mando dos EUA. Se empatar, quase certamente 0-0 ou 1-1." },
+            { cat: "intermediaria", mercado: "Pulisic marca a qualquer momento", odd: 3.20,
+              justificativa: "8 gols e 54 chutes em 30 jogos no Milan 25/26 (3.01 chutes/90min, 0.45 gols/90min). Principal arma ofensiva dos EUA. Se o EUA marca, Pulisic é o candidato nº1 — protagonista absoluto." },
+            { cat: "intermediaria", mercado: "Paraguai não perde (dupla hipótese)", odd: 2.40,
+              justificativa: "Modelo dá 62% de não-vitória dos EUA (26% empate + 36% Paraguai). Invictos em 8, venceram Brasil e Argentina. Sem Enciso dói, mas Alfaro monta times resilientes — Sanabria (4 gols nas Eliminatórias) e Almiron estão confirmados." },
+
+            // ── Especulativa ──
+            { cat: "loucura", mercado: "Empate + under 2.5 gols + over 4.5 cartões", odd: 10.0,
+              justificativa: "'Jogo feio completo': Paraguai 13.7 faltas/jogo nas Eliminatórias + Makkelie 3.4 amarelos/jogo + bloco baixo sem gols. Se o roteiro truncado se confirma, as três pernas são 100% correlacionadas." },
+            { cat: "loucura", mercado: "Under 2.5 gols + over 9.5 escanteios + D. Gómez cartão", odd: 8.00,
+              justificativa: "'Paraguai sendo Paraguai': jogo travado (under) com EUA forçando pelos lados (escanteios) e Gómez fazendo falta no Pulisic (cartão). Combo que descreve exatamente o script tático esperado — pernas super correlacionadas." },
+            { cat: "loucura", mercado: "Paraguai vence + under 2.5 gols", odd: 7.50,
+              justificativa: "Se o Paraguai vencer, vai ser 1-0 no contra-ataque — esse é o DNA do Alfaro-ball. Venceram Brasil 1-0 e Argentina 1-0 nas Eliminatórias exatamente assim. EUA jogou mal nos amistosos (7-2 vs Bélgica/Portugal em março)." }
           ]
         }
       ]
