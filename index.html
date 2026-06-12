@@ -6,103 +6,241 @@
 <title>Copa 2026 — Central de Apostas</title>
 <style>
   :root{
-    --bg:#0d1117; --card:#161b22; --border:#30363d; --text:#e6edf3; --muted:#8b949e;
-    --green:#3fb950; --red:#f85149; --amber:#d29922; --blue:#58a6ff; --purple:#bc8cff;
+    --bg:#070e1c;
+    --card:#0c1524;
+    --card2:#101c30;
+    --border:#1c2e47;
+    --text:#e9f1fc;
+    --muted:#667d99;
+    --green:#22c55e;
+    --red:#ef4444;
+    --amber:#f59e0b;
+    --blue:#60a5fa;
+    --purple:#c084fc;
+    --copa-red:#c8102e;
+    --copa-gold:#f5b225;
+    --copa-navy:#002868;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;padding:24px 16px;max-width:980px;margin:0 auto}
-  header{margin-bottom:24px}
-  h1{font-size:1.6rem}
-  .sub{color:var(--muted);font-size:.9rem}
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:20px 0}
-  .stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}
-  .stat .v{font-size:1.4rem;font-weight:700}
-  .stat .l{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
-  .day{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:20px;overflow:hidden}
-  .day-h{padding:16px 18px;border-bottom:1px solid var(--border);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
-  .day-h h2{font-size:1.05rem}
-  .day-h .d{color:var(--blue);font-size:.85rem;white-space:nowrap}
+
+  /* ── Header ── */
+  header{
+    background:linear-gradient(135deg,#0d1a2e 0%,#130b1e 100%);
+    border:1px solid var(--border);border-radius:14px;
+    margin-bottom:24px;overflow:hidden;
+  }
+  .header-stripe{
+    height:5px;
+    background:linear-gradient(90deg,
+      var(--copa-red) 0%,var(--copa-red) 33%,
+      var(--copa-gold) 33%,var(--copa-gold) 66%,
+      var(--copa-navy) 66%,var(--copa-navy) 100%);
+  }
+  .header-body{padding:20px 24px 22px}
+  .copa-label{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(245,178,37,.1);color:var(--copa-gold);
+    border:1px solid rgba(245,178,37,.25);border-radius:99px;
+    padding:3px 12px;font-size:.72rem;font-weight:700;letter-spacing:.08em;
+    margin-bottom:10px;
+  }
+  header h1{font-size:1.85rem;font-weight:800;line-height:1.2;margin-bottom:6px}
+  header h1 span{color:var(--copa-gold)}
+  .header-hosts{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted);margin-bottom:8px}
+  .header-hosts .sep{color:var(--border)}
+  .sub{color:var(--muted);font-size:.84rem;margin-top:2px}
+
+  /* ── Stats ── */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:0 0 20px}
+  .stat{
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:14px;position:relative;overflow:hidden;
+  }
+  .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+  .stat:nth-child(1)::before{background:var(--copa-gold)}
+  .stat:nth-child(2)::before{background:var(--green)}
+  .stat:nth-child(3)::before{background:var(--copa-red)}
+  .stat:nth-child(4)::before{background:var(--blue)}
+  .stat .v{font-size:1.5rem;font-weight:700}
+  .stat .l{color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+
+  /* ── Day cards ── */
+  .day{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden}
+  .day-h{
+    padding:14px 18px;border-bottom:1px solid var(--border);
+    cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;
+    background:linear-gradient(90deg,rgba(200,16,46,.07) 0%,transparent 55%);
+    transition:background .15s;
+  }
+  .day-h:hover{background:linear-gradient(90deg,rgba(200,16,46,.13) 0%,transparent 55%)}
+  .day-h h2{font-size:1.05rem;display:flex;align-items:center;gap:8px}
+  .day-h .d{color:var(--copa-gold);font-size:.85rem;font-weight:600;white-space:nowrap}
   .day-body{padding:18px}
-  .games{display:grid;gap:6px;margin-bottom:14px}
-  .game{display:flex;gap:10px;font-size:.9rem;flex-wrap:wrap}
-  .game .t{color:var(--amber);font-variant-numeric:tabular-nums;min-width:38px}
-  .game .g{color:var(--muted)}
-  .ctx{background:#1c2128;border-left:3px solid var(--blue);padding:10px 12px;border-radius:6px;font-size:.85rem;color:var(--muted);margin-bottom:16px}
+
+  /* ── Games ── */
+  .games{display:grid;gap:8px;margin-bottom:14px}
+  .game{
+    background:var(--card2);border:1px solid var(--border);border-radius:8px;
+    padding:10px 14px;
+  }
+  .game-row{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;font-size:.9rem}
+  .game .t{color:var(--copa-gold);font-variant-numeric:tabular-nums;min-width:38px;font-weight:700;font-size:.85rem}
+  .game .g{color:var(--muted);font-size:.82rem}
+  .game-stats{color:var(--muted);font-size:.78rem;margin-top:6px;padding-top:6px;border-top:1px solid var(--border);line-height:1.6}
+
+  /* ── Context ── */
+  .ctx{
+    background:rgba(245,178,37,.05);border-left:3px solid var(--copa-gold);
+    padding:10px 12px;border-radius:0 6px 6px 0;
+    font-size:.85rem;color:var(--muted);margin-bottom:16px;
+  }
+
+  /* ── Categories ── */
   .cat{margin-bottom:14px}
-  .cat h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-  .cat.c h3{color:var(--green)} .cat.i h3{color:var(--amber)} .cat.l h3{color:var(--purple)}
-  .bet{border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:4px 12px}
-  .bet .m{font-weight:600;font-size:.95rem}
-  .bet .j{grid-column:1/-1;color:var(--muted);font-size:.83rem}
-  .bet .o{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-  .badge{display:inline-block;padding:1px 8px;border-radius:99px;font-size:.72rem;font-weight:700;margin-left:6px;vertical-align:1px}
-  .b-pendente{background:#1f6feb33;color:var(--blue)}
-  .b-ganhou{background:#3fb95033;color:var(--green)}
-  .b-perdeu{background:#f8514933;color:var(--red)}
-  .b-anulada{background:#8b949e33;color:var(--muted)}
-  footer{color:var(--muted);font-size:.78rem;margin-top:28px;border-top:1px solid var(--border);padding-top:14px}
+  .cat h3{
+    font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;
+    margin-bottom:8px;padding-bottom:6px;
+    display:flex;align-items:center;gap:8px;
+    border-bottom:1px solid var(--border);
+  }
+  .cat.c h3{color:var(--green)}
+  .cat.i h3{color:var(--copa-gold)}
+  .cat.l h3{color:var(--purple)}
+
+  /* ── Bets ── */
+  .bet{
+    border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:8px;
+    display:grid;grid-template-columns:1fr auto;gap:4px 12px;
+    background:rgba(255,255,255,.02);transition:background .1s;
+  }
+  .bet:hover{background:rgba(255,255,255,.04)}
+  .bet .m{font-weight:600;font-size:.95rem;display:flex;align-items:baseline;gap:4px;flex-wrap:wrap}
+  .bet .j{grid-column:1/-1;color:var(--muted);font-size:.83rem;margin-top:2px;line-height:1.5}
+  .bet .o{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.9rem;color:var(--text)}
+
+  /* ── Badges ── */
+  .badge{
+    display:inline-block;padding:1px 8px;border-radius:99px;
+    font-size:.7rem;font-weight:700;vertical-align:2px;margin-left:4px;
+  }
+  .b-pendente{background:rgba(96,165,250,.1);color:var(--blue);border:1px solid rgba(96,165,250,.2)}
+  .b-ganhou{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+  .b-perdeu{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+  .b-anulada{background:rgba(102,125,153,.1);color:var(--muted);border:1px solid rgba(102,125,153,.2)}
+
+  /* ── Footer ── */
+  footer{
+    color:var(--muted);font-size:.78rem;margin-top:28px;
+    border-top:1px solid var(--border);padding-top:14px;
+    display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;
+  }
+
+  /* ── Utilities ── */
   .pos{color:var(--green)} .neg{color:var(--red)}
   .hidden{display:none}
-  .chev{color:var(--muted);transition:transform .15s}
+  .chev{color:var(--copa-red);font-size:.75rem;transition:transform .15s;flex-shrink:0}
   .open .chev{transform:rotate(90deg)}
 </style>
 </head>
 <body>
+
 <header>
-  <h1>⚽ Copa 2026 — Central de Apostas</h1>
-  <div class="sub" id="updated"></div>
-  <div class="sub">Horários em BRT — Brasília (UTC−3)</div>
+  <div class="header-stripe"></div>
+  <div class="header-body">
+    <div class="copa-label">⚽ COPA DO MUNDO FIFA 2026™</div>
+    <h1>Central de <span>Apostas</span></h1>
+    <div class="header-hosts">
+      <span>🇺🇸 EUA</span><span class="sep">·</span>
+      <span>🇲🇽 México</span><span class="sep">·</span>
+      <span>🇨🇦 Canadá</span>
+    </div>
+    <div class="sub" id="updated"></div>
+    <div class="sub">Horários em BRT — Brasília (UTC−3)</div>
+  </div>
 </header>
+
 <div class="stats" id="stats"></div>
 <div id="days"></div>
+
 <footer>
-  Modelo: Elo-Poisson ancorado nas premissas socioeconômicas de Klement. Odds são estimativas — confirme na casa antes de apostar.
-  Como diz o próprio Klement, ~50% do resultado é sorte: aposte apenas o que pode perder. Sugestão de unidade: <span id="unit"></span>.
+  <span>Modelo Elo-Poisson (premissas Klement). Odds são estimativas — confirme na casa antes de apostar.</span>
+  <span>~50% do resultado é sorte. Aposte só o que pode perder. Unidade: <span id="unit"></span>.</span>
 </footer>
+
 <script src="data.js"></script>
 <script>
-const CATS = {conservadora:["c","🟢 Conservadoras (1.5–3.0)"], intermediaria:["i","🟡 Intermediárias (3.0–6.0)"], loucura:["l","🟣 Loucura (10+)"]};
-document.getElementById('updated').textContent = 'Atualizado em ' + new Date(DATA.atualizadoEm).toLocaleString('pt-BR');
+const CATS = {
+  conservadora: ["c","🟢 Conservadoras (1.5–3.0)"],
+  intermediaria: ["i","🟡 Intermediárias (3.0–6.0)"],
+  loucura:       ["l","🟣 Loucura (10+)"]
+};
+
+document.getElementById('updated').textContent =
+  'Atualizado em ' + new Date(DATA.atualizadoEm).toLocaleString('pt-BR');
 document.getElementById('unit').textContent = DATA.unidade;
 
-let staked=0, returned=0, won=0, lost=0, pend=0;
-DATA.dias.forEach(d=>d.apostas.forEach(b=>{
-  if(b.status==='anulada')return;
-  if(b.status==='pendente'){pend++;return;}
-  staked+=b.stake;
-  if(b.status==='ganhou'){returned+=b.stake*b.odd;won++;} else lost++;
+// Global P&L
+let staked = 0, returned = 0, won = 0, lost = 0, pend = 0;
+DATA.dias.forEach(d => d.apostas.forEach(b => {
+  if (b.status === 'anulada') return;
+  if (b.status === 'pendente') { pend++; return; }
+  staked += b.stake;
+  if (b.status === 'ganhou') { returned += b.stake * b.odd; won++; } else { lost++; }
 }));
-const pl=returned-staked;
+const pl = returned - staked;
 document.getElementById('stats').innerHTML = `
-  <div class="stat"><div class="v ${pl>=0?'pos':'neg'}">${pl>=0?'+':''}${pl.toFixed(2)}u</div><div class="l">Lucro/Prejuízo</div></div>
-  <div class="stat"><div class="v">${won}–${lost}</div><div class="l">Ganhas–Perdidas</div></div>
+  <div class="stat"><div class="v ${pl >= 0 ? 'pos' : 'neg'}">${pl >= 0 ? '+' : ''}${pl.toFixed(2)}u</div><div class="l">Lucro / Prejuízo</div></div>
+  <div class="stat"><div class="v">${won}–${lost}</div><div class="l">Ganhas – Perdidas</div></div>
   <div class="stat"><div class="v">${staked.toFixed(2)}u</div><div class="l">Total apostado</div></div>
   <div class="stat"><div class="v">${pend}</div><div class="l">Pendentes</div></div>`;
 
-const root=document.getElementById('days');
-[...DATA.dias].sort((a,b)=>b.data.localeCompare(a.data)).forEach((d,idx)=>{
-  const day=document.createElement('div');day.className='day'+(idx===0?' open':'');
-  const dt=new Date(d.data+'T12:00:00').toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
-  let games=d.jogos.map(g=>`<div class="game"><span class="t">${g.hora}</span><span><strong>${g.partida}</strong> <span class="g">Grupo ${g.grupo} · ${g.local}</span>${g.stats?`<div class="g" style="font-size:.78rem;margin:2px 0 8px">📊 ${g.stats}</div>`:''}</span></div>`).join('');
-  let cats='';
-  for(const[key,[cls,label]]of Object.entries(CATS)){
-    const bets=d.apostas.filter(b=>b.cat===key);
-    if(!bets.length)continue;
-    cats+=`<div class="cat ${cls}"><h3>${label}</h3>`+bets.map(b=>`
+// Render days (newest first)
+const root = document.getElementById('days');
+[...DATA.dias].sort((a, b) => b.data.localeCompare(a.data)).forEach((d, idx) => {
+  const day = document.createElement('div');
+  day.className = 'day' + (idx === 0 ? ' open' : '');
+
+  const dt = new Date(d.data + 'T12:00:00')
+    .toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
+
+  const games = d.jogos.map(g => `
+    <div class="game">
+      <div class="game-row">
+        <span class="t">${g.hora}</span>
+        <span><strong>${g.partida}</strong> <span class="g">Grupo ${g.grupo} · ${g.local}</span></span>
+      </div>
+      ${g.stats ? `<div class="game-stats">📊 ${g.stats}</div>` : ''}
+    </div>`).join('');
+
+  let cats = '';
+  for (const [key, [cls, label]] of Object.entries(CATS)) {
+    const bets = d.apostas.filter(b => b.cat === key);
+    if (!bets.length) continue;
+    cats += `<div class="cat ${cls}"><h3>${label}</h3>` +
+      bets.map(b => `
       <div class="bet">
         <div class="m">${b.mercado}<span class="badge b-${b.status}">${b.status}</span></div>
         <div class="o">@${b.odd.toFixed(2)} · ${b.stake}u</div>
         <div class="j">${b.justificativa}</div>
-      </div>`).join('')+'</div>';
+      </div>`).join('') + '</div>';
   }
-  day.innerHTML=`
-    <div class="day-h"><h2><span class="chev">▶</span> ${d.titulo}</h2><span class="d">${dt}</span></div>
-    <div class="day-body ${idx===0?'':'hidden'}">
+
+  day.innerHTML = `
+    <div class="day-h">
+      <h2><span class="chev">▶</span> ${d.titulo}</h2>
+      <span class="d">${dt}</span>
+    </div>
+    <div class="day-body ${idx === 0 ? '' : 'hidden'}">
       <div class="games">${games}</div>
-      ${d.contexto?`<div class="ctx">${d.contexto}</div>`:''}
+      ${d.contexto ? `<div class="ctx">${d.contexto}</div>` : ''}
       ${cats}
     </div>`;
-  day.querySelector('.day-h').onclick=()=>{day.classList.toggle('open');day.querySelector('.day-body').classList.toggle('hidden');};
+
+  day.querySelector('.day-h').onclick = () => {
+    day.classList.toggle('open');
+    day.querySelector('.day-body').classList.toggle('hidden');
+  };
   root.appendChild(day);
 });
 </script>
