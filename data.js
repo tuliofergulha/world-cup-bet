@@ -2,13 +2,13 @@
 // status: "pendente" | "ganhou" | "perdeu" | "anulada"
 // Apostas ficam dentro de cada jogo para manter contexto.
 const DATA = {
-  atualizadoEm: "2026-06-11T21:00:00-03:00",
+  atualizadoEm: "2026-06-12T08:00:00-03:00",
   unidade: "1u = 1% da banca (sugestão)",
   dias: [
     {
       data: "2026-06-11",
       titulo: "Dia 1 — Abertura",
-      contexto: "Abertura precisa: modelo cravou México 2×0 África do Sul (λ 2.76×0.18, 90% vitória). À noite, Coreia × Tchéquia fecha o Dia 1 — jogo mais equilibrado de toda a 1ª rodada.",
+      contexto: "Abertura precisa: modelo cravou México 2×0 África do Sul (λ 2.76×0.18, 90% vitória). À noite, Coreia virou de 0-1 para 2-1 contra a Tchéquia (Hwang 67', Oh 80') — o favorito marginal do modelo venceu, mas pelo caminho mais dramático possível. Ambas marcaram ✓, over 2.5 ✓.",
       jogos: [
         {
           hora: "16h",
@@ -26,16 +26,16 @@ const DATA = {
           visitante: "Tchéquia",
           grupo: "A",
           local: "Estadio Akron, Guadalajara",
-          placar: null,
-          stats: "Modelo: 39/26/34 · λ 1.37×1.26 (total: 2.63 gols esperados) · Jogo mais equilibrado da 1ª rodada",
+          placar: "2 × 1",
+          stats: "Coreia virou de 0-1 para 2-1 (Krejci 59', Hwang 67', Oh 80') · Modelo equilibrado (39/26/34, λ 1.37×1.26) acertou o jogo travado, mas errou o vencedor · Ambas marcaram ✓ · Total: 3 gols (over 2.5 ✓) — ENCERRADO",
           apostas: [
-            { cat: "conservadora", mercado: "Ambas marcam", odd: 1.75, stake: 1.5, status: "pendente",
+            { cat: "conservadora", mercado: "Ambas marcam", odd: 1.75, stake: 1.5, status: "ganhou",
               justificativa: "λ moderados dos dois lados (1.37×1.26): Poisson indica ~53% de ambas marcarem. Son para Coreia, Schick para Tchéquia — dois atacantes de referência sem bloco ultra-defensivo na estreia." },
-            { cat: "intermediaria", mercado: "Empate", odd: 3.20, stake: 1, status: "pendente",
+            { cat: "intermediaria", mercado: "Empate", odd: 3.20, stake: 1, status: "perdeu",
               justificativa: "Jogo mais equilibrado da 1ª rodada (modelo: 39/26/34). Com λ quase iguais (1.37×1.26), nenhum time domina. Empate é o resultado individualmente mais provável." },
-            { cat: "intermediaria", mercado: "Tchéquia vence", odd: 3.10, stake: 0.75, status: "pendente",
+            { cat: "intermediaria", mercado: "Tchéquia vence", odd: 3.10, stake: 0.75, status: "perdeu",
               justificativa: "Modelo dá 34.4% para a Tchéquia. Se o mercado paga 3.10 (~32% implícito), há valor marginal. Tchéquia tem Schick + Souček; Coreia joga em estádio mexicano sem apoio da torcida." },
-            { cat: "loucura", mercado: "Criar Aposta: Tchéquia vence + mais de 2.5 gols", odd: 8.0, stake: 0.25, status: "pendente",
+            { cat: "loucura", mercado: "Criar Aposta: Tchéquia vence + mais de 2.5 gols", odd: 8.0, stake: 0.25, status: "perdeu",
               justificativa: "Tchéquia vence (34.4%) num jogo com total esperado de 2.63 gols (~49% over 2.5). Se a Tchéquia vencer, o roteiro tende a ser mais aberto — pernas correlacionadas." }
           ]
         }
