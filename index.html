@@ -6,47 +6,47 @@
 <title>Copa 2026 — Central de Apostas</title>
 <style>
   :root{
-    --bg:#070e1c;
-    --card:#0c1524;
-    --card2:#101c30;
-    --border:#1c2e47;
-    --text:#e9f1fc;
-    --muted:#667d99;
+    --bg:#080f08;
+    --card:#0d160d;
+    --card2:#111e11;
+    --border:#1e3020;
+    --text:#edf5ec;
+    --muted:#6b8f6e;
     --green:#22c55e;
     --red:#ef4444;
     --amber:#f59e0b;
     --blue:#60a5fa;
     --purple:#c084fc;
-    --copa-red:#c8102e;
-    --copa-gold:#f5b225;
-    --copa-navy:#002868;
+    --br-green:#009c3b;
+    --br-yellow:#ffdf00;
+    --br-blue:#002776;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;padding:24px 16px;max-width:980px;margin:0 auto}
 
   /* ── Header ── */
   header{
-    background:linear-gradient(135deg,#0d1a2e 0%,#130b1e 100%);
+    background:linear-gradient(135deg,#0d1a0d 0%,#091209 100%);
     border:1px solid var(--border);border-radius:14px;
     margin-bottom:24px;overflow:hidden;
   }
   .header-stripe{
     height:5px;
     background:linear-gradient(90deg,
-      var(--copa-red) 0%,var(--copa-red) 33%,
-      var(--copa-gold) 33%,var(--copa-gold) 66%,
-      var(--copa-navy) 66%,var(--copa-navy) 100%);
+      var(--br-green) 0%,var(--br-green) 33%,
+      var(--br-yellow) 33%,var(--br-yellow) 66%,
+      var(--br-blue) 66%,var(--br-blue) 100%);
   }
   .header-body{padding:20px 24px 22px}
   .copa-label{
     display:inline-flex;align-items:center;gap:6px;
-    background:rgba(245,178,37,.1);color:var(--copa-gold);
-    border:1px solid rgba(245,178,37,.25);border-radius:99px;
+    background:rgba(255,223,0,.1);color:var(--br-yellow);
+    border:1px solid rgba(255,223,0,.25);border-radius:99px;
     padding:3px 12px;font-size:.72rem;font-weight:700;letter-spacing:.08em;
     margin-bottom:10px;
   }
   header h1{font-size:1.85rem;font-weight:800;line-height:1.2;margin-bottom:6px}
-  header h1 span{color:var(--copa-gold)}
+  header h1 span{color:var(--br-yellow)}
   .header-hosts{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted);margin-bottom:8px}
   .header-hosts .sep{color:var(--border)}
   .sub{color:var(--muted);font-size:.84rem;margin-top:2px}
@@ -58,10 +58,10 @@
     padding:14px;position:relative;overflow:hidden;
   }
   .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-  .stat:nth-child(1)::before{background:var(--copa-gold)}
-  .stat:nth-child(2)::before{background:var(--green)}
-  .stat:nth-child(3)::before{background:var(--copa-red)}
-  .stat:nth-child(4)::before{background:var(--blue)}
+  .stat:nth-child(1)::before{background:var(--br-yellow)}
+  .stat:nth-child(2)::before{background:var(--br-green)}
+  .stat:nth-child(3)::before{background:var(--red)}
+  .stat:nth-child(4)::before{background:var(--br-blue)}
   .stat .v{font-size:1.5rem;font-weight:700}
   .stat .l{color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
 
@@ -70,12 +70,12 @@
   .day-h{
     padding:14px 18px;border-bottom:1px solid var(--border);
     cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;
-    background:linear-gradient(90deg,rgba(200,16,46,.07) 0%,transparent 55%);
+    background:linear-gradient(90deg,rgba(0,156,59,.07) 0%,transparent 55%);
     transition:background .15s;
   }
-  .day-h:hover{background:linear-gradient(90deg,rgba(200,16,46,.13) 0%,transparent 55%)}
+  .day-h:hover{background:linear-gradient(90deg,rgba(0,156,59,.13) 0%,transparent 55%)}
   .day-h h2{font-size:1.05rem;display:flex;align-items:center;gap:8px}
-  .day-h .d{color:var(--copa-gold);font-size:.85rem;font-weight:600;white-space:nowrap}
+  .day-h .d{color:var(--br-yellow);font-size:.85rem;font-weight:600;white-space:nowrap}
   .day-body{padding:18px}
 
   /* ── Games ── */
@@ -85,13 +85,13 @@
     padding:10px 14px;
   }
   .game-row{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;font-size:.9rem}
-  .game .t{color:var(--copa-gold);font-variant-numeric:tabular-nums;min-width:38px;font-weight:700;font-size:.85rem}
+  .game .t{color:var(--br-yellow);font-variant-numeric:tabular-nums;min-width:38px;font-weight:700;font-size:.85rem}
   .game .g{color:var(--muted);font-size:.82rem}
   .game-stats{color:var(--muted);font-size:.78rem;margin-top:6px;padding-top:6px;border-top:1px solid var(--border);line-height:1.6}
 
   /* ── Context ── */
   .ctx{
-    background:rgba(245,178,37,.05);border-left:3px solid var(--copa-gold);
+    background:rgba(0,156,59,.05);border-left:3px solid var(--br-green);
     padding:10px 12px;border-radius:0 6px 6px 0;
     font-size:.85rem;color:var(--muted);margin-bottom:16px;
   }
@@ -105,7 +105,7 @@
     border-bottom:1px solid var(--border);
   }
   .cat.c h3{color:var(--green)}
-  .cat.i h3{color:var(--copa-gold)}
+  .cat.i h3{color:var(--br-yellow)}
   .cat.l h3{color:var(--purple)}
 
   /* ── Bets ── */
@@ -139,7 +139,7 @@
   /* ── Utilities ── */
   .pos{color:var(--green)} .neg{color:var(--red)}
   .hidden{display:none}
-  .chev{color:var(--copa-red);font-size:.75rem;transition:transform .15s;flex-shrink:0}
+  .chev{color:var(--br-green);font-size:.75rem;transition:transform .15s;flex-shrink:0}
   .open .chev{transform:rotate(90deg)}
 </style>
 </head>
