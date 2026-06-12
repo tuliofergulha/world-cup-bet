@@ -22,7 +22,7 @@
     --br-blue:#002776;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;padding:24px 16px;max-width:980px;margin:0 auto}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;padding:24px 16px;max-width:860px;margin:0 auto}
 
   /* ── Header ── */
   header{
@@ -76,31 +76,54 @@
   .day-h:hover{background:linear-gradient(90deg,rgba(0,156,59,.13) 0%,transparent 55%)}
   .day-h h2{font-size:1.05rem;display:flex;align-items:center;gap:8px}
   .day-h .d{color:var(--br-yellow);font-size:.85rem;font-weight:600;white-space:nowrap}
-  .day-body{padding:18px}
-
-  /* ── Games ── */
-  .games{display:grid;gap:8px;margin-bottom:14px}
-  .game{
-    background:var(--card2);border:1px solid var(--border);border-radius:8px;
-    padding:10px 14px;
-  }
-  .game-row{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;font-size:.9rem}
-  .game .t{color:var(--br-yellow);font-variant-numeric:tabular-nums;min-width:38px;font-weight:700;font-size:.85rem}
-  .game .g{color:var(--muted);font-size:.82rem}
-  .game-stats{color:var(--muted);font-size:.78rem;margin-top:6px;padding-top:6px;border-top:1px solid var(--border);line-height:1.6}
+  .day-body{padding:14px}
 
   /* ── Context ── */
   .ctx{
     background:rgba(0,156,59,.05);border-left:3px solid var(--br-green);
-    padding:10px 12px;border-radius:0 6px 6px 0;
-    font-size:.85rem;color:var(--muted);margin-bottom:16px;
+    padding:9px 12px;border-radius:0 6px 6px 0;
+    font-size:.84rem;color:var(--muted);margin-bottom:14px;
   }
 
+  /* ── Game card ── */
+  .game-card{
+    background:var(--card2);border:1px solid var(--border);border-radius:10px;
+    margin-bottom:12px;overflow:hidden;
+  }
+  .game-card.has-bets{border-left:3px solid rgba(0,156,59,.5)}
+  .game-card:last-child{margin-bottom:0}
+
+  .g-hdr{
+    padding:12px 14px 10px;
+    border-bottom:1px solid var(--border);
+  }
+  .g-matchup{
+    display:flex;align-items:center;gap:8px;
+    font-size:1rem;font-weight:700;margin-bottom:4px;flex-wrap:wrap;
+  }
+  .g-team{display:flex;align-items:center;gap:5px}
+  .g-sep{color:var(--muted);font-size:.85rem;font-weight:400}
+  .g-score{color:var(--br-yellow);font-variant-numeric:tabular-nums}
+  .g-meta{
+    font-size:.78rem;color:var(--muted);
+    display:flex;align-items:center;gap:5px;flex-wrap:wrap;
+  }
+  .g-time{color:var(--br-yellow);font-weight:700;font-variant-numeric:tabular-nums}
+  .g-dot{color:var(--border)}
+
+  .g-body{padding:12px 14px}
+  .g-stats{
+    color:var(--muted);font-size:.78rem;line-height:1.65;
+    margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);
+  }
+  .g-stats:only-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+
   /* ── Categories ── */
-  .cat{margin-bottom:14px}
+  .cat{margin-bottom:10px}
+  .cat:last-child{margin-bottom:0}
   .cat h3{
-    font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;
-    margin-bottom:8px;padding-bottom:6px;
+    font-size:.76rem;text-transform:uppercase;letter-spacing:.07em;
+    margin-bottom:6px;padding-bottom:5px;
     display:flex;align-items:center;gap:8px;
     border-bottom:1px solid var(--border);
   }
@@ -110,19 +133,20 @@
 
   /* ── Bets ── */
   .bet{
-    border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:8px;
-    display:grid;grid-template-columns:1fr auto;gap:4px 12px;
+    border:1px solid var(--border);border-radius:7px;padding:10px 12px;margin-bottom:6px;
+    display:grid;grid-template-columns:1fr auto;gap:3px 12px;
     background:rgba(255,255,255,.02);transition:background .1s;
   }
+  .bet:last-child{margin-bottom:0}
   .bet:hover{background:rgba(255,255,255,.04)}
-  .bet .m{font-weight:600;font-size:.95rem;display:flex;align-items:baseline;gap:4px;flex-wrap:wrap}
-  .bet .j{grid-column:1/-1;color:var(--muted);font-size:.83rem;margin-top:2px;line-height:1.5}
-  .bet .o{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.9rem;color:var(--text)}
+  .bet .m{font-weight:600;font-size:.92rem;display:flex;align-items:baseline;gap:5px;flex-wrap:wrap}
+  .bet .j{grid-column:1/-1;color:var(--muted);font-size:.81rem;margin-top:2px;line-height:1.5}
+  .bet .o{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:.88rem}
 
   /* ── Badges ── */
   .badge{
-    display:inline-block;padding:1px 8px;border-radius:99px;
-    font-size:.7rem;font-weight:700;vertical-align:2px;margin-left:4px;
+    display:inline-block;padding:1px 7px;border-radius:99px;
+    font-size:.68rem;font-weight:700;vertical-align:2px;
   }
   .b-pendente{background:rgba(96,165,250,.1);color:var(--blue);border:1px solid rgba(96,165,250,.2)}
   .b-ganhou{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
@@ -131,12 +155,12 @@
 
   /* ── Footer ── */
   footer{
-    color:var(--muted);font-size:.78rem;margin-top:28px;
+    color:var(--muted);font-size:.77rem;margin-top:28px;
     border-top:1px solid var(--border);padding-top:14px;
     display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;
   }
 
-  /* ── Utilities ── */
+  /* ── Utils ── */
   .pos{color:var(--green)} .neg{color:var(--red)}
   .hidden{display:none}
   .chev{color:var(--br-green);font-size:.75rem;transition:transform .15s;flex-shrink:0}
@@ -164,36 +188,95 @@
 <div id="days"></div>
 
 <footer>
-  <span>Modelo Elo-Poisson (premissas Klement). Odds são estimativas — confirme na casa antes de apostar.</span>
+  <span>Modelo Elo-Poisson (premissas Klement). Odds são estimativas — confirme na casa antes.</span>
   <span>~50% do resultado é sorte. Aposte só o que pode perder. Unidade: <span id="unit"></span>.</span>
 </footer>
 
 <script src="data.js"></script>
 <script>
 const CATS = {
-  conservadora: ["c","🟢 Conservadoras (1.5–3.0)"],
-  intermediaria: ["i","🟡 Intermediárias (3.0–6.0)"],
-  loucura:       ["l","🟣 Loucura (10+)"]
+  conservadora: ["c", "🟢 Conservadoras (1.5–3.0)"],
+  intermediaria: ["i", "🟡 Intermediárias (3.0–6.0)"],
+  loucura:       ["l", "🟣 Loucura (10+)"]
 };
+
+const FLAGS = {
+  "México":"🇲🇽","África do Sul":"🇿🇦","Coreia do Sul":"🇰🇷","Tchéquia":"🇨🇿",
+  "Canadá":"🇨🇦","Bósnia e Herz.":"🇧🇦","Suíça":"🇨🇭","Catar":"🇶🇦",
+  "Brasil":"🇧🇷","Marrocos":"🇲🇦","Escócia":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","Haiti":"🇭🇹",
+  "EUA":"🇺🇸","Paraguai":"🇵🇾","Turquia":"🇹🇷","Austrália":"🇦🇺",
+  "Alemanha":"🇩🇪","Equador":"🇪🇨","Holanda":"🇳🇱","Japão":"🇯🇵",
+  "Bélgica":"🇧🇪","Espanha":"🇪🇸","França":"🇫🇷","Argentina":"🇦🇷",
+  "Portugal":"🇵🇹","Colômbia":"🇨🇴","Inglaterra":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","Croácia":"🇭🇷",
+  "Uruguai":"🇺🇾","Senegal":"🇸🇳","Noruega":"🇳🇴","Irã":"🇮🇷","Egito":"🇪🇬"
+};
+const flag = t => FLAGS[t] ?? "🏳";
 
 document.getElementById('updated').textContent =
   'Atualizado em ' + new Date(DATA.atualizadoEm).toLocaleString('pt-BR');
 document.getElementById('unit').textContent = DATA.unidade;
 
-// Global P&L
+// P&L global — apostas agora estão dentro de cada jogo
 let staked = 0, returned = 0, won = 0, lost = 0, pend = 0;
-DATA.dias.forEach(d => d.apostas.forEach(b => {
+DATA.dias.forEach(d => d.jogos.forEach(j => (j.apostas || []).forEach(b => {
   if (b.status === 'anulada') return;
   if (b.status === 'pendente') { pend++; return; }
   staked += b.stake;
   if (b.status === 'ganhou') { returned += b.stake * b.odd; won++; } else { lost++; }
-}));
+})));
 const pl = returned - staked;
 document.getElementById('stats').innerHTML = `
   <div class="stat"><div class="v ${pl >= 0 ? 'pos' : 'neg'}">${pl >= 0 ? '+' : ''}${pl.toFixed(2)}u</div><div class="l">Lucro / Prejuízo</div></div>
   <div class="stat"><div class="v">${won}–${lost}</div><div class="l">Ganhas – Perdidas</div></div>
   <div class="stat"><div class="v">${staked.toFixed(2)}u</div><div class="l">Total apostado</div></div>
   <div class="stat"><div class="v">${pend}</div><div class="l">Pendentes</div></div>`;
+
+function renderGame(g) {
+  const hasBets = g.apostas && g.apostas.length > 0;
+
+  // Matchup line: flags + names + score (or ×)
+  const sep = g.placar
+    ? `<span class="g-score">${g.placar}</span>`
+    : `<span class="g-sep">×</span>`;
+  const matchup = `
+    <span class="g-team">${flag(g.mandante)} ${g.mandante}</span>
+    ${sep}
+    <span class="g-team">${flag(g.visitante)} ${g.visitante}</span>`;
+
+  // Bets grouped by category
+  let betsHtml = '';
+  if (hasBets) {
+    for (const [key, [cls, label]] of Object.entries(CATS)) {
+      const catBets = g.apostas.filter(b => b.cat === key);
+      if (!catBets.length) continue;
+      betsHtml += `<div class="cat ${cls}"><h3>${label}</h3>` +
+        catBets.map(b => `
+          <div class="bet">
+            <div class="m">${b.mercado}<span class="badge b-${b.status}">${b.status}</span></div>
+            <div class="o">@${b.odd.toFixed(2)} · ${b.stake}u</div>
+            <div class="j">${b.justificativa}</div>
+          </div>`).join('') + '</div>';
+    }
+  }
+
+  return `
+    <div class="game-card${hasBets ? ' has-bets' : ''}">
+      <div class="g-hdr">
+        <div class="g-matchup">${matchup}</div>
+        <div class="g-meta">
+          <span class="g-time">${g.hora}</span>
+          <span class="g-dot">·</span>
+          <span>Grupo ${g.grupo}</span>
+          <span class="g-dot">·</span>
+          <span>${g.local}</span>
+        </div>
+      </div>
+      ${g.stats || hasBets ? `<div class="g-body">
+        ${g.stats ? `<div class="g-stats">📊 ${g.stats}</div>` : ''}
+        ${betsHtml}
+      </div>` : ''}
+    </div>`;
+}
 
 // Render days (newest first)
 const root = document.getElementById('days');
@@ -204,37 +287,14 @@ const root = document.getElementById('days');
   const dt = new Date(d.data + 'T12:00:00')
     .toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
 
-  const games = d.jogos.map(g => `
-    <div class="game">
-      <div class="game-row">
-        <span class="t">${g.hora}</span>
-        <span><strong>${g.partida}</strong> <span class="g">Grupo ${g.grupo} · ${g.local}</span></span>
-      </div>
-      ${g.stats ? `<div class="game-stats">📊 ${g.stats}</div>` : ''}
-    </div>`).join('');
-
-  let cats = '';
-  for (const [key, [cls, label]] of Object.entries(CATS)) {
-    const bets = d.apostas.filter(b => b.cat === key);
-    if (!bets.length) continue;
-    cats += `<div class="cat ${cls}"><h3>${label}</h3>` +
-      bets.map(b => `
-      <div class="bet">
-        <div class="m">${b.mercado}<span class="badge b-${b.status}">${b.status}</span></div>
-        <div class="o">@${b.odd.toFixed(2)} · ${b.stake}u</div>
-        <div class="j">${b.justificativa}</div>
-      </div>`).join('') + '</div>';
-  }
-
   day.innerHTML = `
     <div class="day-h">
       <h2><span class="chev">▶</span> ${d.titulo}</h2>
       <span class="d">${dt}</span>
     </div>
     <div class="day-body ${idx === 0 ? '' : 'hidden'}">
-      <div class="games">${games}</div>
       ${d.contexto ? `<div class="ctx">${d.contexto}</div>` : ''}
-      ${cats}
+      ${d.jogos.map(renderGame).join('')}
     </div>`;
 
   day.querySelector('.day-h').onclick = () => {
