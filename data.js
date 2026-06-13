@@ -1,7 +1,7 @@
 // Copa 2026 — Painel de Análise. Atualizado diariamente pelo briefing das 8h.
 // Gerado automaticamente pela routine de análise (acessa sites + valida stats reais).
 const DATA = {
-  atualizadoEm: "2026-06-13T10:30:00-03:00",
+  atualizadoEm: "2026-06-13T14:45:00-03:00",
 
   // Campos não-deriváveis do placar — preenchidos pela routine. Totais (jogos/gols/média)
   // são auto-calculados pelo app a partir dos placares.
@@ -148,7 +148,7 @@ const DATA = {
           grupo: "B",
           local: "Levi's Stadium, Santa Clara (SF Bay Area)",
           placar: null,
-          stats: "Maior desequilíbrio do dia. Suíça (FIFA #19, Elo 1891) vs Catar (FIFA #57, Elo 1421). Catar foi o 1º time anfitrião a perder na estreia em 2022 (0-2 vs Equador), caiu os 3 grupos (1GF, 7GC). Suíça venceu 6/6 eliminatórias com apenas 2GC. Xhaka (Arsenal, capitão, 36 anos, 130+ caps) dirige um meio-campo sem falhas; Embolo é o finalizador. Histórico: 1 jogo (amistoso 2018, Catar 1-0, gol Afif). Hassan Al-Haydos (35 anos, 186 caps) lidera um elenco envelhecido. Lopetegui substituído por Marquez López. XI confirmados — Suíça: Kobel; Widmer, Akanji, Elvedi, Rodriguez; Xhaka, Freuler; Vargas, Rieder, Ndoye; Embolo. Catar: Abunada; Al Oui, Miguel, Khoukhi, Elamin; Laye, Fathi, Gaber; Edmilson Jr., Almoez Ali, Afif.",
+          stats: "Maior desequilíbrio do dia. Suíça (FIFA #19, Elo 1891) vs Catar (FIFA #57, Elo 1421). Catar foi o 1º time anfitrião a perder na estreia em 2022 (0-2 vs Equador), caiu os 3 grupos (1GF, 7GC). Suíça venceu 6/6 eliminatórias com apenas 2GC. Xhaka (Arsenal, capitão, 36 anos, 130+ caps) dirige um meio-campo sem falhas; Embolo é o finalizador. Histórico: 1 jogo (amistoso 2018, Catar 1-0, gol Afif). Hassan Al-Haydos (35 anos, 186 caps) lidera um elenco envelhecido. Lopetegui substituído por Marquez López. XI confirmados — Suíça: Kobel; Widmer, Akanji, Elvedi, Rodriguez; Xhaka, Freuler; Vargas, Rieder, Ndoye; Embolo. Catar: Abunada; Al Oui, Miguel, Khoukhi, Elamin; Laye, Fathi, Gaber; Edmilson Jr., Almoez Ali, Afif. Árbitro: Saíd Martínez (Honduras) — estreante como árbitro-chefe em Copa; foi assistente em 2022. Média de 3.2 amarelos/jogo no WC 2026 (6 jogos). Perfil conservador em grandes torneios.",
           numeros: [
             { v: "91%", l: "Prob. Suíça" },
             { v: "2.91", l: "λ Suíça" },
@@ -156,24 +156,20 @@ const DATA = {
             { v: "6/6", l: "Vitórias Suíça (elim.)" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Suíça vence", odd: 1.10,
-              justificativa: "90.8% pelo modelo Elo-Poisson. Catar perdeu os 3 grupos em 2022 com apenas 1 gol marcado e 7 sofridos. Suíça venceu todos os 6 jogos das eliminatórias com saldo +15. Xhaka e Freuler dominam o meio — o Catar não tem como competir em nível técnico." },
-            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.20,
-              justificativa: "λ total = 3.13. Com Suíça esperando 2.91 gols e Catar com 0.22, é quase impossível o jogo terminar com 0 ou 1 gol. Simulação Poisson: >95% de 2+ gols." },
-            { cat: "conservadora", mercado: "Suíça vence a zero", odd: 2.20,
-              justificativa: "λ Catar = 0.22 → P(Catar não marca) = e^(−0.22) ≈ 80%. Catar não tem atacante de nível internacional — Al-Haydos tem 35 anos e Almoez Ali vai enfrentar Kobel (Dortmund, 28 anos, sucessor de Sommer que se aposentou em ago/2024; concedeu apenas 2 gols nas 6 eliminatórias). Suíça concedeu apenas 2 gols em 6 eliminatórias." },
-            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 1.55,
-              justificativa: "λ total = 3.13. Simulação Poisson: 63% de 3+ gols. Suíça com trio ofensivo Ndoye-Embolo-Vargas, enquanto o Catar tem defesa envelhecida (Khoukhi 35, Hatem 36, Boudiaf 35). Quando Suíça abre vantagem cedo, o jogo abre." },
-            { cat: "intermediaria", mercado: "Breel Embolo marca", odd: 2.80,
-              justificativa: "Artilheiro da Suíça — 10 gols em 2024 pelo país. Monaco 25/26: 14 gols em 35 jogos. É o 9 referencial, físico, inteligente nos canais e forte no ar. Contra a defesa lenta e envelhecida do Catar, deve ter múltiplas oportunidades." },
-            { cat: "intermediaria", mercado: "Over 3.5 cartões no jogo", odd: 1.90,
-              justificativa: "Catar vai fazer faltas táticas ao longo do jogo para travar a transição da Suíça. Com árbitro europeu para esse tipo de jogo e Suíça pressionando, o cartão amarelo vira ferramenta de sobrevivência do Catar." },
-            { cat: "loucura", mercado: "Suíça vence + over 3.5 gols", odd: 3.80,
-              justificativa: "λ Suíça = 2.91 e λ total = 3.13. Se a Suíça sair na frente cedo (alta probabilidade), o Catar vai ter que se abrir. Poisson: ~40% de 4+ gols. Suíça massacrou nas eliminatórias — 4-0, 5-1 foram resultados recorrentes." },
-            { cat: "loucura", mercado: "Suíça −2.5 handicap", odd: 3.50,
-              justificativa: "Com λ de 2.91 e um Catar com 0.22, goleada é o cenário esperado. Suíça teve saldo de gols de +15 nas eliminatórias. Se Embolo e companhia começam bem, o 3-0 ou 4-0 é tão provável quanto o 2-0." },
-            { cat: "loucura", mercado: "Almoez Ali marca", odd: 5.00,
-              justificativa: "O artilheiro histórico do Catar (39 gols) precisa criar algo do nada com λ = 0.22. Mas se o Catar conseguir um escanteio ou pênalti, Almoez é o executor. Com odds de 5.00, o valor especulativo existe — mesmo com apenas 20% de chance de Catar marcar." }
+            { cat: "conservadora", mercado: "Suíça vence a zero", odd: 2.20, edge: 0.67, kelly: 0.14,
+              justificativa: "P(Suíça a zero) = P(Catar=0) × P(Suíça≥1) = e^(−0.22) × (1−e^(−2.91)) = 0.803 × 0.946 = 0.759. Edge = (0.759 × 2.20) − 1 = 67%. Árbitro Saíd Martínez é conservador (3.2 cartões/jogo), não vai inflar o jogo com pênaltis — P(pênalti Catar) é baixíssima. Kobel (Dortmund) concedeu apenas 2 gols em 6 eliminatórias. Defesa Catar: Khoukhi 35, Elamin inexperiente." },
+            { cat: "conservadora", mercado: "Suíça marca no 1T", odd: 1.85, edge: 0.42, kelly: 0.12,
+              justificativa: "λ Suíça 1T ≈ 2.91/2 = 1.455. P(≥1 gol no 1T) = 1−e^(−1.455) = 76.6%. Edge = (0.766 × 1.85) − 1 = 42%. Catar costuma jogar recuado, criando espaços para contra-ataques rápidos da Suíça — Ndoye e Vargas pelas alas são rápidos. Saíd Martínez não bloqueia a transição com cartões precoces." },
+            { cat: "intermediaria", mercado: "Breel Embolo marca", odd: 2.80, edge: 0.45, kelly: 0.06,
+              justificativa: "λ_Embolo ≈ 2.91 × 0.25 = 0.728 (25% dos gols suíços). P(marca) = 1−e^(−0.728) = 51.7%. Edge = (0.517 × 2.80) − 1 = 45%. Monaco 25/26: 14 gols em 35 jogos. É o 9 referencial — físico, forte no ar contra defesa Catar envelhecida (Khoukhi 35, Miguel sem experiência Copa)." },
+            { cat: "intermediaria", mercado: "Ruben Vargas marca", odd: 3.00, edge: 0.32, kelly: 0.04,
+              justificativa: "λ_Vargas ≈ 2.91 × 0.20 = 0.582 (winger ativo). P(marca) = 1−e^(−0.582) = 44.1%. Edge = (0.441 × 3.00) − 1 = 32%. Vargas pela esquerda vai encarar Al Oui, lateral direito do Catar sem experiência internacional de ponta. Com Suíça dominando, Vargas tem múltiplas entradas na área." },
+            { cat: "intermediaria", mercado: "Over 3.5 cartões no jogo", odd: 2.80, edge: 0.10, kelly: 0.01,
+              justificativa: "P(≥4 cartões) com Saíd Martínez (λ=3.2 no WC): Poisson → P(≥4) = 39.4%. Edge = (0.394 × 2.80) − 1 = 10%. Catar, desesperado para travar transições da Suíça, fará faltas táticas repetidas. Árbitro inexperiente como chefe pode reagir distribuindo cartões ao sentir o jogo fugir do controle no 2T." },
+            { cat: "loucura", mercado: "Suíça vence + over 3.5 gols", odd: 3.80, edge: 0.42, kelly: 0.04,
+              justificativa: "P(Suíça vence E total≥4) = soma sobre i>j com i+j≥4 dos P(SUI=i)×P(CAT=j) ≈ 37.3%. Edge = (0.373 × 3.80) − 1 = 42%. λSUI=2.91 garante que goleadas são o cenário modal. Nas eliminatórias suíças: 4-0, 5-1 foram frequentes. Catar abre ao precisar de gol no 2T." },
+            { cat: "loucura", mercado: "Suíça −2.5 handicap", odd: 3.50, edge: 0.79, kelly: 0.08,
+              justificativa: "P(Suíça vence por ≥3) ≈ 51.1% — enumeração Poisson sobre pares (SUI,CAT) com SUI−CAT≥3. Edge = (0.511 × 3.50) − 1 = 79%. Mercado coloca a vitória por 3+ como evento raro, mas o modelo (λSUI=2.91, λCAT=0.22) indica que é o cenário esperado. Saldo eliminatórias: +15 gols." }
           ]
         },
         {
@@ -183,7 +179,7 @@ const DATA = {
           grupo: "C",
           local: "MetLife Stadium, East Rutherford (Nova York)",
           placar: null,
-          stats: "O duelo mais esperado do dia. Brasil (Elo 1991, FIFA #6) vem sem Neymar (lesão grau 2 na panturrilha) e sem Wesley (lesão muscular, cortado do Mundial) — Danilo joga como LD e Alex Sandro como LE. Vinicius Jr. (Ballon d'Or 2024, 36G+A no La Liga 24/25), Raphinha e Ancelotti estreando como técnico. XI provável: Alisson; Danilo, Marquinhos, Gabriel Magalhães, Alex Sandro; Casemiro, Bruno Guimarães; Raphinha, Lucas Paquetá, Vinicius Jr.; Matheus Cunha. Marrocos (Elo 1827, FIFA #7): sem Ziyech (excluído), sem Aguerd (joelho, corte), sem Ezzalzouli (joelho, corte). Mazraoui (luxação parcial no ombro em amistoso vs Noruega) treinou normalmente na quinta e está confirmado — mas pode estar a ~85%. En-Nesyri (11 gols nas Eliminatórias CAF) INICIA NO BANCO; ataque titular: Brahim Díaz, Talbi, Saibari. XI provável: Bounou; Hakimi, Issa Diop, Chadi Riad, Mazraoui; El Aynaoui, Bouaddi, Ounahi; Brahim Díaz, Talbi, Saibari. H2H: Brasil 3-0 na Copa 1998. Marrocos 2-1 em amistoso (set/2023).",
+          stats: "O duelo mais esperado do dia. Brasil (Elo 1991, FIFA #6) vem sem Neymar (lesão grau 2 na panturrilha) e sem Wesley (lesão muscular, cortado do Mundial) — Danilo joga como LD e Alex Sandro como LE. Vinicius Jr. (Ballon d'Or 2024, 36G+A no La Liga 24/25), Raphinha e Ancelotti estreando como técnico. XI provável: Alisson; Danilo, Marquinhos, Gabriel Magalhães, Alex Sandro; Casemiro, Bruno Guimarães; Raphinha, Lucas Paquetá, Vinicius Jr.; Matheus Cunha. Marrocos (Elo 1827, FIFA #7): sem Ziyech (excluído), sem Aguerd (joelho, corte), sem Ezzalzouli (joelho, corte). Mazraoui (luxação parcial no ombro em amistoso vs Noruega) treinou normalmente na quinta e está confirmado — mas pode estar a ~85%. En-Nesyri (11 gols nas Eliminatórias CAF) INICIA NO BANCO; ataque titular: Brahim Díaz, Talbi, Saibari. XI provável: Bounou; Hakimi, Issa Diop, Chadi Riad, Mazraoui; El Aynaoui, Bouaddi, Ounahi; Brahim Díaz, Talbi, Saibari. H2H: Brasil 3-0 na Copa 1998. Marrocos 2-1 em amistoso (set/2023). Árbitro: Slavko Vincic (Eslovênia, 46 anos) — 4.13 amarelos/jogo na carreira (330 jogos), 0 vermelhos em 2 jogos de Copa, 0.29 pênaltis/jogo na 2025/26. Experiente e equilibrado, não tende a inflar cartões em jogos de alto calibre.",
           numeros: [
             { v: "61%", l: "Prob. Brasil" },
             { v: "1.79", l: "λ Brasil" },
@@ -191,24 +187,20 @@ const DATA = {
             { v: "36", l: "Gols Vinicius Jr. (Real 24/25)" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Under 2.5 gols", odd: 1.90,
-              justificativa: "λ total = 2.59. Marrocos concedeu apenas 3 gols em 6 jogos das Eliminatórias CAF (0.50/jogo) — defesa organizada com Mazraoui, Hakimi e bloco baixo de Regragui. Estreias de Copa são historicamente travadas. Poisson: 52% de chance de under 2.5." },
-            { cat: "conservadora", mercado: "Brasil vence", odd: 1.65,
-              justificativa: "61% pelo modelo. Vinicius Jr. é o melhor jogador do planeta — 36 gols no Real Madrid, cobrador de pênaltis, intocável pelos lados. Sem Ziyech (criativo principal) e sem Aguerd (melhor zagueiro), Marrocos chega diminuída. Ancelotti sabe montar times para vencer jogos difíceis." },
-            { cat: "conservadora", mercado: "Empate no intervalo", odd: 2.10,
-              justificativa: "Marrocos historicamente é resiliente nos primeiros 45min — foi assim em quase toda a campanha do 2022. Defesa de Regragui resiste no 1T e cresce no 2T. Brasil tende a aumentar o ritmo no segundo tempo. Mercado ignora esse padrão tático marroquino." },
-            { cat: "intermediaria", mercado: "Vinicius Jr. marca", odd: 2.40,
-              justificativa: "Ballon d'Or 2024, 36 gols no La Liga, cobrador de pênaltis da seleção brasileira. Com Neymar fora, Vinicius é o protagonista absoluto. Vai encarar Mazraoui (LB) — que jogará com luxação parcial no ombro (lesionado no amistoso vs Noruega, treinou normalmente na quinta mas está a ~85%). Duelos físicos e arrancadas de Vinicius ficam ainda mais favoráveis contra um lateral comprometido. É o candidato nº1 para qualquer gol do Brasil." },
-            { cat: "intermediaria", mercado: "Marrocos não perde (dupla hipótese)", odd: 2.60,
-              justificativa: "39% de não-vitória do Brasil (22.7%E + 16.2%V). Marrocos foi semifinalista em 2022, tem Hakimi como arma ofensiva pela direita e bloco defensivo organizado de Regragui. Sem Neymar e sem Wesley (lateral cortado do Mundial), o Brasil joga com Danilo (LD) e Alex Sandro (LE) — dupla com 71 anos combinados, menos explosiva. Hakimi pela ala direita vai explorar Alex Sandro sistematicamente. 1-1 ou mesmo 1-0 Marrocos são plausíveis." },
-            { cat: "intermediaria", mercado: "Over 9.5 escanteios", odd: 1.85,
-              justificativa: "Brasil ataca pelas duas alas (Vinicius pela esquerda, Raphinha pela direita). Historicamente Marrocos defende com bloco compacto que limpa cruzamentos pela linha de fundo — gerando escanteios para o adversário. Atenção: com Brahim Díaz (não En-Nesyri) no ataque titular, Marrocos tende a um estilo mais posicional do que contragolpe direto, o que pode reduzir a abertura de espaços que geraria os escanteios. Risco leve vs expectativa original." },
-            { cat: "loucura", mercado: "Empate", odd: 3.40,
-              justificativa: "22.7% de empate pelo modelo — justo odds seria ~4.40, mas 3.40 indica valor. Marrocos é uma das seleções mais resilientes do mundo atual. Sem Neymar, Brasil pode ser menos inspirado no ataque. 1-1 é um placar completamente realista." },
-            { cat: "loucura", mercado: "Brasil vence + Vinicius Jr. marca + under 2.5 gols", odd: 5.50,
-              justificativa: "Combo correlacionado: se o Brasil vence de 1-0 ou 2-0, Vinicius tende a estar no placar (é o atacante principal) e o jogo é naturalmente under com a defesa marroquina. As três pernas andam juntas no roteiro de 'vitória apertada com gol do craque'." },
-            { cat: "loucura", mercado: "En-Nesyri marca", odd: 5.00,
-              justificativa: "ATENÇÃO: En-Nesyri NÃO inicia — confirmado no banco por Regragui. Ataque titular: Brahim Díaz, Talbi, Saibari (sistema mais técnico/posicional). En-Nesyri (artilheiro CAF, 11 gols, especialista em cabeceios) entra como substituto. Para marcar, precisa entrar, receber bola e converter — cadeia longa. Odd de 5.00 não remunera adequadamente o risco adicional de partir do banco." }
+            { cat: "conservadora", mercado: "Empate no intervalo", odd: 2.10, edge: 0.16, kelly: 0.04,
+              justificativa: "P(empate HT) ≈ 55% com base no padrão de Marrocos em 2022: foi ao intervalo empatado em todos os jogos da fase de grupos. Defesa de Regragui (bloco baixo 4-4-2) resiste no 1T e Brasil tende a forçar mais no 2T. Edge = (0.55 × 2.10) − 1 = 16%. Vincic não precipita o jogo com cartões no 1T — fase inicial tende a ser estudada." },
+            { cat: "conservadora", mercado: "Brasil marca no 1T", odd: 1.80, edge: 0.07, kelly: 0.02,
+              justificativa: "λ Brasil 1T ≈ 1.79/2 = 0.895. P(≥1 gol Brasil no 1T) = 1−e^(−0.895) = 59.2%. Edge = (0.592 × 1.80) − 1 = 7%. Com Vinicius pela esquerda e Raphinha pela direita dominando desde o apito inicial, e Marrocos sem Aguerd (melhor zagueiro, cortado), a probabilidade de gol brasileiro no 1T é real mesmo contra o bloco marroquino." },
+            { cat: "intermediaria", mercado: "Vinicius Jr. marca", odd: 2.40, edge: 0.16, kelly: 0.03,
+              justificativa: "λ_Vini = 1.79 × 0.35 × 1.05 = 0.658 (35% dos gols do Brasil, ajuste +5% por Mazraoui comprometido). P = 1−e^(−0.658) = 48.2%. Edge = (0.482 × 2.40) − 1 = 16%. Vai encarar Mazraoui (LB) a ~85% fisicamente — luxação parcial no ombro. Duelos de velocidade e dribling ficam desequilibrados. É o cobrador de pênaltis e protagonist absoluto sem Neymar." },
+            { cat: "intermediaria", mercado: "Matheus Cunha marca", odd: 4.00, edge: 0.20, kelly: 0.02,
+              justificativa: "λ_Cunha = 1.79 × 0.20 = 0.358 (centroavante titular). P = 1−e^(−0.358) = 30.1%. Edge = (0.301 × 4.00) − 1 = 20%. Com Neymar fora, Cunha é o 9 titular de Ancelotti — físico, gosta de duelar com zagueiros. Issa Diop (CB, 1.93m) é sólido mas lento. Mercado ainda subestima Cunha fora do contexto do Atletico Madrid." },
+            { cat: "intermediaria", mercado: "Lucas Paquetá marca", odd: 4.50, edge: 0.24, kelly: 0.02,
+              justificativa: "λ_Paquetá = 1.79 × 0.18 = 0.322 (meia por trás com liberdade de chegar). P = 1−e^(−0.322) = 27.6%. Edge = (0.276 × 4.50) − 1 = 24%. Paquetá joga na meia-esquerda e tem liberdade de inserção na área — marcou 8 gols na Premier League 24/25. Vincic não costuma negar pênaltis claros (0.29/jogo): se Paquetá entrar na área, é risco real para Marrocos." },
+            { cat: "loucura", mercado: "Brasil vence a zero", odd: 4.00, edge: 0.10, kelly: 0.01,
+              justificativa: "P = P(Brasil vence) × P(Marrocos=0) = 0.61 × e^(−0.80) = 0.61 × 0.449 = 27.4%. Edge = (0.274 × 4.00) − 1 = 10%. Sem Aguerd (melhor zagueiro), Ziyech (criativo) e Ezzalzouli (extremo), o ataque marroquino é Brahim Díaz + Talbi — menos ameaçador. Alisson não cometeu erros graves em 2025/26 e Marquinhos domina os duelos aéreos." },
+            { cat: "loucura", mercado: "Brasil vence + over 2.5 gols", odd: 4.00, edge: 0.36, kelly: 0.03,
+              justificativa: "P(Brasil vence E total≥3) ≈ 34.1% via enumeração Poisson — inclui 2-1, 3-0, 3-1, 2-0+Marrocos 0 (total=2, não conta), 4-0 etc. Edge = (0.341 × 4.00) − 1 = 36%. Ancelotti é um treinador que prefere vencer com estilo — se o Brasil abrir 2-0, não fecha o jogo como Regragui. Com Marrocos precisando atacar para empatar, espaços surgem no 2T." }
           ]
         },
         {
@@ -226,24 +218,20 @@ const DATA = {
             { v: "11", l: "Gols McTominay (Serie A 24/25)" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Escócia vence", odd: 1.60,
-              justificativa: "64.8% pelo modelo. Haiti é WR 83, sem jogadores em ligas top (MLS e Ligue 2). Escócia veio de 5-0 Curaçao e 3-1 Bolívia nos amistosos — em ritmo. Robertson e McTominay são demais tecnicamente para o Haiti aguentar 90 minutos." },
-            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.50,
-              justificativa: "λ total = 2.59. Escócia vai atacar (λ 1.87) — Robertson orquestra pela esquerda, Gannon-Doak pela direita. Dificilmente fica 0-0 com essa pressão escocesa por 90min. Poisson: >90% de pelo menos 2 gols." },
-            { cat: "conservadora", mercado: "Escócia vence a zero", odd: 2.60,
-              justificativa: "Haiti λ = 0.72 → P(Haiti não marca) = e^(−0.72) ≈ 49%. Metade das vezes o Haiti não marca. Sem atacantes de qualidade internacional, Nazon tende a ser isolado. McKenna e Souttar são a coluna vertebral da defesa escocesa." },
-            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 1.85,
-              justificativa: "λ total = 2.59. Escócia veio de 5-0 e 3-1 nos amistosos. Haiti, ao entrar atrás no placar, vai ter que se abrir no 2T — e Escócia tem Robertson, Christie e Adams para explorar espaços. Poisson: ~54% de 3+ gols." },
-            { cat: "intermediaria", mercado: "Scott McTominay marca", odd: 2.80,
-              justificativa: "11 gols pelo Napoli na Serie A 24/25, excelente finalizador de média distância e bolas paradas. Principal ameaça ofensiva da Escócia além dos atacantes. Em estilo Copa (jogo mais aberto), McTominay é o tipo de jogador que aparece nos momentos decisivos." },
-            { cat: "intermediaria", mercado: "Escócia vence + over 2.5 gols", odd: 2.80,
-              justificativa: "Escócia domina (64.8%) num jogo com λ total de 2.59. Se Robertson e Gannon-Doak criarem espaços com Haiti abrindo para atacar, 2-0 ou 3-0 é realista. Haiti não tem estrutura defensiva para segurar por 90min sem ceder gols." },
-            { cat: "loucura", mercado: "Escócia −1.5 handicap", odd: 3.20,
-              justificativa: "64.8% de vitória e superioridade técnica enorme. Haiti em sua 1ª Copa desde 1974 pode ser sobrecarregado emocionalmente no Gillette Stadium. Se Escócia sair na frente com Robertson+McTominay funcionando, o floodgates pode abrir como foi nos amistosos (5-0)." },
-            { cat: "loucura", mercado: "Haiti marca", odd: 2.10,
-              justificativa: "λ = 0.72 → 51% de chance de marcar pelo Poisson. Haiti tem velocidade no contra-ataque (Nazon, Isidor). Se Escócia se lançar todo no ataque buscando o gol, pode levar um gol de contra. Com 2.10 de odds e 51% de probabilidade, é o melhor valor dessa lista." },
-            { cat: "loucura", mercado: "Empate", odd: 4.00,
-              justificativa: "21.6% de empate pelo modelo — odds justo seria ~4.63, mas 4.00 tem valor. Haiti pode ser resiliente como foram outros 'azarões' em 2022. Jogam em blocos fechados. Se o placar ficar 0-0 até os 70min, Escócia entra em pânico e 0-0 ou 1-1 se tornam realistas." }
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.50, edge: 0.10, kelly: 0.05,
+              justificativa: "P(total≥2) com λ_total=2.59: 1 − P(0) − P(1) = 1 − 0.075 − 0.194 = 73.1%. Edge = (0.731 × 1.50) − 1 = 10%. Escócia vem de 5-0 e 3-1 nos amistosos — Robertson orquestra pela esquerda, Gannon-Doak pela direita. Haiti não tem estrutura para 90min de pressão sem ceder ao menos 1 gol. Mercado priced muito apertado, mas o edge existe." },
+            { cat: "conservadora", mercado: "Over 3.5 cartões no jogo", odd: 1.90, edge: 0.08, kelly: 0.02,
+              justificativa: "Ghorbal (Argélia) no WC 2026: média de 4.0 cartões/jogo e 28.8 faltas/jogo. P(≥4 cartões) com Poisson(4.0) = 56.7%. Edge = (0.567 × 1.90) − 1 = 8%. Haiti faz muitas faltas táticas (MLS, Ligue 2 — físico e intenso). Escócia também joga duro com McTominay e Ferguson no meio. Árbitro africano tende a reagir rapidamente com cartões." },
+            { cat: "intermediaria", mercado: "Scott McTominay marca", odd: 2.80, edge: 0.11, kelly: 0.02,
+              justificativa: "λ_McTominay ≈ 1.87 × 0.27 = 0.505. P(marca) = 1−e^(−0.505) = 39.6%. Edge = (0.396 × 2.80) − 1 = 11%. 11 gols pelo Napoli na Serie A 24/25. Finalizador de média distância e bolas paradas — Haiti vai fazer faltas perto da área (Ghorbal = 28.8 faltas/jogo). McTominay cobra falta e chega na segunda bola melhor que qualquer jogador do Haiti." },
+            { cat: "intermediaria", mercado: "Che Adams marca", odd: 3.50, edge: 0.50, kelly: 0.05,
+              justificativa: "λ_Adams ≈ 1.87 × 0.30 = 0.561. P(marca) = 1−e^(−0.561) = 42.9%. Edge = (0.429 × 3.50) − 1 = 50%. Adams é o atacante referencial da Escócia — duelos físicos com Ade e Delcroix (defensores haitianos em ligas baixas). Nos amistosos Escócia encontrou Adams como artilheiro da campanha. Mercado subestima o 9 escocês vs uma defesa de Ligue 2 e segunda divisão." },
+            { cat: "intermediaria", mercado: "Haiti marca", odd: 2.10, edge: 0.08, kelly: 0.02,
+              justificativa: "P(Haiti≥1) = 1−e^(−0.72) = 51.3%. Edge = (0.513 × 2.10) − 1 = 8%. Nazon (artilheiro histórico Haiti, velocidade no contra-ataque) e Isidor têm explosão. Se Escócia criar o placar cedo e jogar aberta buscando mais gols, o Haiti pode roubar um contra-ataque. Ghorbal (28.8 faltas/jogo) → pênalti é possível se Haiti entrar na área." },
+            { cat: "loucura", mercado: "Escócia −1.5 handicap", odd: 3.20, edge: 0.25, kelly: 0.03,
+              justificativa: "P(Escócia vence por ≥2) ≈ 39.1% via Poisson sobre pares (ESC=k, HAI=j) com k−j≥2. Edge = (0.391 × 3.20) − 1 = 25%. Haiti na 1ª Copa desde 1974 — pressão emocional enorme no Gillette Stadium. Nos amistosos escoceses: 5-0 e 3-1. Com Robertson+McTominay e uma defesa haitiana de nível Ligue 2 vs Série A italiana, a goleada é cenário plausível." },
+            { cat: "loucura", mercado: "Escócia vence + Haiti marca", odd: 5.00, edge: 0.18, kelly: 0.01,
+              justificativa: "P(ESC>HAI E HAI≥1) = soma sobre pares i>j≥1: (2,1)+(3,1)+(3,2)+(4+,1)+(4+,2)+(4+,3) ≈ 23.6%. Edge = (0.236 × 5.00) − 1 = 18%. Cenário: Escócia domina mas Haiti marca em contra ou pênalti (Ghorbal + Nazon = risco real). 2-1 ou 3-1 são placares realistas. Combo correlacionado positivamente — se Haiti marcar significa que houve abertura de jogo que favorece mais gols da Escócia também." }
           ]
         }
       ]
