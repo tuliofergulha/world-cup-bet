@@ -1,7 +1,7 @@
 // Copa 2026 — Painel de Análise. Atualizado diariamente pelo briefing das 8h.
 // Gerado automaticamente pela routine de análise (acessa sites + valida stats reais).
 const DATA = {
-  atualizadoEm: "2026-06-13T08:00:00-03:00",
+  atualizadoEm: "2026-06-13T10:30:00-03:00",
 
   // Campos não-deriváveis do placar — preenchidos pela routine. Totais (jogos/gols/média)
   // são auto-calculados pelo app a partir dos placares.
@@ -148,7 +148,7 @@ const DATA = {
           grupo: "B",
           local: "Levi's Stadium, Santa Clara (SF Bay Area)",
           placar: null,
-          stats: "Maior desequilíbrio do dia. Suíça (FIFA #19, Elo 1891) vs Catar (FIFA #57, Elo 1421). Catar foi o 1º time anfitrião a perder na estreia em 2022 (0-2 vs Equador), caiu os 3 grupos (1GF, 7GC). Suíça venceu 6/6 eliminatórias com apenas 2GC. Xhaka (Arsenal, capitão, 36 anos, 130+ caps) dirige um meio-campo sem falhas; Embolo é o finalizador. Histórico: 1 jogo (amistoso 2018, Catar 1-0, gol Afif). Hassan Al-Haydos (35 anos, 186 caps) lidera um elenco envelhecido. Lopetegui substituído por Marquez López.",
+          stats: "Maior desequilíbrio do dia. Suíça (FIFA #19, Elo 1891) vs Catar (FIFA #57, Elo 1421). Catar foi o 1º time anfitrião a perder na estreia em 2022 (0-2 vs Equador), caiu os 3 grupos (1GF, 7GC). Suíça venceu 6/6 eliminatórias com apenas 2GC. Xhaka (Arsenal, capitão, 36 anos, 130+ caps) dirige um meio-campo sem falhas; Embolo é o finalizador. Histórico: 1 jogo (amistoso 2018, Catar 1-0, gol Afif). Hassan Al-Haydos (35 anos, 186 caps) lidera um elenco envelhecido. Lopetegui substituído por Marquez López. XI confirmados — Suíça: Kobel; Widmer, Akanji, Elvedi, Rodriguez; Xhaka, Freuler; Vargas, Rieder, Ndoye; Embolo. Catar: Abunada; Al Oui, Miguel, Khoukhi, Elamin; Laye, Fathi, Gaber; Edmilson Jr., Almoez Ali, Afif.",
           numeros: [
             { v: "91%", l: "Prob. Suíça" },
             { v: "2.91", l: "λ Suíça" },
@@ -161,7 +161,7 @@ const DATA = {
             { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.20,
               justificativa: "λ total = 3.13. Com Suíça esperando 2.91 gols e Catar com 0.22, é quase impossível o jogo terminar com 0 ou 1 gol. Simulação Poisson: >95% de 2+ gols." },
             { cat: "conservadora", mercado: "Suíça vence a zero", odd: 2.20,
-              justificativa: "λ Catar = 0.22 → P(Catar não marca) = e^(−0.22) ≈ 80%. Catar não tem atacante de nível internacional — Al-Haydos tem 35 anos e Almoez Ali vai enfrentar Sommer (um dos GKs mais consistentes do mundo). Suíça concedeu apenas 2 gols em 6 eliminatórias." },
+              justificativa: "λ Catar = 0.22 → P(Catar não marca) = e^(−0.22) ≈ 80%. Catar não tem atacante de nível internacional — Al-Haydos tem 35 anos e Almoez Ali vai enfrentar Kobel (Dortmund, 28 anos, sucessor de Sommer que se aposentou em ago/2024; concedeu apenas 2 gols nas 6 eliminatórias). Suíça concedeu apenas 2 gols em 6 eliminatórias." },
             { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 1.55,
               justificativa: "λ total = 3.13. Simulação Poisson: 63% de 3+ gols. Suíça com trio ofensivo Ndoye-Embolo-Vargas, enquanto o Catar tem defesa envelhecida (Khoukhi 35, Hatem 36, Boudiaf 35). Quando Suíça abre vantagem cedo, o jogo abre." },
             { cat: "intermediaria", mercado: "Breel Embolo marca", odd: 2.80,
@@ -183,7 +183,7 @@ const DATA = {
           grupo: "C",
           local: "MetLife Stadium, East Rutherford (Nova York)",
           placar: null,
-          stats: "O duelo mais esperado do dia. Brasil (Elo 1991, FIFA #6) vem sem Neymar (lesão muscular desde maio), mas com Vinicius Jr. (Ballon d'Or 2024, 36G+A no La Liga 24/25), Raphinha (Barcelona, 42 G+A na temporada) e Ancelotti estreando como técnico. 3 amistosos pré-Copa: 3-1 Croácia, 6-2 Panamá, 2-1 Egito. Marrocos (Elo 1827, FIFA #7): sem Ziyech (excluído) e sem Aguerd (joelho). Hakimi confirmado após recuperar de lesão. En-Nesyri (11 gols nas Eliminatórias CAF) é o centroavante. Pré-Copa: 4-0 Burundi, 5-0 Madagascar, 1-1 Noruega. H2H: Brasil 3-0 na Copa 1998. Marrocos 2-1 em amistoso (set/2023).",
+          stats: "O duelo mais esperado do dia. Brasil (Elo 1991, FIFA #6) vem sem Neymar (lesão grau 2 na panturrilha) e sem Wesley (lesão muscular, cortado do Mundial) — Danilo joga como LD e Alex Sandro como LE. Vinicius Jr. (Ballon d'Or 2024, 36G+A no La Liga 24/25), Raphinha e Ancelotti estreando como técnico. XI provável: Alisson; Danilo, Marquinhos, Gabriel Magalhães, Alex Sandro; Casemiro, Bruno Guimarães; Raphinha, Lucas Paquetá, Vinicius Jr.; Matheus Cunha. Marrocos (Elo 1827, FIFA #7): sem Ziyech (excluído), sem Aguerd (joelho, corte), sem Ezzalzouli (joelho, corte). Mazraoui (luxação parcial no ombro em amistoso vs Noruega) treinou normalmente na quinta e está confirmado — mas pode estar a ~85%. En-Nesyri (11 gols nas Eliminatórias CAF) INICIA NO BANCO; ataque titular: Brahim Díaz, Talbi, Saibari. XI provável: Bounou; Hakimi, Issa Diop, Chadi Riad, Mazraoui; El Aynaoui, Bouaddi, Ounahi; Brahim Díaz, Talbi, Saibari. H2H: Brasil 3-0 na Copa 1998. Marrocos 2-1 em amistoso (set/2023).",
           numeros: [
             { v: "61%", l: "Prob. Brasil" },
             { v: "1.79", l: "λ Brasil" },
@@ -198,17 +198,17 @@ const DATA = {
             { cat: "conservadora", mercado: "Empate no intervalo", odd: 2.10,
               justificativa: "Marrocos historicamente é resiliente nos primeiros 45min — foi assim em quase toda a campanha do 2022. Defesa de Regragui resiste no 1T e cresce no 2T. Brasil tende a aumentar o ritmo no segundo tempo. Mercado ignora esse padrão tático marroquino." },
             { cat: "intermediaria", mercado: "Vinicius Jr. marca", odd: 2.40,
-              justificativa: "Ballon d'Or 2024, 36 gols no La Liga, cobrador de pênaltis da seleção brasileira. Com Neymar fora, Vinicius é o protagonista absoluto. Vai encarar Mazraoui (RB) — duelo de elite, mas Vinicius tem mais imposição ofensiva. É o candidato nº1 para qualquer gol do Brasil." },
+              justificativa: "Ballon d'Or 2024, 36 gols no La Liga, cobrador de pênaltis da seleção brasileira. Com Neymar fora, Vinicius é o protagonista absoluto. Vai encarar Mazraoui (LB) — que jogará com luxação parcial no ombro (lesionado no amistoso vs Noruega, treinou normalmente na quinta mas está a ~85%). Duelos físicos e arrancadas de Vinicius ficam ainda mais favoráveis contra um lateral comprometido. É o candidato nº1 para qualquer gol do Brasil." },
             { cat: "intermediaria", mercado: "Marrocos não perde (dupla hipótese)", odd: 2.60,
-              justificativa: "39% de não-vitória do Brasil (22.7%E + 16.2%V). Marrocos foi semifinalista em 2022, tem En-Nesyri perigoso nas bolas paradas e Hakimi como arma ofensiva pela direita. Sem Neymar, o Brasil pode ser menos criativo. 1-1 ou mesmo 1-0 Marrocos são plausíveis." },
+              justificativa: "39% de não-vitória do Brasil (22.7%E + 16.2%V). Marrocos foi semifinalista em 2022, tem Hakimi como arma ofensiva pela direita e bloco defensivo organizado de Regragui. Sem Neymar e sem Wesley (lateral cortado do Mundial), o Brasil joga com Danilo (LD) e Alex Sandro (LE) — dupla com 71 anos combinados, menos explosiva. Hakimi pela ala direita vai explorar Alex Sandro sistematicamente. 1-1 ou mesmo 1-0 Marrocos são plausíveis." },
             { cat: "intermediaria", mercado: "Over 9.5 escanteios", odd: 1.85,
-              justificativa: "Brasil ataca pelas duas alas (Vinicius pela esquerda, Raphinha pela direita). Marrocos defende com dois blocos compactos — limpa cruzamentos pela linha de fundo em vez de arriscar no centro. Padrão marroquino gera muitos escanteios para o adversário." },
+              justificativa: "Brasil ataca pelas duas alas (Vinicius pela esquerda, Raphinha pela direita). Historicamente Marrocos defende com bloco compacto que limpa cruzamentos pela linha de fundo — gerando escanteios para o adversário. Atenção: com Brahim Díaz (não En-Nesyri) no ataque titular, Marrocos tende a um estilo mais posicional do que contragolpe direto, o que pode reduzir a abertura de espaços que geraria os escanteios. Risco leve vs expectativa original." },
             { cat: "loucura", mercado: "Empate", odd: 3.40,
               justificativa: "22.7% de empate pelo modelo — justo odds seria ~4.40, mas 3.40 indica valor. Marrocos é uma das seleções mais resilientes do mundo atual. Sem Neymar, Brasil pode ser menos inspirado no ataque. 1-1 é um placar completamente realista." },
             { cat: "loucura", mercado: "Brasil vence + Vinicius Jr. marca + under 2.5 gols", odd: 5.50,
               justificativa: "Combo correlacionado: se o Brasil vence de 1-0 ou 2-0, Vinicius tende a estar no placar (é o atacante principal) e o jogo é naturalmente under com a defesa marroquina. As três pernas andam juntas no roteiro de 'vitória apertada com gol do craque'." },
             { cat: "loucura", mercado: "En-Nesyri marca", odd: 5.00,
-              justificativa: "Artilheiro das Eliminatórias CAF (11 gols) e especialista em cabeceios e bolas paradas. Sem Aguerd na zaga, Marrocos vai tentar contra-atacar — En-Nesyri é a ameaça real. Se o Brasil jogar aberto, os cruzamentos do Hakimi podem encontrá-lo na área." }
+              justificativa: "ATENÇÃO: En-Nesyri NÃO inicia — confirmado no banco por Regragui. Ataque titular: Brahim Díaz, Talbi, Saibari (sistema mais técnico/posicional). En-Nesyri (artilheiro CAF, 11 gols, especialista em cabeceios) entra como substituto. Para marcar, precisa entrar, receber bola e converter — cadeia longa. Odd de 5.00 não remunera adequadamente o risco adicional de partir do banco." }
           ]
         },
         {
@@ -218,7 +218,7 @@ const DATA = {
           grupo: "C",
           local: "Gillette Stadium, Boston (Foxborough)",
           placar: null,
-          stats: "Duelo histórico: Escócia em sua 1ª Copa desde 1998 (28 anos de espera!) e Haiti de volta depois de 52 anos (última Copa: 1974). Robertson (Liverpool, capitão), McTominay (Napoli, 11G na Serie A 24/25), Tierney, McKenna. Ataque: Shankland + Adams. Técnico: Steve Clarke. Amistosos pré-Copa: 5-0 Curaçao, 3-1 Bolívia. Haiti (WR 83): Nazon (artilheiro histórico, 20+ gols), Providence, Isidor. Maioria dos jogadores no MLS e Ligue 2. H2H: Escócia 1-0 Haiti na Copa 1974 (gol Joe Jordan). Modelo: pM (Escócia) = 64.8%, pE = 21.6%, pV (Haiti) = 13.6%, λEscócia = 1.87, λHaiti = 0.72.",
+          stats: "Duelo histórico: Escócia em sua 1ª Copa desde 1998 (28 anos de espera!) e Haiti de volta depois de 52 anos (última Copa: 1974). Robertson (Liverpool, capitão), McTominay (Napoli, 11G na Serie A 24/25) CONFIRMADO após recuperação de gripe estomacal. Billy Gilmour CORTADO do Mundial (substituído por Tyler Fletcher, Manchester United). XI provável: Gunn; Hickey, Souttar, McKenna, Robertson; Gannon-Doak, McTominay, Ferguson, Christie; Adams, Shankland. Técnico: Steve Clarke. Amistosos pré-Copa: 5-0 Curaçao, 3-1 Bolívia. Haiti (WR 83): sem lesões. Nazon (artilheiro histórico, 20+ gols), Providence, Isidor confirmados. XI provável (4-4-2): Placide; Arcus, Ade, Delcroix, Experience; Casimir, Jean Jacques, Bellegarde, Providence; Nazon, Isidor. Árbitro: Mustapha Gorbal (Argélia). H2H: Escócia 1-0 Haiti na Copa 1974 (gol Joe Jordan). Modelo: pM (Escócia) = 64.8%, pE = 21.6%, pV (Haiti) = 13.6%, λEscócia = 1.87, λHaiti = 0.72.",
           numeros: [
             { v: "65%", l: "Prob. Escócia" },
             { v: "1.87", l: "λ Escócia" },
