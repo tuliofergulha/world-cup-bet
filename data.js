@@ -1,13 +1,13 @@
 // Copa 2026 — Painel de Análise. Atualizado diariamente pelo briefing das 8h.
 // Gerado automaticamente pela routine de análise (acessa sites + valida stats reais).
 const DATA = {
-  atualizadoEm: "2026-06-13T14:45:00-03:00",
+  atualizadoEm: "2026-06-14T00:35:00-03:00",
 
   // Campos não-deriváveis do placar — preenchidos pela routine. Totais (jogos/gols/média)
   // são auto-calculados pelo app a partir dos placares.
   estatisticasManuais: {
-    cartoesAmarelos: 7,
-    escanteiosMed: "9.2"
+    cartoesAmarelos: 14,
+    escanteiosMed: "8.9"
   },
 
   dias: [
@@ -138,8 +138,8 @@ const DATA = {
     },
     {
       data: "2026-06-13",
-      titulo: "Dia 3 — Brasil estreia",
-      contexto: "O grande dia: Brasil enfrenta Marrocos no MetLife Stadium (NY) às 19h. Catar e Suíça abrem o dia às 16h em Santa Clara — missão quase impossível para os catarenses (modelo: 90.8% Suíça). À noite, Escócia e Haiti fazem a estreia histórica de dois países que voltam à Copa após décadas. Brasil chega sem Neymar (lesão muscular), mas com Vinicius Jr. e Raphinha intactos e Ancelotti estreando como técnico.",
+      titulo: "Dia 3 — Defesas resistem, Vinicius brilha",
+      contexto: "Dia de resultados inesperados. Suíça desperdiçou um arsenal (26 chutes, 3.24 xG) e só converteu o pênalti de Embolo (17') — Khoukhi cabeceou o empate histórico no 90+4', 1.º ponto do Catar em Copas do Mundo. Brasil e Marrocos protagonizaram o duelo mais aguardado: Saibari abriu (21', passe Brahim Díaz), Vinicius igualou com golaço (32', corte do pé direito, passe de Bruno Guimarães). HT 1-1, final 1-1 — Alisson fez dois milagres no 2T. Escócia venceu o Haiti de 1-0 em Boston: McGinn (28', rebote após Adams bloqueado por Placide) em jogo no qual Haiti dominou posse (56%) e finalizações (15-9). Grupo C: Escócia lidera com 3 pts, Brasil e Marrocos com 1.",
       jogos: [
         {
           hora: "16h",
@@ -147,29 +147,29 @@ const DATA = {
           visitante: "Catar",
           grupo: "B",
           local: "Levi's Stadium, Santa Clara (SF Bay Area)",
-          placar: null,
-          stats: "Maior desequilíbrio do dia. Suíça (FIFA #19, Elo 1891) vs Catar (FIFA #57, Elo 1421). Catar foi o 1º time anfitrião a perder na estreia em 2022 (0-2 vs Equador), caiu os 3 grupos (1GF, 7GC). Suíça venceu 6/6 eliminatórias com apenas 2GC. Xhaka (Arsenal, capitão, 36 anos, 130+ caps) dirige um meio-campo sem falhas; Embolo é o finalizador. Histórico: 1 jogo (amistoso 2018, Catar 1-0, gol Afif). Hassan Al-Haydos (35 anos, 186 caps) lidera um elenco envelhecido. Lopetegui substituído por Marquez López. XI confirmados — Suíça: Kobel; Widmer, Akanji, Elvedi, Rodriguez; Xhaka, Freuler; Vargas, Rieder, Ndoye; Embolo. Catar: Abunada; Al Oui, Miguel, Khoukhi, Elamin; Laye, Fathi, Gaber; Edmilson Jr., Almoez Ali, Afif. Árbitro: Saíd Martínez (Honduras) — estreante como árbitro-chefe em Copa; foi assistente em 2022. Média de 3.2 amarelos/jogo no WC 2026 (6 jogos). Perfil conservador em grandes torneios.",
+          placar: "1 × 1",
+          stats: "Suíça desperdiçou 26 chutes e 3.24 xG — só converteu o pênalti de Embolo (17') após falta de Abunada em Freuler (Abunada amarelado). Gaber (Catar) amarelado no 22' por falta em Vargas; Zakaria (Suíça) amarelado no 2T. Khoukhi cabeceou o empate histórico no 90+4': 1.º ponto do Catar na história das Copas. Árbitro Saíd Martínez: 3 amarelos, jogo controlado.",
           numeros: [
-            { v: "91%", l: "Prob. Suíça" },
-            { v: "2.91", l: "λ Suíça" },
-            { v: "0.22", l: "λ Catar" },
-            { v: "6/6", l: "Vitórias Suíça (elim.)" }
+            { v: "26", l: "Chutes Suíça" },
+            { v: "3.24", l: "xG Suíça" },
+            { v: "1 × 1", l: "Placar final" },
+            { v: "3", l: "Amarelos" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Suíça vence a zero", odd: 2.20, edge: 0.67, kelly: 0.14,
-              justificativa: "P(Suíça a zero) = P(Catar=0) × P(Suíça≥1) = e^(−0.22) × (1−e^(−2.91)) = 0.803 × 0.946 = 0.759. Edge = (0.759 × 2.20) − 1 = 67%. Árbitro Saíd Martínez é conservador (3.2 cartões/jogo), não vai inflar o jogo com pênaltis — P(pênalti Catar) é baixíssima. Kobel (Dortmund) concedeu apenas 2 gols em 6 eliminatórias. Defesa Catar: Khoukhi 35, Elamin inexperiente." },
-            { cat: "conservadora", mercado: "Suíça marca no 1T", odd: 1.85, edge: 0.42, kelly: 0.12,
-              justificativa: "λ Suíça 1T ≈ 2.91/2 = 1.455. P(≥1 gol no 1T) = 1−e^(−1.455) = 76.6%. Edge = (0.766 × 1.85) − 1 = 42%. Catar costuma jogar recuado, criando espaços para contra-ataques rápidos da Suíça — Ndoye e Vargas pelas alas são rápidos. Saíd Martínez não bloqueia a transição com cartões precoces." },
-            { cat: "intermediaria", mercado: "Breel Embolo marca", odd: 2.80, edge: 0.45, kelly: 0.06,
-              justificativa: "λ_Embolo ≈ 2.91 × 0.25 = 0.728 (25% dos gols suíços). P(marca) = 1−e^(−0.728) = 51.7%. Edge = (0.517 × 2.80) − 1 = 45%. Monaco 25/26: 14 gols em 35 jogos. É o 9 referencial — físico, forte no ar contra defesa Catar envelhecida (Khoukhi 35, Miguel sem experiência Copa)." },
-            { cat: "intermediaria", mercado: "Ruben Vargas marca", odd: 3.00, edge: 0.32, kelly: 0.04,
-              justificativa: "λ_Vargas ≈ 2.91 × 0.20 = 0.582 (winger ativo). P(marca) = 1−e^(−0.582) = 44.1%. Edge = (0.441 × 3.00) − 1 = 32%. Vargas pela esquerda vai encarar Al Oui, lateral direito do Catar sem experiência internacional de ponta. Com Suíça dominando, Vargas tem múltiplas entradas na área." },
-            { cat: "intermediaria", mercado: "Over 3.5 cartões no jogo", odd: 2.80, edge: 0.10, kelly: 0.01,
-              justificativa: "P(≥4 cartões) com Saíd Martínez (λ=3.2 no WC): Poisson → P(≥4) = 39.4%. Edge = (0.394 × 2.80) − 1 = 10%. Catar, desesperado para travar transições da Suíça, fará faltas táticas repetidas. Árbitro inexperiente como chefe pode reagir distribuindo cartões ao sentir o jogo fugir do controle no 2T." },
-            { cat: "loucura", mercado: "Suíça vence + over 3.5 gols", odd: 3.80, edge: 0.42, kelly: 0.04,
-              justificativa: "P(Suíça vence E total≥4) = soma sobre i>j com i+j≥4 dos P(SUI=i)×P(CAT=j) ≈ 37.3%. Edge = (0.373 × 3.80) − 1 = 42%. λSUI=2.91 garante que goleadas são o cenário modal. Nas eliminatórias suíças: 4-0, 5-1 foram frequentes. Catar abre ao precisar de gol no 2T." },
-            { cat: "loucura", mercado: "Suíça −2.5 handicap", odd: 3.50, edge: 0.79, kelly: 0.08,
-              justificativa: "P(Suíça vence por ≥3) ≈ 51.1% — enumeração Poisson sobre pares (SUI,CAT) com SUI−CAT≥3. Edge = (0.511 × 3.50) − 1 = 79%. Mercado coloca a vitória por 3+ como evento raro, mas o modelo (λSUI=2.91, λCAT=0.22) indica que é o cenário esperado. Saldo eliminatórias: +15 gols." }
+            { cat: "conservadora", mercado: "Suíça vence a zero", odd: 2.20, edge: 0.67, kelly: 0.14, resultado: "miss",
+              justificativa: "P(Suíça a zero) = P(Catar=0) × P(Suíça≥1) = e^(−0.22) × (1−e^(−2.91)) = 0.803 × 0.946 = 0.759. Edge = (0.759 × 2.20) − 1 = 67%. Khoukhi cabeceou no 90+4' e destruiu o clean sheet no último suspiro." },
+            { cat: "conservadora", mercado: "Suíça marca no 1T", odd: 1.85, edge: 0.42, kelly: 0.12, resultado: "hit",
+              justificativa: "λ Suíça 1T ≈ 2.91/2 = 1.455. P(≥1 gol no 1T) = 1−e^(−1.455) = 76.6%. Edge = (0.766 × 1.85) − 1 = 42%. Embolo converteu o pênalti no 17' — exatamente como o modelo previa." },
+            { cat: "intermediaria", mercado: "Breel Embolo marca", odd: 2.80, edge: 0.45, kelly: 0.06, resultado: "hit",
+              justificativa: "λ_Embolo ≈ 2.91 × 0.25 = 0.728. P(marca) = 51.7%. Edge = 45%. Embolo converteu o pênalti no 17' após falta de Abunada em Freuler." },
+            { cat: "intermediaria", mercado: "Ruben Vargas marca", odd: 3.00, edge: 0.32, kelly: 0.04, resultado: "miss",
+              justificativa: "λ_Vargas ≈ 2.91 × 0.20 = 0.582. P(marca) = 44.1%. Edge = 32%. Vargas sofreu a falta que gerou o pênalti (Gaber amarelado no 22') mas não marcou no jogo." },
+            { cat: "intermediaria", mercado: "Over 3.5 cartões no jogo", odd: 2.80, edge: 0.10, kelly: 0.01, resultado: "miss",
+              justificativa: "P(≥4 cartões) com Saíd Martínez (λ=3.2 no WC): Poisson → P(≥4) = 39.4%. Edge = 10%. Apenas 3 amarelos no total (Abunada, Gaber, Zakaria) — árbitro foi mais conservador do que seu perfil indicava." },
+            { cat: "loucura", mercado: "Suíça vence + over 3.5 gols", odd: 3.80, edge: 0.42, kelly: 0.04, resultado: "miss",
+              justificativa: "P(Suíça vence E total≥4) ≈ 37.3%. Edge = 42%. A goleada não veio: empate 1-1, Khoukhi no 90+4' impediu qualquer cenário de goleada suíça." },
+            { cat: "loucura", mercado: "Suíça −2.5 handicap", odd: 3.50, edge: 0.79, kelly: 0.08, resultado: "miss",
+              justificativa: "P(Suíça vence por ≥3) ≈ 51.1%. Edge = 79%. O modelo era correto em termos de dominância, mas o futebol entregou empate. Khoukhi cabeceou no 90+4' — o pior momento possível para o clean sheet suíço." }
           ]
         },
         {
@@ -178,29 +178,29 @@ const DATA = {
           visitante: "Marrocos",
           grupo: "C",
           local: "MetLife Stadium, East Rutherford (Nova York)",
-          placar: null,
-          stats: "O duelo mais esperado do dia. Brasil (Elo 1991, FIFA #6) vem sem Neymar (lesão grau 2 na panturrilha) e sem Wesley (lesão muscular, cortado do Mundial) — Danilo joga como LD e Alex Sandro como LE. Vinicius Jr. (Ballon d'Or 2024, 36G+A no La Liga 24/25), Raphinha e Ancelotti estreando como técnico. XI provável: Alisson; Danilo, Marquinhos, Gabriel Magalhães, Alex Sandro; Casemiro, Bruno Guimarães; Raphinha, Lucas Paquetá, Vinicius Jr.; Matheus Cunha. Marrocos (Elo 1827, FIFA #7): sem Ziyech (excluído), sem Aguerd (joelho, corte), sem Ezzalzouli (joelho, corte). Mazraoui (luxação parcial no ombro em amistoso vs Noruega) treinou normalmente na quinta e está confirmado — mas pode estar a ~85%. En-Nesyri (11 gols nas Eliminatórias CAF) INICIA NO BANCO; ataque titular: Brahim Díaz, Talbi, Saibari. XI provável: Bounou; Hakimi, Issa Diop, Chadi Riad, Mazraoui; El Aynaoui, Bouaddi, Ounahi; Brahim Díaz, Talbi, Saibari. H2H: Brasil 3-0 na Copa 1998. Marrocos 2-1 em amistoso (set/2023). Árbitro: Slavko Vincic (Eslovênia, 46 anos) — 4.13 amarelos/jogo na carreira (330 jogos), 0 vermelhos em 2 jogos de Copa, 0.29 pênaltis/jogo na 2025/26. Experiente e equilibrado, não tende a inflar cartões em jogos de alto calibre.",
+          placar: "1 × 1",
+          stats: "Saibari abriu (21', passe de Brahim Díaz). Vinicius Jr. igualou com golaço (32': recebeu de Bruno Guimarães na esquerda, cortou pro pé direito e acertou o ângulo oposto). HT 1-1 — Ancelotti substituiu Roger Ibañez e Casemiro (ambos com cartão) por Danilo e Fabinho no intervalo. Alisson fez dois milagres no 2T para preservar o ponto. 80.663 torcedores no MetLife Stadium.",
           numeros: [
-            { v: "61%", l: "Prob. Brasil" },
-            { v: "1.79", l: "λ Brasil" },
-            { v: "0.80", l: "λ Marrocos" },
-            { v: "36", l: "Gols Vinicius Jr. (Real 24/25)" }
+            { v: "1 × 1", l: "Placar final" },
+            { v: "32'", l: "Gol Vinicius" },
+            { v: "1-1", l: "Placar no intervalo" },
+            { v: "80.663", l: "Torcedores" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Empate no intervalo", odd: 2.10, edge: 0.16, kelly: 0.04,
-              justificativa: "P(empate HT) ≈ 55% com base no padrão de Marrocos em 2022: foi ao intervalo empatado em todos os jogos da fase de grupos. Defesa de Regragui (bloco baixo 4-4-2) resiste no 1T e Brasil tende a forçar mais no 2T. Edge = (0.55 × 2.10) − 1 = 16%. Vincic não precipita o jogo com cartões no 1T — fase inicial tende a ser estudada." },
-            { cat: "conservadora", mercado: "Brasil marca no 1T", odd: 1.80, edge: 0.07, kelly: 0.02,
-              justificativa: "λ Brasil 1T ≈ 1.79/2 = 0.895. P(≥1 gol Brasil no 1T) = 1−e^(−0.895) = 59.2%. Edge = (0.592 × 1.80) − 1 = 7%. Com Vinicius pela esquerda e Raphinha pela direita dominando desde o apito inicial, e Marrocos sem Aguerd (melhor zagueiro, cortado), a probabilidade de gol brasileiro no 1T é real mesmo contra o bloco marroquino." },
-            { cat: "intermediaria", mercado: "Vinicius Jr. marca", odd: 2.40, edge: 0.16, kelly: 0.03,
-              justificativa: "λ_Vini = 1.79 × 0.35 × 1.05 = 0.658 (35% dos gols do Brasil, ajuste +5% por Mazraoui comprometido). P = 1−e^(−0.658) = 48.2%. Edge = (0.482 × 2.40) − 1 = 16%. Vai encarar Mazraoui (LB) a ~85% fisicamente — luxação parcial no ombro. Duelos de velocidade e dribling ficam desequilibrados. É o cobrador de pênaltis e protagonist absoluto sem Neymar." },
-            { cat: "intermediaria", mercado: "Matheus Cunha marca", odd: 4.00, edge: 0.20, kelly: 0.02,
-              justificativa: "λ_Cunha = 1.79 × 0.20 = 0.358 (centroavante titular). P = 1−e^(−0.358) = 30.1%. Edge = (0.301 × 4.00) − 1 = 20%. Com Neymar fora, Cunha é o 9 titular de Ancelotti — físico, gosta de duelar com zagueiros. Issa Diop (CB, 1.93m) é sólido mas lento. Mercado ainda subestima Cunha fora do contexto do Atletico Madrid." },
-            { cat: "intermediaria", mercado: "Lucas Paquetá marca", odd: 4.50, edge: 0.24, kelly: 0.02,
-              justificativa: "λ_Paquetá = 1.79 × 0.18 = 0.322 (meia por trás com liberdade de chegar). P = 1−e^(−0.322) = 27.6%. Edge = (0.276 × 4.50) − 1 = 24%. Paquetá joga na meia-esquerda e tem liberdade de inserção na área — marcou 8 gols na Premier League 24/25. Vincic não costuma negar pênaltis claros (0.29/jogo): se Paquetá entrar na área, é risco real para Marrocos." },
-            { cat: "loucura", mercado: "Brasil vence a zero", odd: 4.00, edge: 0.10, kelly: 0.01,
-              justificativa: "P = P(Brasil vence) × P(Marrocos=0) = 0.61 × e^(−0.80) = 0.61 × 0.449 = 27.4%. Edge = (0.274 × 4.00) − 1 = 10%. Sem Aguerd (melhor zagueiro), Ziyech (criativo) e Ezzalzouli (extremo), o ataque marroquino é Brahim Díaz + Talbi — menos ameaçador. Alisson não cometeu erros graves em 2025/26 e Marquinhos domina os duelos aéreos." },
-            { cat: "loucura", mercado: "Brasil vence + over 2.5 gols", odd: 4.00, edge: 0.36, kelly: 0.03,
-              justificativa: "P(Brasil vence E total≥3) ≈ 34.1% via enumeração Poisson — inclui 2-1, 3-0, 3-1, 2-0+Marrocos 0 (total=2, não conta), 4-0 etc. Edge = (0.341 × 4.00) − 1 = 36%. Ancelotti é um treinador que prefere vencer com estilo — se o Brasil abrir 2-0, não fecha o jogo como Regragui. Com Marrocos precisando atacar para empatar, espaços surgem no 2T." }
+            { cat: "conservadora", mercado: "Empate no intervalo", odd: 2.10, edge: 0.16, kelly: 0.04, resultado: "hit",
+              justificativa: "P(empate HT) ≈ 55% com base no padrão de Marrocos em 2022. Saibari abriu no 21', Vinicius igualou no 32' — ambos os gols no 1T, confirmando HT 1-1. Edge = 16%." },
+            { cat: "conservadora", mercado: "Brasil marca no 1T", odd: 1.80, edge: 0.07, kelly: 0.02, resultado: "hit",
+              justificativa: "λ Brasil 1T ≈ 0.895. P(≥1 gol Brasil no 1T) = 59.2%. Edge = 7%. Vinicius marcou no 32' — golaço cortando do pé esquerdo para o direito." },
+            { cat: "intermediaria", mercado: "Vinicius Jr. marca", odd: 2.40, edge: 0.16, kelly: 0.03, resultado: "hit",
+              justificativa: "λ_Vini = 1.79 × 0.35 × 1.05 = 0.658. P = 48.2%. Edge = 16%. Vinicius marcou o 10.º gol pela Seleção num dos gols mais bonitos da Copa até agora." },
+            { cat: "intermediaria", mercado: "Matheus Cunha marca", odd: 4.00, edge: 0.20, kelly: 0.02, resultado: "miss",
+              justificativa: "λ_Cunha = 1.79 × 0.20 = 0.358. P = 30.1%. Edge = 20%. Cunha não marcou — Brasil não conseguiu ampliar após o empate de Vinicius." },
+            { cat: "intermediaria", mercado: "Lucas Paquetá marca", odd: 4.50, edge: 0.24, kelly: 0.02, resultado: "miss",
+              justificativa: "λ_Paquetá = 1.79 × 0.18 = 0.322. P = 27.6%. Edge = 24%. Paquetá não marcou. Alisson precisou de dois milagres no 2T para segurar o empate." },
+            { cat: "loucura", mercado: "Brasil vence a zero", odd: 4.00, edge: 0.10, kelly: 0.01, resultado: "miss",
+              justificativa: "P = 0.61 × e^(−0.80) = 27.4%. Edge = 10%. Saibari abriu no 21' — Marrocos sem Aguerd e Ziyech ainda foi capaz de marcar e ameaçar no 2T." },
+            { cat: "loucura", mercado: "Brasil vence + over 2.5 gols", odd: 4.00, edge: 0.36, kelly: 0.03, resultado: "miss",
+              justificativa: "P ≈ 34.1%. Edge = 36%. Brasil não venceu e o jogo ficou em 2 gols totais. Marrocos defendeu em bloco no 2T após o empate, sem dar espaços." }
           ]
         },
         {
@@ -209,29 +209,181 @@ const DATA = {
           visitante: "Haiti",
           grupo: "C",
           local: "Gillette Stadium, Boston (Foxborough)",
-          placar: null,
-          stats: "Duelo histórico: Escócia em sua 1ª Copa desde 1998 (28 anos de espera!) e Haiti de volta depois de 52 anos (última Copa: 1974). Robertson (Liverpool, capitão), McTominay (Napoli, 11G na Serie A 24/25) CONFIRMADO após recuperação de gripe estomacal. Billy Gilmour CORTADO do Mundial (substituído por Tyler Fletcher, Manchester United). XI provável: Gunn; Hickey, Souttar, McKenna, Robertson; Gannon-Doak, McTominay, Ferguson, Christie; Adams, Shankland. Técnico: Steve Clarke. Amistosos pré-Copa: 5-0 Curaçao, 3-1 Bolívia. Haiti (WR 83): sem lesões. Nazon (artilheiro histórico, 20+ gols), Providence, Isidor confirmados. XI provável (4-4-2): Placide; Arcus, Ade, Delcroix, Experience; Casimir, Jean Jacques, Bellegarde, Providence; Nazon, Isidor. Árbitro: Mustapha Gorbal (Argélia). H2H: Escócia 1-0 Haiti na Copa 1974 (gol Joe Jordan). Modelo: pM (Escócia) = 64.8%, pE = 21.6%, pV (Haiti) = 13.6%, λEscócia = 1.87, λHaiti = 0.72.",
+          placar: "1 × 0",
+          stats: "McGinn (28') finalizou o rebote após Placide bloquear Adams em contra-ataque iniciado por Grant Hanley. Haiti dominou a posse (56%) e as finalizações (15-9), com 2 finalizações no alvo para cada lado — partida muito disputada. Apenas 2 amarelos: Bellegarde (Haiti, tackle imprudente) e McLean (Escócia, perna alta). Árbitro Ghorbal foi mais conservador do que o esperado. Escócia lidera o Grupo C com 3 pts.",
           numeros: [
-            { v: "65%", l: "Prob. Escócia" },
-            { v: "1.87", l: "λ Escócia" },
-            { v: "0.72", l: "λ Haiti" },
-            { v: "11", l: "Gols McTominay (Serie A 24/25)" }
+            { v: "1 × 0", l: "Placar final" },
+            { v: "28'", l: "Gol McGinn" },
+            { v: "15-9", l: "Chutes HAI-SCO" },
+            { v: "56%", l: "Posse Haiti" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.50, edge: 0.10, kelly: 0.05,
-              justificativa: "P(total≥2) com λ_total=2.59: 1 − P(0) − P(1) = 1 − 0.075 − 0.194 = 73.1%. Edge = (0.731 × 1.50) − 1 = 10%. Escócia vem de 5-0 e 3-1 nos amistosos — Robertson orquestra pela esquerda, Gannon-Doak pela direita. Haiti não tem estrutura para 90min de pressão sem ceder ao menos 1 gol. Mercado priced muito apertado, mas o edge existe." },
-            { cat: "conservadora", mercado: "Over 3.5 cartões no jogo", odd: 1.90, edge: 0.08, kelly: 0.02,
-              justificativa: "Ghorbal (Argélia) no WC 2026: média de 4.0 cartões/jogo e 28.8 faltas/jogo. P(≥4 cartões) com Poisson(4.0) = 56.7%. Edge = (0.567 × 1.90) − 1 = 8%. Haiti faz muitas faltas táticas (MLS, Ligue 2 — físico e intenso). Escócia também joga duro com McTominay e Ferguson no meio. Árbitro africano tende a reagir rapidamente com cartões." },
-            { cat: "intermediaria", mercado: "Scott McTominay marca", odd: 2.80, edge: 0.11, kelly: 0.02,
-              justificativa: "λ_McTominay ≈ 1.87 × 0.27 = 0.505. P(marca) = 1−e^(−0.505) = 39.6%. Edge = (0.396 × 2.80) − 1 = 11%. 11 gols pelo Napoli na Serie A 24/25. Finalizador de média distância e bolas paradas — Haiti vai fazer faltas perto da área (Ghorbal = 28.8 faltas/jogo). McTominay cobra falta e chega na segunda bola melhor que qualquer jogador do Haiti." },
-            { cat: "intermediaria", mercado: "Che Adams marca", odd: 3.50, edge: 0.50, kelly: 0.05,
-              justificativa: "λ_Adams ≈ 1.87 × 0.30 = 0.561. P(marca) = 1−e^(−0.561) = 42.9%. Edge = (0.429 × 3.50) − 1 = 50%. Adams é o atacante referencial da Escócia — duelos físicos com Ade e Delcroix (defensores haitianos em ligas baixas). Nos amistosos Escócia encontrou Adams como artilheiro da campanha. Mercado subestima o 9 escocês vs uma defesa de Ligue 2 e segunda divisão." },
-            { cat: "intermediaria", mercado: "Haiti marca", odd: 2.10, edge: 0.08, kelly: 0.02,
-              justificativa: "P(Haiti≥1) = 1−e^(−0.72) = 51.3%. Edge = (0.513 × 2.10) − 1 = 8%. Nazon (artilheiro histórico Haiti, velocidade no contra-ataque) e Isidor têm explosão. Se Escócia criar o placar cedo e jogar aberta buscando mais gols, o Haiti pode roubar um contra-ataque. Ghorbal (28.8 faltas/jogo) → pênalti é possível se Haiti entrar na área." },
-            { cat: "loucura", mercado: "Escócia −1.5 handicap", odd: 3.20, edge: 0.25, kelly: 0.03,
-              justificativa: "P(Escócia vence por ≥2) ≈ 39.1% via Poisson sobre pares (ESC=k, HAI=j) com k−j≥2. Edge = (0.391 × 3.20) − 1 = 25%. Haiti na 1ª Copa desde 1974 — pressão emocional enorme no Gillette Stadium. Nos amistosos escoceses: 5-0 e 3-1. Com Robertson+McTominay e uma defesa haitiana de nível Ligue 2 vs Série A italiana, a goleada é cenário plausível." },
-            { cat: "loucura", mercado: "Escócia vence + Haiti marca", odd: 5.00, edge: 0.18, kelly: 0.01,
-              justificativa: "P(ESC>HAI E HAI≥1) = soma sobre pares i>j≥1: (2,1)+(3,1)+(3,2)+(4+,1)+(4+,2)+(4+,3) ≈ 23.6%. Edge = (0.236 × 5.00) − 1 = 18%. Cenário: Escócia domina mas Haiti marca em contra ou pênalti (Ghorbal + Nazon = risco real). 2-1 ou 3-1 são placares realistas. Combo correlacionado positivamente — se Haiti marcar significa que houve abertura de jogo que favorece mais gols da Escócia também." }
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.50, edge: 0.10, kelly: 0.05, resultado: "miss",
+              justificativa: "P(total≥2) com λ_total=2.59: 73.1%. Edge = 10%. Apenas 1 gol no total — Haiti dominou mas Placide defendeu bem e a Escócia foi eficiente com o único gol (McGinn 28')." },
+            { cat: "conservadora", mercado: "Over 3.5 cartões no jogo", odd: 1.90, edge: 0.08, kelly: 0.02, resultado: "miss",
+              justificativa: "Ghorbal (Argélia): média de 4.0 cartões/jogo. P(≥4 cartões) com Poisson(4.0) = 56.7%. Edge = 8%. Apenas 2 amarelos no jogo — árbitro foi muito mais conservador do que o perfil indicava." },
+            { cat: "intermediaria", mercado: "Scott McTominay marca", odd: 2.80, edge: 0.11, kelly: 0.02, resultado: "miss",
+              justificativa: "λ_McTominay ≈ 1.87 × 0.27 = 0.505. P(marca) = 39.6%. Edge = 11%. McGinn marcou o gol da partida (28'), não McTominay — que jogou bem no meio mas não finalizou." },
+            { cat: "intermediaria", mercado: "Che Adams marca", odd: 3.50, edge: 0.50, kelly: 0.05, resultado: "miss",
+              justificativa: "λ_Adams ≈ 1.87 × 0.30 = 0.561. P(marca) = 42.9%. Edge = 50%. Adams foi bloqueado por Placide — o rebote foi convertido por McGinn. Adams criou, McGinn finalizou." },
+            { cat: "intermediaria", mercado: "Haiti marca", odd: 2.10, edge: 0.08, kelly: 0.02, resultado: "miss",
+              justificativa: "P(Haiti≥1) = 1−e^(−0.72) = 51.3%. Edge = 8%. Haiti dominou (15 chutes, 56% posse) mas não marcou. Gunn fez boas defesas quando necessário." },
+            { cat: "loucura", mercado: "Escócia −1.5 handicap", odd: 3.20, edge: 0.25, kelly: 0.03, resultado: "miss",
+              justificativa: "P(Escócia vence por ≥2) ≈ 39.1%. Edge = 25%. 1-0 foi o placar — o Haiti resistiu muito mais do que os amistosos (5-0, 3-1) sugeriam. Copa não é amistoso." },
+            { cat: "loucura", mercado: "Escócia vence + Haiti marca", odd: 5.00, edge: 0.18, kelly: 0.01, resultado: "miss",
+              justificativa: "P(ESC>HAI E HAI≥1) ≈ 23.6%. Edge = 18%. Haiti não marcou apesar de dominar — Gunn foi bem nas poucas finalizações centrais." }
+          ]
+        }
+      ]
+    },
+    {
+      data: "2026-06-14",
+      titulo: "Dia 4 — Dupla europeia: Alemanha estreia, Japão desafia Holanda",
+      contexto: "Cinco grupos entram em cena no dia mais movimentado até agora. A rodada abre de madrugada (1h BRT) com Austrália vs Turquia em Vancouver — jogo de equilíbrio moderado no Grupo D. Às 14h, Alemanha estreia contra a debutante Curaçao em Houston (86% de favoritismo — o maior do dia). Às 17h, o duelo mais intrigante: Holanda vs Japão em Arlington, Texas — Japão chegou com 6 vitórias seguidas em amistosos (incluindo Brasil e Inglaterra) e Timber (HOL) está fora por lesão, fragilizando a defesa holandesa. Às 20h, Costa do Marfim vs Equador na Filadélfia pode decidir o 2.º lugar do Grupo E: Valencia é dúvida para o Equador. A rodada fecha às 23h com Suécia vs Tunísia em Monterrey — Gyokeres e Isak formam a mais letal dupla de centroavantes da Copa.",
+      jogos: [
+        {
+          hora: "1h",
+          mandante: "Turquia",
+          visitante: "Austrália",
+          grupo: "D",
+          local: "BC Place, Vancouver",
+          placar: null,
+          stats: "Turquia (Elo 1880, FIFA #22) vs Austrália (Elo 1714, FIFA #26) em Vancouver — sede canadense, sem vantagem de torcida para nenhum lado. Turquia: Hakan Calhanoglu (capitão, 100+ caps, 22 gols, Inter Milan) dirige o meio-campo; Kenan Yildiz (21 anos, Juventus, 3 gols nas eliminatórias) é a ameaça ofensiva. XI provável (4-2-3-1): Günoğlu; Müldür, Demiral, Akaydin, Kadioglu; Calhanoglu, Yokuslu; Yildiz, Yazici, Aktürkoğlu; Turan. Austrália: marcou ≤1 gol em 7 dos últimos 8 jogos. XI provável (3-4-2-1): M. Ryan; Circati, Souttar, Burgess; Italiano, O'Neill, Irvine, Bos; Leckie, Metcalfe; Touré. H2H: Austrália venceu 4 dos últimos 5 jogos contra a Turquia. Árbitro: Jesús Valenzuela (Venezuela). Modelo: pM(TUR)=61.3%, pE=22.6%, pV(AUS)=16.0%, λTUR=1.80, λAUS=0.79.",
+          numeros: [
+            { v: "61%", l: "Prob. Turquia" },
+            { v: "1.80", l: "λ Turquia" },
+            { v: "0.79", l: "λ Austrália" },
+            { v: "4/5", l: "H2H últ. 5 (AUS)" }
+          ],
+          dicas: [
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.52, edge: 0.11, kelly: 0.05,
+              justificativa: "λ_total = 1.80+0.79 = 2.59. P(total≥2) = 1 − e^(−2.59)×(1+2.59) = 1 − 0.075×3.59 = 73.1%. Edge = (0.731×1.52)−1 = 11.1%. Austrália tem histórico de jogos fechados (≤1 gol em 7/8 jogos) mas a Turquia de Calhanoglu+Yildiz pressionará desde o apito. λ_TUR=1.80 sozinho garante que 0 gols da Turquia é improvável (probabilidade: 16.5%)." },
+            { cat: "conservadora", mercado: "Turquia vence a zero", odd: 2.85, edge: 0.08, kelly: 0.01,
+              justificativa: "P = P(AUS=0) × P(TUR≥1) = e^(−0.79) × (1−e^(−1.80)) = 0.454×0.835 = 37.9%. Edge = (0.379×2.85)−1 = 8.0%. Austrália marcou ≤1 gol em 7/8 partidas recentes — o ataque dos Socceroos (Touré como único 9 confirmado) não é ameaçador. Yildiz+Aktürkoğlu pelas alas vão forçar a defesa australiana a 3 CBs." },
+            { cat: "intermediaria", mercado: "Kenan Yildiz marca", odd: 2.75, edge: 0.09, kelly: 0.01,
+              justificativa: "λ_Yildiz ≈ 1.80 × 0.28 = 0.504 (28% dos gols turcos — 3 gols nas eliminatórias, winger com liberdade de infiltração). P(marca) = 1−e^(−0.504) = 39.5%. Edge = (0.395×2.75)−1 = 8.6%. Com 21 anos e um Calhanoglu dando a bola sempre à frente, Yildiz cria espaços pela direita contra o 3-4-2-1 australiano. Circati e Italiano são laterais-ala sem DNA defensivo puro." },
+            { cat: "intermediaria", mercado: "Austrália não perde (dupla hipótese)", odd: 2.80, edge: 0.08, kelly: 0.01,
+              justificativa: "P(empate + AUS vence) = 22.6%+16.0% = 38.6%. Edge = (0.386×2.80)−1 = 8.1%. Contrarianismo justificado: Austrália venceu 4 dos últimos 5 H2H vs Turquia, os Socceroos têm solidez defensiva (Souttar + Ryan no gol) e o mercado provavelmente precifica a Turquia abaixo de 1.60 — sub-avaliando o valor no lado australiano." },
+            { cat: "loucura", mercado: "Turquia vence + over 2.5 gols", odd: 3.20, edge: 0.14, kelly: 0.02,
+              justificativa: "P(TUR vence E total≥3) = P(TUR vence) − P(1-0) − P(2-0) = 0.613 − (0.297×0.454) − (0.267×0.454) = 0.613 − 0.135 − 0.121 = 35.7%. Edge = (0.357×3.20)−1 = 14.2%. Com λ_TUR=1.80, a Turquia frequentemente marca 2+ e a Austrália pode pontuar em contra. Calhanoglu conduz mas também não fecha o jogo quando vence — perfil mais ofensivo do que defensivo." },
+            { cat: "loucura", mercado: "Turquia −1.5 handicap", odd: 3.50, edge: 0.23, kelly: 0.02,
+              justificativa: "P(TUR vence por ≥2) ≈ 35.2% (soma Poisson sobre k−j≥2). Edge = (0.352×3.50)−1 = 23.2%. Mercado trata a vitória por 2+ como evento raro (odds 3.50 → ~29%), mas com λ_TUR=1.80 e λ_AUS=0.79, o modelo indica que a maioria das vitórias turcas virão com placar amplo. Austrália marcou ≤1 em 7/8 → dificilmente ameaça o clean sheet ou uma vitória por 1." }
+          ]
+        },
+        {
+          hora: "14h",
+          mandante: "Alemanha",
+          visitante: "Curaçao",
+          grupo: "E",
+          local: "NRG Stadium, Houston (Texas)",
+          placar: null,
+          stats: "Maior desequilíbrio do Dia 4. Alemanha (Elo 1932, FIFA #10) em sequência de 9 vitórias seguidas (28 gols marcados, 5 gols concedidos). XI provável (4-2-3-1): Neuer; Kimmich, Tah, Schlotterbeck, Raum; Goretzka, Pavlovic; Sané, Musiala, Wirtz; Havertz. Curaçao: estreia histórica na Copa (menor país por população a disputar um Mundial), 1 vitória nos últimos 5 jogos, apenas 3 gols marcados nesse período. Técnico Dick Advocaat (78 anos, o mais velho da Copa). H2H: Alemanha venceu os 5 encontros. Árbitro a confirmar. Modelo: pM(GER)=85.7%, pE=11.3%, pV(CUR)=3.0%, λGER=2.55, λCUR=0.32.",
+          numeros: [
+            { v: "86%", l: "Prob. Alemanha" },
+            { v: "2.55", l: "λ Alemanha" },
+            { v: "0.32", l: "λ Curaçao" },
+            { v: "9", l: "Vitórias seguidas GER" }
+          ],
+          dicas: [
+            { cat: "conservadora", mercado: "Alemanha vence a zero", odd: 1.70, edge: 0.14, kelly: 0.05,
+              justificativa: "P = P(CUR=0) × P(GER≥1) = e^(−0.32) × (1−e^(−2.55)) = 0.726×0.922 = 0.669. Edge = (0.669×1.70)−1 = 13.7%. Curaçao marcou apenas 3 gols nos últimos 5 jogos; sem jogadores de referência contra uma das melhores defesas da Copa. Neuer em sua última Copa — motivado. λ_CUR=0.32 implica apenas 27.4% de chance de marcar ao menos 1 gol." },
+            { cat: "conservadora", mercado: "Kai Havertz marca", odd: 2.10, edge: 0.12, kelly: 0.03,
+              justificativa: "λ_Havertz ≈ 2.55 × 0.30 = 0.765 (9 striker, maior fatia dos gols da Alemanha — 12 gols nas eliminatórias). P(marca) = 1−e^(−0.765) = 53.5%. Edge = (0.535×2.10)−1 = 12.4%. Com Kimmich+Raum cruzando pelas alas e Musiala+Wirtz chegando por trás, Havertz vai ter chances claras dentro da área contra uma defesa de Curaçao sem experiência europeia de ponta." },
+            { cat: "intermediaria", mercado: "Jamal Musiala marca", odd: 2.25, edge: 0.06, kelly: 0.01,
+              justificativa: "λ_Musiala ≈ 2.55 × 0.25 = 0.638 (meia ofensivo com liberdade total de finalização). P(marca) = 1−e^(−0.638) = 47.2%. Edge = (0.472×2.25)−1 = 6.2%. Musiala no Bayern 24/25 marcou 22 gols em 46 jogos — finalizador de fora da área e drible no dedo. Sem Timber (HOL), mas Musiala tem espaço para explorar o 4-4-2 fechado de Advocaat." },
+            { cat: "intermediaria", mercado: "Over 8.5 escanteios no jogo", odd: 1.85, edge: 0.06, kelly: 0.02,
+              justificativa: "P(≥9 escanteios) ≈ 57% com Alemanha dominando posse e explorando as alas (Kimmich RB, Raum LB, Sané e Wirtz pelos lados). Curaçao vai fechar em bloco baixo — defensores na linha dos 5m geram escanteios. Nos 9 jogos da sequência alemã: média de 6.8 escanteios apenas pelo lado germânico. Com a resistência do Curaçao, a Alemanha vai cruzar repetidamente. Edge = (0.57×1.85)−1 = 5.5%." },
+            { cat: "loucura", mercado: "Alemanha −2.5 handicap", odd: 2.80, edge: 0.13, kelly: 0.02,
+              justificativa: "P(GER vence por ≥3) ≈ P(GER vence) − P(vence por 1) − P(vence por 2) = 0.857 − 0.214 − 0.239 = 40.4%. Edge = (0.404×2.80)−1 = 13.1%. Com λ_GER=2.55, as goleadas são o cenário modal: P(3-0)=15.7%, P(4-0)=10.0%, P(3-1)=5.0%. Alemanha nas eliminatórias: 4-0, 5-0 foram frequentes. Curaçao defensivamente limitada e sem estrutura para resistir por 90 min." },
+            { cat: "loucura", mercado: "Havertz e Musiala ambos marcam", odd: 4.50, edge: 0.13, kelly: 0.01,
+              justificativa: "P ≈ P(Havertz marca) × P(Musiala marca) = 0.535 × 0.472 = 25.3%. Edge = (0.253×4.50)−1 = 13.4%. Independência razoável: Havertz finaliza de dentro da área (pivô), Musiala de fora (meia). Numa Alemanha que marcará 2.55 gols em média, a distribuição entre os dois principais artilheiros é real. Nos últimos 9 jogos da seleção, pelo menos 2 marcadores diferentes em 7 partidas." }
+          ]
+        },
+        {
+          hora: "17h",
+          mandante: "Holanda",
+          visitante: "Japão",
+          grupo: "F",
+          local: "AT&T Stadium, Arlington (Dallas)",
+          placar: null,
+          stats: "Duelo de potências desequilibrado pela forma recente. Japão (Elo 1879, FIFA #18) chegou com 6 vitórias seguidas em amistosos pré-Copa, incluindo vitórias vs Brasil e vs Inglaterra — possivelmente a melhor fase pré-torneio da história japonesa. Mitoma (Brighton) está FORA por lesão muscular. XI previsto Japão (4-2-3-1): Z. Suzuki; Taniguchi, Itakura, H. Ito; Doan, Kamada, Sano, Nakamura; Kubo (Real Sociedad, 7G/49 caps); J. Ito, A. Ueda. Holanda (Elo 1948, FIFA #8): Timber (Arsenal, zagueiro) FORA por lesão — Van Hecke assume. XI previsto (4-3-3): Verbruggen; Dumfries, Van Hecke, Van Dijk, Van de Ven; Reijnders, Gravenberch, De Jong; Summerville, Malen, Gakpo (Liverpool, 20G/50 caps). Árbitro: Ismail Elfath (EUA, residente em Austin). Modelo: pM(HOL)=45.6%, pE=25.2%, pV(JPN)=29.2%, λHOL=1.54, λJPN=1.18.",
+          numeros: [
+            { v: "46%", l: "Prob. Holanda" },
+            { v: "29%", l: "Prob. Japão" },
+            { v: "1.54", l: "λ Holanda" },
+            { v: "6", l: "Vitórias JPN amistosos" }
+          ],
+          dicas: [
+            { cat: "conservadora", mercado: "Japão não perde (dupla hipótese)", odd: 2.10, edge: 0.14, kelly: 0.03,
+              justificativa: "P(empate + JPN vence) = 25.2%+29.2% = 54.4%. Edge = (0.544×2.10)−1 = 14.2%. Japão vem de 6 amistosos sem derrota, incluindo vitórias vs Brasil e England. Timber ausente fragiliza o lado esquerdo holandês — Van Hecke (Brighon) é inferior como construtor. Japão tem o melhor pressing da Copa (Doan+Kamada+Sano em bloco compacto) e Van Dijk sem seu parceiro habitual pode vacilar." },
+            { cat: "conservadora", mercado: "Ambas marcam", odd: 1.95, edge: 0.06, kelly: 0.02,
+              justificativa: "P(HOL≥1 E JPN≥1) = (1−e^(−1.54))×(1−e^(−1.18)) = 0.785×0.692 = 54.3%. Edge = (0.543×1.95)−1 = 5.9%. Com λ_JPN=1.18 (terceiro maior λ de visitante do dia) e um Japão que marcou contra Brasil e Inglaterra em amistosos, é improvável que fique a zero. Elfath (árbitro americano) tende a deixar o jogo fluir — menos interrupções = mais chances de gol." },
+            { cat: "intermediaria", mercado: "Japão vence", odd: 3.80, edge: 0.11, kelly: 0.01,
+              justificativa: "P(JPN vence) = 29.2%. Edge = (0.292×3.80)−1 = 11.0%. Mercado precifica o Japão a ~26% implícito — subestimação clara dada a forma recente. Japão já derrubou Alemanha e Espanha na Copa 2022. Com Timber fora, o flanco esquerdo holandês (Van Hecke) é a vulnerabilidade: Kubo e Junya Ito chegam pela direita e esquerda japonesa com velocidade suficiente para expor o Van Hecke." },
+            { cat: "intermediaria", mercado: "Ayase Ueda marca", odd: 3.20, edge: 0.08, kelly: 0.01,
+              justificativa: "λ_Ueda ≈ 1.18 × 0.35 = 0.413 (centroavante referencial do Japão). P(marca) = 1−e^(−0.413) = 33.8%. Edge = (0.338×3.20)−1 = 8.2%. Ueda (Feyenoord) marcou 16 gols pela Eredivisie 24/25. Duela com Van Hecke e Van Dijk — dois zagueiros que raramente enfrentam 9 de área tão dinâmico. Japão vai criar chances pelo centro se quebrar o meio-campo holandês." },
+            { cat: "intermediaria", mercado: "Cody Gakpo marca", odd: 2.90, edge: 0.07, kelly: 0.01,
+              justificativa: "λ_Gakpo ≈ 1.54 × 0.30 = 0.462 (ponta esquerda, 20 gols em 50 caps, 3 gols no grupo na Copa 2022). P(marca) = 37.0%. Edge = (0.370×2.90)−1 = 7.3%. Gakpo pela esquerda enfrenta Nakamura — lateral-direito japonês de 26 anos, mais técnico do que físico. Com Summerville e Malen como alternativas pelas alas, se Gakpo receber o espaço que teve em 2022, vai finalizar." },
+            { cat: "loucura", mercado: "Japão vence + over 2.5 gols", odd: 7.00, edge: 0.18, kelly: 0.01,
+              justificativa: "P(JPN vence E total≥3) = P(JPN vence) − P(1-0) − P(2-0) = 0.292 − (0.363×0.214) − (0.214×0.214) = 0.292 − 0.077 − 0.046 = 16.9%. Edge = (0.169×7.00)−1 = 18.3%. Japão quando vence joga bem e marca em múltiplas situações — o 2-1 vs Alemanha em 2022 mostrou isso. Com Holanda tendo que atacar para empatar, espaços surgem. Correlação positiva: JPN vence → jogo aberto → mais gols." }
+          ]
+        },
+        {
+          hora: "20h",
+          mandante: "Costa do Marfim",
+          visitante: "Equador",
+          grupo: "E",
+          local: "Lincoln Financial Field, Philadelphia",
+          placar: null,
+          stats: "Jogo que pode definir o 2.º lugar do Grupo E (Alemanha favorita ao 1.º). Equador (Elo 1938, FIFA #23): invicto nos últimos 19 jogos; Enner Valencia (49 gols, capitão, 36 anos) é DÚVIDA por lesão muscular leve — pode iniciar no banco. Sem Valencia o ataque perde referência e artilheiro histórico. XI provável sem Valencia (4-3-3): Galíndez; Ordóñez, Hincapié, Pacho, Estupiñán; Plata, Caicedo, Vite; Minda, Yeboah, Alan Minda. Árbitro: François Letexier (França) — Campeão da Euro 2024 como árbitro, 4.3 amarelos/jogo na carreira, estilo disciplinado mas equilibrado. Costa do Marfim (Elo 1793, FIFA #33): campeã africana em vigor, Amad Diallo (Machester United) e Evann Guessand na frente, Kessie+Fofana no meio. Modelo: pM(ECU)=58.2%, pE=23.4%, pV(CIV)=18.4%, λECU=1.74, λCIV=0.86.",
+          numeros: [
+            { v: "58%", l: "Prob. Equador" },
+            { v: "1.74", l: "λ Equador" },
+            { v: "0.86", l: "λ C. do Marfim" },
+            { v: "19", l: "Jogos inv. Equador" }
+          ],
+          dicas: [
+            { cat: "conservadora", mercado: "Equador não perde (dupla hipótese)", odd: 1.42, edge: 0.16, kelly: 0.09,
+              justificativa: "P(empate + ECU vence) = 23.4%+58.2% = 81.6%. Edge = (0.816×1.42)−1 = 15.9%. Equador invicto em 19 jogos consecutivos — equipe sólida defensivamente mesmo sem Valencia. Caicedo no miolo (Chelsea) é um dos melhores médios defensivos do mundo; Pacho e Hincapié (ambos com experiência europeia de Champions League) travam a defesa. Costa do Marfim é campeã africana mas ainda não testou defensores de nível Champions." },
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.55, edge: 0.14, kelly: 0.06,
+              justificativa: "λ_total = 1.74+0.86 = 2.60. P(total≥2) = 1−e^(−2.60)×(1+2.60) = 1−0.074×3.60 = 73.3%. Edge = (0.733×1.55)−1 = 13.6%. Ambas as seleções vêm de campanhas ofensivas em suas qualificatórias. Letexier tende a deixar o jogo fluir sem interromper com cartões precoces — ambiente propenso a gols desde cedo." },
+            { cat: "conservadora", mercado: "Enner Valencia marca (se jogar)", odd: 2.40, edge: 0.09, kelly: 0.02,
+              justificativa: "λ_Valencia ≈ 1.74 × 0.35 = 0.609 (se titular; ajuste downward se sair do banco). P(marca) = 1−e^(−0.609) = 45.4%. Edge = (0.454×2.40)−1 = 9.0%. Valencia é artilheiro histórico do Equador com 49 gols — sua presença ou ausência é o maior X desta partida. Se jogar desde o início, torna-se a maior ameaça da Copa no dia. Dica condicionada à sua titularidade." },
+            { cat: "intermediaria", mercado: "Costa do Marfim não perde (dupla hipótese)", odd: 2.70, edge: 0.13, kelly: 0.02,
+              justificativa: "P(empate + CIV vence) = 23.4%+18.4% = 41.8%. Edge = (0.418×2.70)−1 = 12.9%. Valor de underdog: Costa do Marfim é campeã africana com Kessie+Fofana dominando o meio e Amad Diallo capaz de criar em velocidade. Equador sem Valencia perde o referencial do ataque — abre espaço para o equilíbrio que o modelo já indica (apenas 58% para Ecuador)." },
+            { cat: "intermediaria", mercado: "Gonzalo Plata marca", odd: 3.80, edge: 0.12, kelly: 0.01,
+              justificativa: "λ_Plata ≈ 1.74 × 0.20 = 0.348 (extremo direito, substituto natural de Valencia na criação). P(marca) = 1−e^(−0.348) = 29.4%. Edge = (0.294×3.80)−1 = 11.7%. Se Valencia não jogar, Plata assume papel de liderança na criação e finalização. Pela direita vai enfrentar Konan (Nantes) — lateral-esquerdo marfinense sem experiência de Champions. Letexier permite duelos físicos." },
+            { cat: "loucura", mercado: "Equador vence + Valencia marca", odd: 4.00, edge: 0.16, kelly: 0.01,
+              justificativa: "P ≈ P(ECU vence) × P(Valencia marca | ECU vence) = 0.582 × 0.50 = 29.1%. Edge = (0.291×4.00)−1 = 16.4%. Correlação positiva: se Equador vence, Valencia provavelmente foi decisivo (artilheiro histórico tende a marcar em vitórias). Combo natural se Valencia for titular. Mercado tende a sub-avaliar Valencia pela dúvida — se ele confirmar, odd de 4.00 representa valor real." }
+          ]
+        },
+        {
+          hora: "23h",
+          mandante: "Suécia",
+          visitante: "Tunísia",
+          grupo: "F",
+          local: "Estadio BBVA, Guadalupe (Monterrey)",
+          placar: null,
+          stats: "Suécia (Elo 1815, FIFA #38) retorna à Copa após perder a classificação em 2022 — motivação histórica. XI provável (4-4-2): V. Johansson; Lagerbielke, I. Hien, Lindelöf; Gudmundsson (recuperado de vírus), Svanberg, Karlström, Ekdal; Isak (Newcastle, 24G/38 caps), Gyokeres (Sporting, 4 gols nos play-offs, Bola de Ouro candidato), Elanga como 3.º atacante. Tunísia (Elo 1697, FIFA #46): pré-Copa horroroso — perdeu para Mali (AFCON), perdeu 1-0 pro Áustria, foi destruída 5-0 pela Bélgica. Hannibal Mejbri (Birmingham City) com dúvida de condicionamento. Árbitro a confirmar. Modelo: pM(SWE)=53.9%, pE=24.3%, pV(TUN)=21.8%, λSWE=1.67, λTUN=0.97.",
+          numeros: [
+            { v: "54%", l: "Prob. Suécia" },
+            { v: "1.67", l: "λ Suécia" },
+            { v: "0.97", l: "λ Tunísia" },
+            { v: "5-0", l: "BEL×TUN amistoso" }
+          ],
+          dicas: [
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.55, edge: 0.15, kelly: 0.07,
+              justificativa: "λ_total = 1.67+0.97 = 2.64. P(total≥2) = 1−e^(−2.64)×(1+2.64) = 1−0.071×3.64 = 74.2%. Edge = (0.742×1.55)−1 = 15.0%. Suécia tem a melhor dupla de centroavantes estreantes da Copa (Gyokeres+Isak). Tunísia marcou vs Bélgica e Áustria em amistosos — não vai jogar fechada em um jogo que precisa de resultado. λ_TUN=0.97 confirma que ela tem potencial ofensivo." },
+            { cat: "conservadora", mercado: "Viktor Gyokeres marca", odd: 2.30, edge: 0.08, kelly: 0.02,
+              justificativa: "λ_Gyokeres ≈ 1.67 × 0.38 = 0.635 (38% dos gols suecos — 4 gols nos play-offs, artilheiro do Sporting 24/25). P(marca) = 1−e^(−0.635) = 47.0%. Edge = (0.470×2.30)−1 = 8.1%. Gyokeres é o finalizador mais prolífico da Copa até agora em termos de xG por chance. Contra Bronn e Ali Abdi na defesa tunisiana (Liga francesa, Ligue 2) — nível inferior ao que Gyokeres enfrenta na Champions. Estreia da Copa, motivação máxima." },
+            { cat: "intermediaria", mercado: "Alexander Isak marca", odd: 2.45, edge: 0.09, kelly: 0.02,
+              justificativa: "λ_Isak ≈ 1.67 × 0.35 = 0.585 (35% dos gols suecos — movimento e velocidade complementam o físico de Gyokeres). P(marca) = 1−e^(−0.585) = 44.3%. Edge = (0.443×2.45)−1 = 8.5%. Isak (Newcastle, 24G/38 caps internacionais) é mais técnico que físico — dribles e finalização de qualidade. A Tunísia que tomou 5 de Lukaku e companhia não tem estrutura para deter as duas referências ofensivas suecas simultaneamente." },
+            { cat: "intermediaria", mercado: "Tunísia não perde (dupla hipótese)", odd: 2.40, edge: 0.11, kelly: 0.02,
+              justificativa: "P(empate + TUN vence) = 24.3%+21.8% = 46.1%. Edge = (0.461×2.40)−1 = 10.6%. Contrarianism justificado: o modelo dá apenas 53.9% para a Suécia — não é favorita dominante. Tunísia tem talento individual (Hannibal se recuperar, Skhiri no meio) e historicamente resiste em estreias de Copa (2018: 2.º lugar do grupo; 2022: 0 GC nos 2 primeiros jogos). Se Hannibal jogar no ritmo certo, a Tunísia pode explorar transições." },
+            { cat: "loucura", mercado: "Gyokeres e Isak ambos marcam", odd: 5.50, edge: 0.14, kelly: 0.01,
+              justificativa: "P ≈ P(Gyokeres marca) × P(Isak marca) = 0.470 × 0.443 = 20.8%. Edge = (0.208×5.50)−1 = 14.4%. Independência relativa: Gyokeres é finalizador de área, Isak é criador+finalizador. Numa Suécia com λ=1.67, a distribuição entre os dois atacantes é natural — marcaram juntos em múltiplos amistosos de 2025/26. Tunísia tomou 5 de Bélgica: não é blindada para segurar dois noves de qualidade europeia por 90 min." },
+            { cat: "loucura", mercado: "Suécia −1.5 handicap", odd: 3.80, edge: 0.13, kelly: 0.01,
+              justificativa: "P(SWE vence por ≥2) = P(SWE vence) − P(SWE vence por exatamente 1) = 0.539 − (P(1-0)+P(2-1)+P(3-2)+...) ≈ 0.539 − 0.241 = 29.8%. Edge = (0.298×3.80)−1 = 13.2%. Com 5-0 contra a Bélgica no radar e Gyokeres+Isak juntos, a goleada sueca é o cenário que o mercado sub-avalia. Tunísia sem Hannibal no ritmo perde o equilíbrio no meio — e quando Suécia abre 2-0, tende a não recuar." }
           ]
         }
       ]

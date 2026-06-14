@@ -181,13 +181,6 @@ function renderScorecard() {
     </div>`;
   }
 
-  if (sc.allPending > 0) {
-    html += `<div class="sc-item">
-      <div class="sc-value neutral">${sc.allPending}</div>
-      <div class="sc-label">Pendentes</div>
-    </div>`;
-  }
-
   el.innerHTML = html;
 }
 
