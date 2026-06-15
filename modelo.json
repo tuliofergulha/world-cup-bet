@@ -75,7 +75,7 @@
   },
   "Turquia": {
    "grupo": "D",
-   "elo": 1880,
+   "elo": 1834.5,
    "fifa": 22,
    "sede": false
   },
@@ -93,55 +93,55 @@
   },
   "Austrália": {
    "grupo": "D",
-   "elo": 1714,
+   "elo": 1759.5,
    "fifa": 26,
    "sede": false
   },
   "Equador": {
    "grupo": "E",
-   "elo": 1938,
+   "elo": 1902.6,
    "fifa": 23,
    "sede": false
   },
   "Alemanha": {
    "grupo": "E",
-   "elo": 1932,
+   "elo": 1940.6,
    "fifa": 10,
    "sede": false
   },
   "Costa do Marfim": {
    "grupo": "E",
-   "elo": 1793,
+   "elo": 1828.4,
    "fifa": 33,
    "sede": false
   },
   "Curaçao": {
    "grupo": "E",
-   "elo": 1545,
+   "elo": 1536.4,
    "fifa": 82,
    "sede": false
   },
   "Holanda": {
    "grupo": "F",
-   "elo": 1948,
+   "elo": 1945.1,
    "fifa": 8,
    "sede": false
   },
   "Japão": {
    "grupo": "F",
-   "elo": 1879,
+   "elo": 1881.9,
    "fifa": 18,
    "sede": false
   },
   "Suécia": {
    "grupo": "F",
-   "elo": 1815,
+   "elo": 1841.3,
    "fifa": 38,
    "sede": false
   },
   "Tunísia": {
    "grupo": "F",
-   "elo": 1697,
+   "elo": 1670.7,
    "fifa": 46,
    "sede": false
   },
@@ -524,33 +524,38 @@
    "j": 19,
    "m": "Turquia",
    "v": "Paraguai",
-   "lM": 1.49,
-   "lV": 1.3,
-   "pM": 0.418,
-   "pE": 0.252,
-   "pV": 0.33
+   "lM": 1.39,
+   "lV": 1.57,
+   "pM": 0.338,
+   "pE": 0.244,
+   "pV": 0.418
   },
   {
    "grupo": "D",
    "j": 20,
    "m": "Turquia",
    "v": "Estados Unidos",
-   "lM": 1.51,
-   "lV": 1.26,
-   "pM": 0.43,
-   "pE": 0.252,
-   "pV": 0.318
+   "lM": 1.4,
+   "lV": 1.52,
+   "pM": 0.35,
+   "pE": 0.246,
+   "pV": 0.404
   },
   {
    "grupo": "D",
    "j": 21,
    "m": "Turquia",
    "v": "Austrália",
-   "lM": 1.8,
-   "lV": 0.79,
-   "pM": 0.613,
-   "pE": 0.226,
-   "pV": 0.16
+   "lM": 1.56,
+   "lV": 1.15,
+   "pM": 0.466,
+   "pE": 0.251,
+   "pV": 0.282,
+   "pM_pre": 0.613,
+   "pE_pre": 0.226,
+   "pV_pre": 0.16,
+   "lM_pre": 1.8,
+   "lV_pre": 0.79
   },
   {
    "grupo": "D",
@@ -568,17 +573,61 @@
    "j": 23,
    "m": "Paraguai",
    "v": "Austrália",
-   "lM": 1.67,
-   "lV": 0.96,
-   "pM": 0.54,
-   "pE": 0.243,
-   "pV": 0.217
+   "lM": 1.55,
+   "lV": 1.16,
+   "pM": 0.464,
+   "pE": 0.252,
+   "pV": 0.285
   },
   {
    "grupo": "D",
    "j": 24,
    "m": "Estados Unidos",
    "v": "Austrália",
+   "lM": 1.54,
+   "lV": 1.2,
+   "pM": 0.452,
+   "pE": 0.252,
+   "pV": 0.296
+  },
+  {
+   "grupo": "E",
+   "j": 25,
+   "m": "Equador",
+   "v": "Alemanha",
+   "lM": 1.3,
+   "lV": 1.85,
+   "pM": 0.271,
+   "pE": 0.227,
+   "pV": 0.502
+  },
+  {
+   "grupo": "E",
+   "j": 26,
+   "m": "Equador",
+   "v": "Costa do Marfim",
+   "lM": 1.56,
+   "lV": 1.16,
+   "pM": 0.465,
+   "pE": 0.252,
+   "pV": 0.283
+  },
+  {
+   "grupo": "E",
+   "j": 27,
+   "m": "Equador",
+   "v": "Curaçao",
+   "lM": 2.47,
+   "lV": 0.34,
+   "pM": 0.841,
+   "pE": 0.123,
+   "pV": 0.036
+  },
+  {
+   "grupo": "E",
+   "j": 28,
+   "m": "Alemanha",
+   "v": "Costa do Marfim",
    "lM": 1.65,
    "lV": 0.99,
    "pM": 0.529,
@@ -587,135 +636,106 @@
   },
   {
    "grupo": "E",
-   "j": 25,
-   "m": "Equador",
-   "v": "Alemanha",
-   "lM": 1.4,
-   "lV": 1.54,
-   "pM": 0.346,
-   "pE": 0.245,
-   "pV": 0.409
-  },
-  {
-   "grupo": "E",
-   "j": 26,
-   "m": "Equador",
-   "v": "Costa do Marfim",
-   "lM": 1.74,
-   "lV": 0.86,
-   "pM": 0.582,
-   "pE": 0.235,
-   "pV": 0.184
-  },
-  {
-   "grupo": "E",
-   "j": 27,
-   "m": "Equador",
-   "v": "Curaçao",
-   "lM": 2.58,
-   "lV": 0.31,
-   "pM": 0.861,
-   "pE": 0.11,
-   "pV": 0.029
-  },
-  {
-   "grupo": "E",
-   "j": 28,
-   "m": "Alemanha",
-   "v": "Costa do Marfim",
-   "lM": 1.72,
-   "lV": 0.88,
-   "pM": 0.572,
-   "pE": 0.237,
-   "pV": 0.191
-  },
-  {
-   "grupo": "E",
    "j": 29,
    "m": "Alemanha",
    "v": "Curaçao",
-   "lM": 2.55,
-   "lV": 0.32,
-   "pM": 0.857,
-   "pE": 0.113,
-   "pV": 0.03
+   "lM": 2.62,
+   "lV": 0.29,
+   "pM": 0.869,
+   "pE": 0.105,
+   "pV": 0.026,
+   "pM_pre": 0.857,
+   "pE_pre": 0.113,
+   "pV_pre": 0.03,
+   "lM_pre": 2.55,
+   "lV_pre": 0.32
   },
   {
    "grupo": "E",
    "j": 30,
    "m": "Costa do Marfim",
    "v": "Curaçao",
-   "lM": 2.05,
-   "lV": 0.56,
-   "pM": 0.724,
-   "pE": 0.186,
-   "pV": 0.09
+   "lM": 2.2,
+   "lV": 0.47,
+   "pM": 0.773,
+   "pE": 0.162,
+   "pV": 0.065
   },
   {
    "grupo": "F",
    "j": 31,
    "m": "Holanda",
    "v": "Japão",
-   "lM": 1.54,
-   "lV": 1.18,
-   "pM": 0.456,
+   "lM": 1.53,
+   "lV": 1.21,
+   "pM": 0.446,
    "pE": 0.252,
-   "pV": 0.292
+   "pV": 0.302,
+   "pM_pre": 0.456,
+   "pE_pre": 0.252,
+   "pV_pre": 0.292,
+   "lM_pre": 1.54,
+   "lV_pre": 1.18
   },
   {
    "grupo": "F",
    "j": 32,
    "m": "Holanda",
    "v": "Suécia",
-   "lM": 1.71,
-   "lV": 0.91,
-   "pM": 0.563,
-   "pE": 0.239,
-   "pV": 0.199
+   "lM": 1.63,
+   "lV": 1.02,
+   "pM": 0.515,
+   "pE": 0.247,
+   "pV": 0.238
   },
   {
    "grupo": "F",
    "j": 33,
    "m": "Holanda",
    "v": "Tunísia",
-   "lM": 2.06,
-   "lV": 0.56,
-   "pM": 0.727,
-   "pE": 0.184,
-   "pV": 0.088
+   "lM": 2.14,
+   "lV": 0.5,
+   "pM": 0.754,
+   "pE": 0.172,
+   "pV": 0.074
   },
   {
    "grupo": "F",
    "j": 34,
    "m": "Japão",
    "v": "Suécia",
-   "lM": 1.53,
-   "lV": 1.21,
-   "pM": 0.447,
+   "lM": 1.48,
+   "lV": 1.33,
+   "pM": 0.407,
    "pE": 0.252,
-   "pV": 0.3
+   "pV": 0.342
   },
   {
    "grupo": "F",
    "j": 35,
    "m": "Japão",
    "v": "Tunísia",
-   "lM": 1.85,
-   "lV": 0.74,
-   "pM": 0.637,
-   "pE": 0.219,
-   "pV": 0.144
+   "lM": 1.93,
+   "lV": 0.66,
+   "pM": 0.677,
+   "pE": 0.205,
+   "pV": 0.118
   },
   {
    "grupo": "F",
    "j": 36,
    "m": "Suécia",
    "v": "Tunísia",
-   "lM": 1.67,
-   "lV": 0.97,
-   "pM": 0.539,
-   "pE": 0.243,
-   "pV": 0.218
+   "lM": 1.81,
+   "lV": 0.78,
+   "pM": 0.62,
+   "pE": 0.224,
+   "pV": 0.155,
+   "pM_pre": 0.539,
+   "pE_pre": 0.243,
+   "pV_pre": 0.218,
+   "lM_pre": 1.67,
+   "lV_pre": 0.97
   },
   {
    "grupo": "G",
@@ -1120,7 +1140,12 @@
   "2026-06-12|Canadá|Bósnia e Herz.",
   "2026-06-13|Suíça|Catar",
   "2026-06-13|Brasil|Marrocos",
-  "2026-06-13|Escócia|Haiti"
+  "2026-06-13|Escócia|Haiti",
+  "2026-06-14|Alemanha|Curaçao",
+  "2026-06-14|Holanda|Japão",
+  "2026-06-14|Turquia|Austrália",
+  "2026-06-14|Costa do Marfim|Equador",
+  "2026-06-14|Suécia|Tunísia"
  ],
- "atualizadoEm": "2026-06-14T03:46:45.942Z"
+ "atualizadoEm": "2026-06-15T12:38:19.057Z"
 }
