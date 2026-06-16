@@ -147,49 +147,49 @@
   },
   "Bélgica": {
    "grupo": "G",
-   "elo": 1849,
+   "elo": 1844.3,
    "fifa": 9,
    "sede": false
   },
   "Irã": {
    "grupo": "G",
-   "elo": 1797,
+   "elo": 1786.6,
    "fifa": 21,
    "sede": false
   },
   "Egito": {
    "grupo": "G",
-   "elo": 1737,
+   "elo": 1741.7,
    "fifa": 29,
    "sede": false
   },
   "Nova Zelândia": {
    "grupo": "G",
-   "elo": 1500,
+   "elo": 1510.4,
    "fifa": 85,
    "sede": false
   },
   "Espanha": {
    "grupo": "H",
-   "elo": 2157,
+   "elo": 2143.3,
    "fifa": 2,
    "sede": false
   },
   "Uruguai": {
    "grupo": "H",
-   "elo": 1890,
+   "elo": 1880.5,
    "fifa": 16,
    "sede": false
   },
   "Arábia Saudita": {
    "grupo": "H",
-   "elo": 1631,
+   "elo": 1640.5,
    "fifa": 61,
    "sede": false
   },
   "Cabo Verde": {
    "grupo": "H",
-   "elo": 1620,
+   "elo": 1633.7,
    "fifa": 67,
    "sede": false
   },
@@ -742,132 +742,147 @@
    "j": 37,
    "m": "Bélgica",
    "v": "Irã",
-   "lM": 1.5,
-   "lV": 1.27,
-   "pM": 0.427,
+   "lM": 1.52,
+   "lV": 1.24,
+   "pM": 0.436,
    "pE": 0.252,
-   "pV": 0.321
+   "pV": 0.311
   },
   {
    "grupo": "G",
    "j": 38,
    "m": "Bélgica",
    "v": "Egito",
-   "lM": 1.65,
-   "lV": 0.99,
-   "pM": 0.529,
-   "pE": 0.245,
-   "pV": 0.226
+   "lM": 1.63,
+   "lV": 1.03,
+   "pM": 0.513,
+   "pE": 0.247,
+   "pV": 0.24,
+   "pM_pre": 0.529,
+   "pE_pre": 0.245,
+   "pV_pre": 0.226,
+   "lM_pre": 1.65,
+   "lV_pre": 0.99
   },
   {
    "grupo": "G",
    "j": 39,
    "m": "Bélgica",
    "v": "Nova Zelândia",
-   "lM": 2.4,
-   "lV": 0.37,
-   "pM": 0.827,
-   "pE": 0.132,
-   "pV": 0.041
+   "lM": 2.35,
+   "lV": 0.39,
+   "pM": 0.814,
+   "pE": 0.14,
+   "pV": 0.047
   },
   {
    "grupo": "G",
    "j": 40,
    "m": "Irã",
    "v": "Egito",
-   "lM": 1.52,
-   "lV": 1.23,
-   "pM": 0.44,
+   "lM": 1.49,
+   "lV": 1.31,
+   "pM": 0.414,
    "pE": 0.252,
-   "pV": 0.307
+   "pV": 0.334
   },
   {
    "grupo": "G",
    "j": 41,
    "m": "Irã",
    "v": "Nova Zelândia",
-   "lM": 2.21,
-   "lV": 0.46,
-   "pM": 0.778,
-   "pE": 0.159,
-   "pV": 0.062
+   "lM": 2.14,
+   "lV": 0.5,
+   "pM": 0.756,
+   "pE": 0.171,
+   "pV": 0.073,
+   "pM_pre": 0.778,
+   "pE_pre": 0.159,
+   "pV_pre": 0.062,
+   "lM_pre": 2.21,
+   "lV_pre": 0.46
   },
   {
    "grupo": "G",
    "j": 42,
    "m": "Egito",
    "v": "Nova Zelândia",
-   "lM": 2.01,
-   "lV": 0.59,
-   "pM": 0.71,
-   "pE": 0.192,
-   "pV": 0.098
+   "lM": 1.99,
+   "lV": 0.6,
+   "pM": 0.703,
+   "pE": 0.195,
+   "pV": 0.102
   },
   {
    "grupo": "H",
    "j": 43,
    "m": "Espanha",
    "v": "Uruguai",
-   "lM": 2.11,
-   "lV": 0.52,
-   "pM": 0.746,
-   "pE": 0.176,
-   "pV": 0.078
+   "lM": 2.1,
+   "lV": 0.53,
+   "pM": 0.741,
+   "pE": 0.178,
+   "pV": 0.081
   },
   {
    "grupo": "H",
    "j": 44,
    "m": "Espanha",
    "v": "Arábia Saudita",
-   "lM": 3.18,
-   "lV": 0.18,
-   "pM": 0.933,
-   "pE": 0.058,
-   "pV": 0.009
+   "lM": 3.06,
+   "lV": 0.19,
+   "pM": 0.924,
+   "pE": 0.065,
+   "pV": 0.011
   },
   {
    "grupo": "H",
    "j": 45,
    "m": "Espanha",
    "v": "Cabo Verde",
-   "lM": 3.23,
-   "lV": 0.17,
-   "pM": 0.937,
-   "pE": 0.054,
-   "pV": 0.008
+   "lM": 3.1,
+   "lV": 0.19,
+   "pM": 0.927,
+   "pE": 0.063,
+   "pV": 0.01,
+   "pM_pre": 0.937,
+   "pE_pre": 0.054,
+   "pV_pre": 0.008,
+   "lM_pre": 3.23,
+   "lV_pre": 0.17
   },
   {
    "grupo": "H",
    "j": 46,
    "m": "Uruguai",
    "v": "Arábia Saudita",
-   "lM": 2.08,
-   "lV": 0.54,
-   "pM": 0.737,
-   "pE": 0.18,
-   "pV": 0.083
+   "lM": 2.02,
+   "lV": 0.58,
+   "pM": 0.714,
+   "pE": 0.19,
+   "pV": 0.096
   },
   {
    "grupo": "H",
    "j": 47,
    "m": "Uruguai",
    "v": "Cabo Verde",
-   "lM": 2.12,
-   "lV": 0.51,
-   "pM": 0.749,
-   "pE": 0.174,
-   "pV": 0.077
+   "lM": 2.04,
+   "lV": 0.57,
+   "pM": 0.722,
+   "pE": 0.187,
+   "pV": 0.091
   },
   {
    "grupo": "H",
    "j": 48,
    "m": "Arábia Saudita",
    "v": "Cabo Verde",
-   "lM": 1.41,
-   "lV": 1.51,
-   "pM": 0.355,
-   "pE": 0.247,
-   "pV": 0.399
+   "lM": 1.4,
+   "lV": 1.53,
+   "pM": 0.347,
+   "pE": 0.246,
+   "pV": 0.407
   },
   {
    "grupo": "I",
@@ -1145,7 +1160,11 @@
   "2026-06-14|Holanda|Japão",
   "2026-06-14|Turquia|Austrália",
   "2026-06-14|Costa do Marfim|Equador",
-  "2026-06-14|Suécia|Tunísia"
+  "2026-06-14|Suécia|Tunísia",
+  "2026-06-15|Espanha|Cabo Verde",
+  "2026-06-15|Bélgica|Egito",
+  "2026-06-15|Arábia Saudita|Uruguai",
+  "2026-06-15|Irã|Nova Zelândia"
  ],
- "atualizadoEm": "2026-06-15T12:38:19.057Z"
+ "atualizadoEm": "2026-06-16T12:07:37.556Z"
 }
