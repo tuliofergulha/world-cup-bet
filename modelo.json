@@ -195,49 +195,49 @@
   },
   "França": {
    "grupo": "I",
-   "elo": 2063,
+   "elo": 2078.5,
    "fifa": 3,
    "sede": false
   },
   "Noruega": {
    "grupo": "I",
-   "elo": 1914,
+   "elo": 1926.9,
    "fifa": 31,
    "sede": false
   },
   "Senegal": {
    "grupo": "I",
-   "elo": 1869,
+   "elo": 1853.5,
    "fifa": 15,
    "sede": false
   },
   "Iraque": {
    "grupo": "I",
-   "elo": 1650,
+   "elo": 1637.1,
    "fifa": 56,
    "sede": false
   },
   "Argentina": {
    "grupo": "J",
-   "elo": 2114,
+   "elo": 2122.8,
    "fifa": 1,
    "sede": false
   },
   "Áustria": {
    "grupo": "J",
-   "elo": 1790,
+   "elo": 1808.5,
    "fifa": 24,
    "sede": false
   },
   "Argélia": {
    "grupo": "J",
-   "elo": 1772,
+   "elo": 1763.2,
    "fifa": 28,
    "sede": false
   },
   "Jordânia": {
    "grupo": "J",
-   "elo": 1638,
+   "elo": 1619.5,
    "fifa": 63,
    "sede": false
   },
@@ -889,116 +889,6 @@
    "j": 49,
    "m": "França",
    "v": "Noruega",
-   "lM": 1.75,
-   "lV": 0.85,
-   "pM": 0.588,
-   "pE": 0.233,
-   "pV": 0.179
-  },
-  {
-   "grupo": "I",
-   "j": 50,
-   "m": "França",
-   "v": "Senegal",
-   "lM": 1.88,
-   "lV": 0.7,
-   "pM": 0.654,
-   "pE": 0.214,
-   "pV": 0.133
-  },
-  {
-   "grupo": "I",
-   "j": 51,
-   "m": "França",
-   "v": "Iraque",
-   "lM": 2.66,
-   "lV": 0.28,
-   "pM": 0.875,
-   "pE": 0.101,
-   "pV": 0.024
-  },
-  {
-   "grupo": "I",
-   "j": 52,
-   "m": "Noruega",
-   "v": "Senegal",
-   "lM": 1.49,
-   "lV": 1.31,
-   "pM": 0.414,
-   "pE": 0.252,
-   "pV": 0.334
-  },
-  {
-   "grupo": "I",
-   "j": 53,
-   "m": "Noruega",
-   "v": "Iraque",
-   "lM": 2.1,
-   "lV": 0.53,
-   "pM": 0.743,
-   "pE": 0.177,
-   "pV": 0.08
-  },
-  {
-   "grupo": "I",
-   "j": 54,
-   "m": "Senegal",
-   "v": "Iraque",
-   "lM": 1.96,
-   "lV": 0.63,
-   "pM": 0.688,
-   "pE": 0.201,
-   "pV": 0.111
-  },
-  {
-   "grupo": "J",
-   "j": 55,
-   "m": "Argentina",
-   "v": "Áustria",
-   "lM": 2.31,
-   "lV": 0.41,
-   "pM": 0.805,
-   "pE": 0.145,
-   "pV": 0.051
-  },
-  {
-   "grupo": "J",
-   "j": 56,
-   "m": "Argentina",
-   "v": "Argélia",
-   "lM": 2.38,
-   "lV": 0.38,
-   "pM": 0.821,
-   "pE": 0.135,
-   "pV": 0.044
-  },
-  {
-   "grupo": "J",
-   "j": 57,
-   "m": "Argentina",
-   "v": "Jordânia",
-   "lM": 2.94,
-   "lV": 0.22,
-   "pM": 0.911,
-   "pE": 0.075,
-   "pV": 0.014
-  },
-  {
-   "grupo": "J",
-   "j": 58,
-   "m": "Áustria",
-   "v": "Argélia",
-   "lM": 1.42,
-   "lV": 1.46,
-   "pM": 0.367,
-   "pE": 0.248,
-   "pV": 0.385
-  },
-  {
-   "grupo": "J",
-   "j": 59,
-   "m": "Áustria",
-   "v": "Jordânia",
    "lM": 1.76,
    "lV": 0.84,
    "pM": 0.592,
@@ -1006,15 +896,145 @@
    "pV": 0.176
   },
   {
+   "grupo": "I",
+   "j": 50,
+   "m": "França",
+   "v": "Senegal",
+   "lM": 1.97,
+   "lV": 0.62,
+   "pM": 0.695,
+   "pE": 0.198,
+   "pV": 0.107,
+   "pM_pre": 0.654,
+   "pE_pre": 0.214,
+   "pV_pre": 0.133,
+   "lM_pre": 1.88,
+   "lV_pre": 0.7
+  },
+  {
+   "grupo": "I",
+   "j": 51,
+   "m": "França",
+   "v": "Iraque",
+   "lM": 2.78,
+   "lV": 0.25,
+   "pM": 0.893,
+   "pE": 0.088,
+   "pV": 0.019
+  },
+  {
+   "grupo": "I",
+   "j": 52,
+   "m": "Noruega",
+   "v": "Senegal",
+   "lM": 1.55,
+   "lV": 1.16,
+   "pM": 0.464,
+   "pE": 0.252,
+   "pV": 0.285
+  },
+  {
+   "grupo": "I",
+   "j": 53,
+   "m": "Noruega",
+   "v": "Iraque",
+   "lM": 2.19,
+   "lV": 0.47,
+   "pM": 0.771,
+   "pE": 0.163,
+   "pV": 0.066,
+   "pM_pre": 0.743,
+   "pE_pre": 0.177,
+   "pV_pre": 0.08,
+   "lM_pre": 2.1,
+   "lV_pre": 0.53
+  },
+  {
+   "grupo": "I",
+   "j": 54,
+   "m": "Senegal",
+   "v": "Iraque",
+   "lM": 1.95,
+   "lV": 0.64,
+   "pM": 0.684,
+   "pE": 0.203,
+   "pV": 0.113
+  },
+  {
+   "grupo": "J",
+   "j": 55,
+   "m": "Argentina",
+   "v": "Áustria",
+   "lM": 2.27,
+   "lV": 0.43,
+   "pM": 0.795,
+   "pE": 0.15,
+   "pV": 0.055
+  },
+  {
+   "grupo": "J",
+   "j": 56,
+   "m": "Argentina",
+   "v": "Argélia",
+   "lM": 2.44,
+   "lV": 0.35,
+   "pM": 0.836,
+   "pE": 0.126,
+   "pV": 0.038,
+   "pM_pre": 0.821,
+   "pE_pre": 0.135,
+   "pV_pre": 0.044,
+   "lM_pre": 2.38,
+   "lV_pre": 0.38
+  },
+  {
+   "grupo": "J",
+   "j": 57,
+   "m": "Argentina",
+   "v": "Jordânia",
+   "lM": 3.07,
+   "lV": 0.19,
+   "pM": 0.924,
+   "pE": 0.065,
+   "pV": 0.011
+  },
+  {
+   "grupo": "J",
+   "j": 58,
+   "m": "Áustria",
+   "v": "Argélia",
+   "lM": 1.49,
+   "lV": 1.31,
+   "pM": 0.415,
+   "pE": 0.252,
+   "pV": 0.333
+  },
+  {
+   "grupo": "J",
+   "j": 59,
+   "m": "Áustria",
+   "v": "Jordânia",
+   "lM": 1.87,
+   "lV": 0.72,
+   "pM": 0.647,
+   "pE": 0.216,
+   "pV": 0.137,
+   "pM_pre": 0.592,
+   "pE_pre": 0.232,
+   "pV_pre": 0.176,
+   "lM_pre": 1.76,
+   "lV_pre": 0.84
+  },
+  {
    "grupo": "J",
    "j": 60,
    "m": "Argélia",
    "v": "Jordânia",
-   "lM": 1.71,
-   "lV": 0.9,
-   "pM": 0.564,
-   "pE": 0.238,
-   "pV": 0.197
+   "lM": 1.74,
+   "lV": 0.87,
+   "pM": 0.579,
+   "pE": 0.235,
+   "pV": 0.185
   },
   {
    "grupo": "K",
@@ -1164,7 +1184,11 @@
   "2026-06-15|Espanha|Cabo Verde",
   "2026-06-15|Bélgica|Egito",
   "2026-06-15|Arábia Saudita|Uruguai",
-  "2026-06-15|Irã|Nova Zelândia"
+  "2026-06-15|Irã|Nova Zelândia",
+  "2026-06-16|França|Senegal",
+  "2026-06-16|Noruega|Iraque",
+  "2026-06-16|Argentina|Argélia",
+  "2026-06-17|Áustria|Jordânia"
  ],
- "atualizadoEm": "2026-06-16T12:07:37.556Z"
+ "atualizadoEm": "2026-06-17T12:02:34.211Z"
 }
