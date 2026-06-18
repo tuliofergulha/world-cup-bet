@@ -243,49 +243,49 @@
   },
   "Portugal": {
    "grupo": "K",
-   "elo": 1986,
+   "elo": 1976.1,
    "fifa": 5,
    "sede": false
   },
   "Colômbia": {
    "grupo": "K",
-   "elo": 1982,
+   "elo": 1991.4,
    "fifa": 13,
    "sede": false
   },
   "RD Congo": {
    "grupo": "K",
-   "elo": 1710,
+   "elo": 1719.9,
    "fifa": 45,
    "sede": false
   },
   "Uzbequistão": {
    "grupo": "K",
-   "elo": 1680,
+   "elo": 1670.6,
    "fifa": 50,
    "sede": false
   },
   "Inglaterra": {
    "grupo": "L",
-   "elo": 2021,
+   "elo": 2042.9,
    "fifa": 4,
    "sede": false
   },
   "Croácia": {
    "grupo": "L",
-   "elo": 1912,
+   "elo": 1890.1,
    "fifa": 11,
    "sede": false
   },
   "Panamá": {
    "grupo": "L",
-   "elo": 1715,
+   "elo": 1685.3,
    "fifa": 34,
    "sede": false
   },
   "Gana": {
    "grupo": "L",
-   "elo": 1655,
+   "elo": 1684.7,
    "fifa": 73,
    "sede": false
   }
@@ -1041,22 +1041,27 @@
    "j": 61,
    "m": "Portugal",
    "v": "Colômbia",
-   "lM": 1.39,
-   "lV": 1.55,
-   "pM": 0.342,
-   "pE": 0.245,
-   "pV": 0.413
+   "lM": 1.35,
+   "lV": 1.68,
+   "pM": 0.309,
+   "pE": 0.238,
+   "pV": 0.453
   },
   {
    "grupo": "K",
    "j": 62,
    "m": "Portugal",
    "v": "RD Congo",
-   "lM": 2.14,
-   "lV": 0.5,
-   "pM": 0.756,
-   "pE": 0.171,
-   "pV": 0.073
+   "lM": 2.07,
+   "lV": 0.54,
+   "pM": 0.734,
+   "pE": 0.181,
+   "pV": 0.085,
+   "pM_pre": 0.756,
+   "pE_pre": 0.171,
+   "pV_pre": 0.073,
+   "lM_pre": 2.14,
+   "lV_pre": 0.5
   },
   {
    "grupo": "K",
@@ -1066,7 +1071,7 @@
    "lM": 2.24,
    "lV": 0.44,
    "pM": 0.787,
-   "pE": 0.154,
+   "pE": 0.155,
    "pV": 0.058
   },
   {
@@ -1076,7 +1081,7 @@
    "v": "RD Congo",
    "lM": 2.13,
    "lV": 0.51,
-   "pM": 0.752,
+   "pM": 0.751,
    "pE": 0.173,
    "pV": 0.076
   },
@@ -1085,88 +1090,103 @@
    "j": 65,
    "m": "Colômbia",
    "v": "Uzbequistão",
-   "lM": 2.23,
-   "lV": 0.45,
-   "pM": 0.783,
-   "pE": 0.157,
-   "pV": 0.06
+   "lM": 2.3,
+   "lV": 0.42,
+   "pM": 0.802,
+   "pE": 0.146,
+   "pV": 0.052,
+   "pM_pre": 0.783,
+   "pE_pre": 0.157,
+   "pV_pre": 0.06,
+   "lM_pre": 2.23,
+   "lV_pre": 0.45
   },
   {
    "grupo": "K",
    "j": 66,
    "m": "RD Congo",
    "v": "Uzbequistão",
-   "lM": 1.45,
-   "lV": 1.39,
-   "pM": 0.388,
-   "pE": 0.25,
-   "pV": 0.362
+   "lM": 1.5,
+   "lV": 1.29,
+   "pM": 0.422,
+   "pE": 0.252,
+   "pV": 0.326
   },
   {
    "grupo": "L",
    "j": 67,
    "m": "Inglaterra",
    "v": "Croácia",
-   "lM": 1.64,
-   "lV": 1,
-   "pM": 0.524,
-   "pE": 0.246,
-   "pV": 0.231
+   "lM": 1.76,
+   "lV": 0.84,
+   "pM": 0.594,
+   "pE": 0.232,
+   "pV": 0.175,
+   "pM_pre": 0.524,
+   "pE_pre": 0.246,
+   "pV_pre": 0.231,
+   "lM_pre": 1.64,
+   "lV_pre": 1
   },
   {
    "grupo": "L",
    "j": 68,
    "m": "Inglaterra",
    "v": "Panamá",
-   "lM": 2.24,
-   "lV": 0.44,
-   "pM": 0.787,
-   "pE": 0.154,
-   "pV": 0.058
+   "lM": 2.44,
+   "lV": 0.36,
+   "pM": 0.834,
+   "pE": 0.127,
+   "pV": 0.039
   },
   {
    "grupo": "L",
    "j": 69,
    "m": "Inglaterra",
    "v": "Gana",
-   "lM": 2.47,
-   "lV": 0.34,
-   "pM": 0.841,
-   "pE": 0.123,
-   "pV": 0.036
+   "lM": 2.44,
+   "lV": 0.36,
+   "pM": 0.835,
+   "pE": 0.127,
+   "pV": 0.038
   },
   {
    "grupo": "L",
    "j": 70,
    "m": "Croácia",
    "v": "Panamá",
-   "lM": 1.89,
-   "lV": 0.7,
-   "pM": 0.658,
-   "pE": 0.212,
-   "pV": 0.13
+   "lM": 1.91,
+   "lV": 0.67,
+   "pM": 0.669,
+   "pE": 0.208,
+   "pV": 0.123
   },
   {
    "grupo": "L",
    "j": 71,
    "m": "Croácia",
    "v": "Gana",
-   "lM": 2.08,
-   "lV": 0.54,
-   "pM": 0.734,
-   "pE": 0.181,
-   "pV": 0.084
+   "lM": 1.91,
+   "lV": 0.67,
+   "pM": 0.669,
+   "pE": 0.208,
+   "pV": 0.122
   },
   {
    "grupo": "L",
    "j": 72,
    "m": "Panamá",
    "v": "Gana",
-   "lM": 1.52,
-   "lV": 1.23,
-   "pM": 0.44,
-   "pE": 0.252,
-   "pV": 0.307
+   "lM": 1.39,
+   "lV": 1.57,
+   "pM": 0.336,
+   "pE": 0.244,
+   "pV": 0.42,
+   "pM_pre": 0.44,
+   "pE_pre": 0.252,
+   "pV_pre": 0.307,
+   "lM_pre": 1.52,
+   "lV_pre": 1.23
   }
  ],
  "processados": [
@@ -1188,7 +1208,11 @@
   "2026-06-16|França|Senegal",
   "2026-06-16|Noruega|Iraque",
   "2026-06-16|Argentina|Argélia",
-  "2026-06-17|Áustria|Jordânia"
+  "2026-06-17|Áustria|Jordânia",
+  "2026-06-17|Portugal|RD Congo",
+  "2026-06-17|Inglaterra|Croácia",
+  "2026-06-17|Panamá|Gana",
+  "2026-06-17|Colômbia|Uzbequistão"
  ],
- "atualizadoEm": "2026-06-17T12:02:34.211Z"
+ "atualizadoEm": "2026-06-18T18:05:04.539Z"
 }
