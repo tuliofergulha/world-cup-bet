@@ -1,13 +1,13 @@
 // Copa 2026 — Painel de Análise. Atualizado diariamente pelo briefing das 8h.
 // Gerado automaticamente pela routine de análise (acessa sites + valida stats reais).
 const DATA = {
-  atualizadoEm: "2026-06-18T08:00:00-03:00",
+  atualizadoEm: "2026-06-22T08:00:00-03:00",
 
   // Campos não-deriváveis do placar — preenchidos pela routine. Totais (jogos/gols/média)
   // são auto-calculados pelo app a partir dos placares.
   estatisticasManuais: {
-    cartoesAmarelos: 22,
-    escanteiosMed: "8.9"
+    cartoesAmarelos: 65,
+    escanteiosMed: "8.5"
   },
 
   dias: [
@@ -831,8 +831,8 @@ const DATA = {
     }
     ,{
       data: "2026-06-18",
-      titulo: "Dia 8 — Grupos A e B: eliminação antecipada, goleada esperada e Tejera rigoroso",
-      contexto: "Grupos A e B encerram a 2.ª rodada. No Grupo A, Tchéquia e África do Sul jogam pela sobrevivência (ambas perderam R1) — derrota praticamente elimina. África do Sul sem Sithole e Zwane (vermelhos vs México). Schick chega na melhor forma da vida (16G em 28 jogos na Bundesliga, 9G nos últimos 7). Grupo B totalmente equilibrado: todos os 4 times com 1 ponto. Suíça favorita clara vs Bósnia (λ=2.13). Canadá recebe o Catar com retorno de Alphonso Davies e 89.4% de vitória. À meia-noite, o jogo mais aguardado: México (casa no Akron) vs Coreia do Sul — árbitro Gustavo Tejera tem 5.24 cartões/jogo, mais rigoroso do torneio.",
+      titulo: "Dia 8 — Canadá goleia histórico, México classifica, Suíça avança",
+      contexto: "Grupos A e B encerram R2. Canadá 6-0 Catar: Jonathan David hat-trick (29', 45+3', 90+2'), Larin 16', Saliba 64', Manai OG 75' — 1.ª vitória canadense em Copas, iguala recorde de maior vitória de sede. Tchéquia 1-1 África do Sul: Sadilek 5' e Mokoena pênalti. Suíça 4-1 Bósnia após expulsão de Muharemovic (80'): Manzambi bisou, Vargas e Xhaka pen. México 1-0 Coreia do Sul: Romo no 50' aproveitando erro do goleiro Kim Seung-gyu — México classifica como 1.º do Grupo A.",
       jogos: [
         {
           hora: "13h",
@@ -840,33 +840,33 @@ const DATA = {
           visitante: "África do Sul",
           grupo: "A",
           local: "Mercedes-Benz Stadium, Atlanta (Georgia)",
-          placar: null,
-          stats: "Tchéquia perdeu R1 de virada (1-2 vs Coreia do Sul). África do Sul perdeu 0-2 vs México e ficou reduzida a 9 jogadores com 2 expulsões (Sithole e Zwane — SUSPENSOS hoje). Schick: 16G em 28 jogos na Bundesliga 25-26, 9G nos últimos 7 (hat-trick vs Leipzig). Lyle Foster: 3G/4 amarelos na PL 25-26, 10G em 27 caps. Ref: Tori Penso (EUA) — 1.ª equipa arbitral exclusivamente feminina da história das Copas. H2H: 1.º encontro histórico.",
+          placar: "1 × 1",
+          stats: "Empate que mantém tudo em aberto no Grupo A. Sadilek abriu para a Tchéquia aos 5' (assistência de Sojka). África do Sul reagiu com Mokoena convertendo pênalti — sem Sithole e Zwane (suspensos), o ataque criou de outra forma. Schick não marcou apesar da forma imaculada. Árbitro Tori Penso liderou a 1.ª equipa arbitral 100% feminina da história das Copas — jogo controlado. Ambas seguem com 1 pt.",
           numeros: [
             { v: "66.5%", l: "Prob. Tchéquia" },
-            { v: "1.900", l: "λ Tchéquia" },
-            { v: "0.680", l: "λ África do Sul" },
-            { v: "16G", l: "Schick (Bundesliga 25-26)" }
+            { v: "1 × 1", l: "Placar final" },
+            { v: "5'", l: "Gol Sadilek (TCH)" },
+            { v: "pen", l: "Mokoena igualou (RSA, pênalti)" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Tchéquia não perde (dupla hipótese)", odd: 1.40,
-              justificativa: "P(TCH+EMP)=87.5%. Schick em forma de vida (16G na Bundesliga), África do Sul reduzida sem Sithole e Zwane (suspensos). Mesmo sem vencer, Tchéquia tem λ=1.90 e capacidade de controlar o jogo contra uma defense sul-africana enfraquecida." },
-            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.55,
-              justificativa: "λ_total=2.58. P(total≥2)=72.9%. Tchéquia precisa atacar para se classificar, e a África do Sul também não vai se fechar — ambas precisam de pontos. Sem Sithole e Zwane no meio, a Africa do Sul vai sofrer para segurar a linha." },
-            { cat: "conservadora", mercado: "Patrik Schick marca", odd: 2.20,
-              justificativa: "λ_Schick=1.90×0.28=0.532. P=41.3%. 9G nos últimos 7 jogos pela Leverkusen, hat-trick vs Leipzig. O centroavante mais em forma da Copa entrando em campo contra uma defesa sul-africana sem seus titulares de meio-campo." },
-            { cat: "intermediaria", mercado: "Tchéquia vence a zero", odd: 2.40,
-              justificativa: "P=43.1%. P(AFR não marca)=e^(−0.68)=50.7%. África do Sul perde Sithole e Zwane — os principais responsáveis por transitions rápidas. Sem os dois, λV=0.68 pode ser ainda menor na prática." },
-            { cat: "intermediaria", mercado: "Tchéquia marca 2+ gols", odd: 2.00,
-              justificativa: "P(TCH≥2)=56.5%. Schick+Hložek+Sulc formam trio em boa forma. Africa do Sul sem os dois melhores nomes do meio — os corredores laterais vão sofrer com a movimentação tcheca." },
-            { cat: "intermediaria", mercado: "Relebohile Mofokeng marca", odd: 4.50,
-              justificativa: "λ_Mofokeng=0.68×0.25=0.170. P=15.6%. Jovem winger do Orlando Pirates, mais perigoso da Africa do Sul. No contra-ataque — único modo possível para a Africa do Sul pontuar — Mofokeng é o mais rápido e imprevisível. Odds de 4.50 valorizam um evento com P real de ~16%." },
-            { cat: "loucura", mercado: "Tchéquia vence a zero + Schick marca", odd: 5.50,
-              justificativa: "P=0.431×0.413=0.178. Pernas correlacionadas: clean sheet implica domínio tcheco, domínio implica finalizações do centroavante — Schick é o principal matador. Numa vitória de controle, o artilheiro da Bundesliga vai aparecer no placar." },
-            { cat: "loucura", mercado: "Schick e Hložek ambos marcam", odd: 7.00,
-              justificativa: "P=P(Schick)×P(Hložek)=0.413×(1−e^(−1.90×0.18))=0.413×0.292=0.121. Duo da Leverkusen que funciona em conjunto no clube. Numa dominância tcheca contra Africa do Sul reduzida, os dois vão finalizar — combo natural do 3-4-2-1 de Koubek." },
-            { cat: "loucura", mercado: "Tchéquia −1.5 handicap", odd: 3.50,
-              justificativa: "P(TCH vence por ≥2)≈22%. Africa do Sul sem Sithole e Zwane + desgaste psicológico de 2 expulsões no R1. Schick em modo artilheiro — numa tarde de graça, a goleada é o cenário mais natural para o favorito." }
+            { cat: "conservadora", mercado: "Tchéquia não perde (dupla hipótese)", odd: 1.40, resultado: "hit",
+              justificativa: "P(TCH+EMP)=87.5%. Tchéquia não perdeu — empatou 1-1. Sadilek abriu no 5' mas Mokoena igualou de pênalti. Ponto garantido, sem vitória." },
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.55, resultado: "hit",
+              justificativa: "λ_total=2.58. P(total≥2)=72.9%. 2 gols no total (1-1) — Sadilek 5' e Mokoena pen. Over 1.5 confirmado no mínimo possível." },
+            { cat: "conservadora", mercado: "Patrik Schick marca", odd: 2.20, resultado: "miss",
+              justificativa: "Schick não marcou. O gol tcheco foi de Sadilek (5'). A defesa sul-africana conteve o artilheiro da Bundesliga apesar das ausências de Sithole e Zwane." },
+            { cat: "intermediaria", mercado: "Tchéquia vence a zero", odd: 2.40, resultado: "miss",
+              justificativa: "P=43.1%. África do Sul marcou de pênalti com Mokoena — sem os suspensos, encontrou outro caminho para o gol. Clean sheet tcheco perdido." },
+            { cat: "intermediaria", mercado: "Tchéquia marca 2+ gols", odd: 2.00, resultado: "miss",
+              justificativa: "Tchéquia marcou apenas 1 gol (Sadilek 5'). Defesa sul-africana resistiu além do esperado apesar das ausências no meio-campo." },
+            { cat: "intermediaria", mercado: "Relebohile Mofokeng marca", odd: 4.50, resultado: "miss",
+              justificativa: "O gol da África do Sul foi de Mokoena (pênalti), não Mofokeng. O jovem winger do Orlando Pirates não apareceu no placar no 2.º jogo em Copa." },
+            { cat: "loucura", mercado: "Tchéquia vence a zero + Schick marca", odd: 5.50, resultado: "miss",
+              justificativa: "Ambas as pernas falharam: Tchéquia não venceu (empatou 1-1, Mokoena pen) e Schick não marcou (Sadilek foi o artilheiro tcheco)." },
+            { cat: "loucura", mercado: "Schick e Hložek ambos marcam", odd: 7.00, resultado: "miss",
+              justificativa: "Nenhum dos dois marcou. O único gol tcheco foi de Sadilek (5'). Duo da Leverkusen foi contido pela organização sul-africana mesmo reduzida." },
+            { cat: "loucura", mercado: "Tchéquia −1.5 handicap", odd: 3.50, resultado: "miss",
+              justificativa: "Tchéquia não venceu sequer — empatou 1-1. Mokoena converteu o pênalti da igualdade. Goleada não se materializou contra adversário organizado." }
           ]
         },
         {
@@ -875,33 +875,33 @@ const DATA = {
           visitante: "Bósnia e Herz.",
           grupo: "B",
           local: "SoFi Stadium, Los Angeles (Inglewood)",
-          placar: null,
-          stats: "Suíça: desgosto do 90+4' vs Catar (Khoukhi cabeçou o empate histórico). Embolo: 8G+3A na Ligue 1 25-26 (Rennes). Xhaka como motor defensivo e Freuler+Shaqiri no meio criativo. Bósnia: 1-1 vs Canadá (Lukic 21' de escanteio, Larin igualou 78'). Dzeko (40 anos, Schalke 2. Bundesliga) como referência central — redescobriu forma em 2026. Ref: João Pinheiro (POR). H2H: Bósnia 2-0 Suíça (2016, único amistoso). Grupo B: todos com 1 ponto — vencedor hoje lidera isolado.",
+          placar: "4 × 1",
+          stats: "Avalanche suíça nos acréscimos! Jogo equilibrado até Muharemovic ser expulso no 80' (falta com impedimento de gol). Os últimos 17 minutos produziram 4 gols: Manzambi 74' (1-0), Vargas 84' (2-0), Manzambi 90' (3-0), Mahmic descontou 90+3' (Bósnia, 3-1), Xhaka pênalti 90+7' (4-1). Embolo não marcou — Manzambi foi o Man of the Match (BMW Bayern de olho). Suíça lidera Grupo B com 4 pts.",
           numeros: [
             { v: "75.2%", l: "Prob. Suíça" },
-            { v: "2.130", l: "λ Suíça" },
-            { v: "0.510", l: "λ Bósnia e Herz." },
-            { v: "H2H 2-0 Bósnia", l: "(único encontro, 2016 amistoso)" }
+            { v: "4 × 1", l: "Placar final" },
+            { v: "2", l: "Gols Manzambi (74', 90')" },
+            { v: "80'", l: "Vermelho Muharemovic (BOS) — virou o jogo" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Suíça não perde (dupla hipótese)", odd: 1.25,
-              justificativa: "P(SUI+EMP)=92.5%. Suíça com λ=2.13 vs Bósnia com λ=0.51 é um dos jogos mais desequilibrados do Grupo B. Xhaka e Freuler controlam o meio, Embolo finaliza — a estrutura defensiva suíça raramente cede contra times de λ baixo." },
-            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.55,
-              justificativa: "λ_total=2.64. P=74.1%. Suíça vai criar 15-20 finalizações como vs Catar (26 chutes). Bósnia em 4-2-3-1 com Dzeko como referência pode surgir no contra-ataque. O jogo vai ter gols." },
-            { cat: "conservadora", mercado: "Breel Embolo marca", odd: 2.10,
-              justificativa: "λ_Embolo=2.13×0.25=0.533. P=41.3%. 8G+3A na Ligue 1 25-26 (Rennes), converteu o pênalti vs Catar (17'). Cobrador oficial e referência central — Bósnia com λ=0.51 vai defender com blocos, mas Embolo tem movimentação para criar espaço." },
-            { cat: "intermediaria", mercado: "Suíça vence a zero", odd: 1.90,
-              justificativa: "P=52.9%. P(BOS não marca)=e^(−0.51)=60.0%. Bósnia tem λV=0.51 — limitação ofensiva clara. Dzeko (40 anos, Schalke) pode aparecer em cruzamentos mas a Suíça defende com Nico Elvedi+Fabian Schär — dois dos melhores zagueiros do torneio." },
-            { cat: "intermediaria", mercado: "Suíça marca 2+ gols", odd: 1.95,
-              justificativa: "P(SUI≥2)=62.8%. Com λ=2.13, Suíça vai criar volume. Embolo+Vargas pelos flancos e Freuler de fora. Contra a Bósnia que concedeu o gol de Larin (escanteio mal defendido) no R1, a desvantagem defensiva vai aparecer." },
-            { cat: "intermediaria", mercado: "Bósnia marca", odd: 3.00,
-              justificativa: "P(BOS≥1)=40.0%. Odds de 3.00 implicam 33.3% — modelo estima 40%. Dzeko, mesmo aos 40 anos e vindo do Schalke (2. Bundesliga), redescobriu a forma em 2026 e é referência em bolas aéreas e cruzamentos. H2H 2-0 Bósnia no único encontro. No grande palco do SoFi Stadium, o capitão histórico pode aparecer numa bola parada." },
-            { cat: "loucura", mercado: "Suíça vence a zero + Embolo marca", odd: 5.50,
-              justificativa: "P=0.529×0.413=0.218. Pernas correlacionadas: clean sheet indica dominância suíça completa; num jogo controlado por Xhaka, Embolo vai ter múltiplas finalizações. Se a Bósnia não marca, Embolo quase certamente vai aparecer no placar." },
-            { cat: "loucura", mercado: "Suíça −1.5 handicap", odd: 3.20,
-              justificativa: "P(SUI vence por ≥2)≈30%. λM=2.13 vs λV=0.51 é um diferencial enorme. Suíça desperdiçou 3.24 xG contra o Catar — se não coeter os erros desta vez, a margem de 2+ gols é o cenário mais provável com qualidade ofensiva presente." },
-            { cat: "loucura", mercado: "Embolo e Ruben Vargas ambos marcam", odd: 7.00,
-              justificativa: "P=P(Embolo)×P(Vargas)=0.413×(1−e^(−2.13×0.18))=0.413×0.318=0.131. Vargas (Augsburg): criador pelo flanco direito, 3G pela Suíça em 2025-26. Numa goleada suíça onde ambos os flancos têm liberdade, o duo pode combinar num dos melhores ataques da Copa." }
+            { cat: "conservadora", mercado: "Suíça não perde (dupla hipótese)", odd: 1.25, resultado: "hit",
+              justificativa: "P(SUI+EMP)=92.5%. Suíça venceu 4-1 com virada total após expulsão de Muharemovic no 80'. Liderança do Grupo B confirmada." },
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.55, resultado: "hit",
+              justificativa: "λ_total=2.64. P=74.1%. 5 gols no total (4-1): Manzambi 74'/90', Vargas 84', Xhaka pen 90+7', Mahmic 90+3'. Volume explosivo." },
+            { cat: "conservadora", mercado: "Breel Embolo marca", odd: 2.10, resultado: "miss",
+              justificativa: "Embolo não marcou. Os gols suíços foram de Manzambi (74', 90'), Vargas (84') e Xhaka pen (90+7'). Manzambi foi o herói inesperado — estrela da noite." },
+            { cat: "intermediaria", mercado: "Suíça vence a zero", odd: 1.90, resultado: "miss",
+              justificativa: "Mahmic descontou no 90+3' para a Bósnia. Clean sheet perdido nos acréscimos apesar de superiodade após a expulsão. Final 4-1." },
+            { cat: "intermediaria", mercado: "Suíça marca 2+ gols", odd: 1.95, resultado: "hit",
+              justificativa: "P(SUI≥2)=62.8%. Suíça marcou 4 gols. A expulsão no 80' abriu os espaços para o ataque suíço explodir em 17 minutos frenéticos." },
+            { cat: "intermediaria", mercado: "Bósnia marca", odd: 3.00, resultado: "hit",
+              justificativa: "P(BOS≥1)=40.0%. Mahmic descontou no 90+3' mesmo com 10 homens — Dzeko assistiu. O modelo estava certo na probabilidade da Bósnia marcar." },
+            { cat: "loucura", mercado: "Suíça vence a zero + Embolo marca", odd: 5.50, resultado: "miss",
+              justificativa: "Ambas as pernas falharam: Suíça não venceu a zero (Mahmic 90+3') e Embolo não marcou. Manzambi foi o herói, não Embolo." },
+            { cat: "loucura", mercado: "Suíça −1.5 handicap", odd: 3.20, resultado: "hit",
+              justificativa: "P(SUI vence por ≥2)≈30%. Suíça venceu por 3 gols (4-1). Muharemovic expulso no 80' acelerou o desequilíbrio — handicap superado com folga." },
+            { cat: "loucura", mercado: "Embolo e Ruben Vargas ambos marcam", odd: 7.00, resultado: "miss",
+              justificativa: "Vargas marcou (84') ✓ mas Embolo não ✗. O combo falhou porque Manzambi (sub) roubou o protagonismo com 2 gols. Vargas cumpriu, Embolo ficou apagado." }
           ]
         },
         {
@@ -910,33 +910,33 @@ const DATA = {
           visitante: "Catar",
           grupo: "B",
           local: "BC Place, Vancouver (British Columbia)",
-          placar: null,
-          stats: "Canadá: 1-1 vs Bósnia (dominou mas não venceu — Larin igualou no 78'). ALPHONSO DAVIES RETORNA após perder o R1 por lesão — reforça o flanco esquerdo. Jonathan David: artilheiro histórico do Canadá (36G), agora na Juventus (6G+4A na Serie A 25-26). Catar: 1-1 vs Suíça com gol histórico de Khoukhi (90+4'). Afif criou 2 chances vs Suíça — único catarino com mais de 1 criação. Ref: Cristián Garay (Chile). Modelo: 89.4% para o Canadá — candidato a goleada do torneio.",
+          placar: "6 × 0",
+          stats: "Goleada histórica — 1.ª vitória do Canadá em Copas! Larin abriu no 16' (rebote). David hat-trick: 29' (voleio), 45+3' (rebote na trave) e 90+2'. Koné lesionou-se no 55' e Saliba (sub) marcou no 64' de falta. Manai OG 75'. Catar terminou com 9 homens (2 vermelhos). Iguala recorde de maior vitória de uma sede: Itália 1934, Brasil 1950, Argentina 1978. Davies brilhou e David é artilheiro da Copa com 3 gols.",
           numeros: [
             { v: "89.4%", l: "Prob. Canadá" },
-            { v: "2.790", l: "λ Canadá" },
-            { v: "0.250", l: "λ Catar" },
-            { v: "DAVIES", l: "Retorna! (perdeu R1 por lesão)" }
+            { v: "6 × 0", l: "Placar final" },
+            { v: "3", l: "Gols J. David (hat-trick, 29'/45+3'/90+2')" },
+            { v: "=Recorde", l: "Maior vitória de sede em Copa (ITA'34, BRA'50, ARG'78)" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Canadá vence", odd: 1.15,
-              justificativa: "P(CAN)=89.4%. O maior favorito do dia. Davies de volta reforça o flanco esquerdo — sem ele vs Bósnia, o Canadá só empatou. David (36G, Juve), Larin (faro gol comprovado), Buchanan (extremo veloz) — qualidade muito superior ao Catar." },
-            { cat: "conservadora", mercado: "Canadá vence a zero", odd: 1.42,
-              justificativa: "P=73.1%. P(CAT não marca)=e^(−0.25)=77.9%. Catar tem λ=0.25 — um dos mais baixos da Copa. O gol histórico de Khoukhi vs Suíça (90+4') foi anomalia estatística. Em casa em Vancouver, a defesa canadense vai estar muito mais motivada." },
-            { cat: "conservadora", mercado: "Jonathan David marca", odd: 1.75,
-              justificativa: "λ_David=2.79×0.30=0.837. P=56.7%. Artilheiro histórico do Canadá (36G). Na Juve marcou 6G+4A. Com Davies de volta a criar pela esquerda, os cruzamentos vão chegar no espaço de David dentro da área — a combinação natural do ataque canadense." },
-            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 1.75,
-              justificativa: "P=58.8%. λ_total=3.04. Canadá com λ=2.79 vai criar volume — vs Bósnia criou 13 finalizações mesmo sem Davies. Com o retorno do melhor lateral/winger do mundo, os cruzamentos vão multiplicar as chances." },
-            { cat: "intermediaria", mercado: "Canadá marca 3+ gols", odd: 2.00,
-              justificativa: "P(CAN≥3)=52.9%. λ=2.79 com 5 titulares de alto nível (Davies, David, Larin, Buchanan, Eustáquio). Catar concedeu xG generosos vs Suíça (3.24 xG de adversário) e vs Argentina (ainda mais). A barreira defensiva vai ceder." },
-            { cat: "intermediaria", mercado: "Canadá −2.5 handicap", odd: 3.00,
-              justificativa: "P(CAN vence por ≥3)≈39.6%. Com λ=2.79 e λV=0.25, a diferença esperada é 2.54 gols. Em Vancouver com a torcida empurrada e Davies inspirado, ganhar por 3+ é o cenário médio, não excepcional." },
-            { cat: "loucura", mercado: "Jonathan David bissa (2+ gols)", odd: 5.50,
-              justificativa: "P(David≥2)=20.5%. λ_David=0.837 → P(≥2)=1−e^(−0.837)×(1+0.837)=0.205. Com 36G pela seleção e Davies voltando a criar, David vai ter 4-6 chances dentro da área. O centroavante mais letal das Américas no momento certo." },
-            { cat: "loucura", mercado: "David e Larin ambos marcam", odd: 7.00,
-              justificativa: "P=P(David)×P(Larin)=0.567×(1−e^(−2.79×0.18))=0.567×(1−e^(−0.502})=0.567×0.395=0.224. Larin entrou no 76' e marcou no 78' vs Bósnia — instinto de gol puro. Numa goleada, o centroavante-reserva vai ter seu momento." },
-            { cat: "loucura", mercado: "Catar marca", odd: 6.50,
-              justificativa: "P(CAT≥1)=22.1%. Odd de 6.50 implica 15.4% — modelo estima 22%, edge de 43%. Catar tem Afif (único com 2+ criações vs Suíça) e lembranças do gol histórico de Khoukhi. O mercado subestima a probabilidade de o Catar marcar num contra-ataque abrupto." }
+            { cat: "conservadora", mercado: "Canadá vence", odd: 1.15, resultado: "hit",
+              justificativa: "P(CAN)=89.4%. Canadá venceu 6-0 com hat-trick de David, Larin, Saliba e OG. Dominância total no BC Place — 1.ª vitória histórica do Canadá em Copas." },
+            { cat: "conservadora", mercado: "Canadá vence a zero", odd: 1.42, resultado: "hit",
+              justificativa: "P=73.1%. Catar não marcou nenhum gol. λ=0.25 previu exatamente isso — zero ameaças reais, 9 jogadores no final com 2 vermelhos." },
+            { cat: "conservadora", mercado: "Jonathan David marca", odd: 1.75, resultado: "hit",
+              justificativa: "David hat-trick (29', 45+3', 90+2') — melhor desempenho da Copa 2026. Artilheiro do torneio com 3 gols. Davies criando pela esquerda multiplicou as oportunidades." },
+            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 1.75, resultado: "hit",
+              justificativa: "P=58.8%. 6 gols no total. λ_total=3.04 foi acertado — 9 jogadores do Catar nos acréscimos tornaram o déficit insuperável." },
+            { cat: "intermediaria", mercado: "Canadá marca 3+ gols", odd: 2.00, resultado: "hit",
+              justificativa: "P(CAN≥3)=52.9%. Canadá marcou 6. A barreira catariana cedeu completamente com Davies+David+Larin+Buchanan — mais do que o modelo otimista previu." },
+            { cat: "intermediaria", mercado: "Canadá −2.5 handicap", odd: 3.00, resultado: "hit",
+              justificativa: "P(CAN vence por ≥3)≈39.6%. 6-0: diferença de 6 gols. O modelo estimava vitória por 3+ como cenário médio — o Canadá entregou o dobro." },
+            { cat: "loucura", mercado: "Jonathan David bissa (2+ gols)", odd: 5.50, resultado: "hit",
+              justificativa: "P(David≥2)=20.5%. David fez hat-trick — 3 gols. λ_David=0.837 com odds de 5.50 era valor excelente. Melhor dica do dia, confirmada com autoridade." },
+            { cat: "loucura", mercado: "David e Larin ambos marcam", odd: 7.00, resultado: "hit",
+              justificativa: "P=0.224. Larin abriu no 16' e David hat-trick. Os dois centroavantes marcaram — a combinação natural do ataque canadense com Davies de volta." },
+            { cat: "loucura", mercado: "Catar marca", odd: 6.50, resultado: "miss",
+              justificativa: "P(CAT≥1)=22.1%. Catar não marcou e terminou com 9 jogadores (2 vermelhos). Afif não conseguiu criar sequer 1 finalização no alvo. Zero ameaças reais." }
           ]
         },
         {
@@ -945,33 +945,364 @@ const DATA = {
           visitante: "Coreia do Sul",
           grupo: "A",
           local: "Estadio Akron, Guadalajara",
-          placar: null,
-          stats: "Clássico de vencedores do Grupo A — quem vencer praticamente se classifica. México: 2-0 vs África do Sul (Quiñones + Jimenez). Jimenez: 9G+3A na PL 25-26 para o Wolves. Coreia do Sul: virada dramática 2-1 vs Tchéquia (0-1 → 2-1 em 23 min). Son Heung-min (LAFC, MLS: 0G/8A em 2025-26, mas capitão histórico com 60G+ pela seleção). Lee Kang-in (PSG), Hwang Hee-chan (Wolves). Ref: Gustavo Tejera (URU) — 5.24 cartões/jogo, rigoroso. Polêmica: Coreia possivelmente alvo de espionagem por drone na preparação.",
+          placar: "1 × 0",
+          stats: "Romo marcou o único gol no 50' aproveitando erro absurdo do goleiro Kim Seung-gyu (colisão com Lee Gi-hyuk na área). 1T sem gols e só 3 chutes mexicanos. Rangel defendeu duas vezes no 87' (Cho Gue-sung + Yang Hyun-jun) para preservar o placar. Tejera surpreendeu com apenas 2 amarelos (Lee Kang-in + Paik Seung-ho — muito abaixo da média de 5.24). México 1.º do Grupo A — 1.ª seleção a avançar no WC26.",
           numeros: [
             { v: "65.8%", l: "Prob. México" },
-            { v: "1.890", l: "λ México" },
-            { v: "0.690", l: "λ Coreia do Sul" },
-            { v: "5.24", l: "Cartões/jogo Tejera (árbitro)" }
+            { v: "1 × 0", l: "Placar final" },
+            { v: "50'", l: "Gol Romo (erro Kim Seung-gyu)" },
+            { v: "2", l: "Amarelos Tejera (média era 5.24 — surpreendeu)" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "México não perde (dupla hipótese)", odd: 1.35,
-              justificativa: "P(MEX+EMP)=87.0%. Em casa no Akron (similar ao Azteca para o torcedor mexicano). Jimenez e Quiñones confirmados ofensivamente no R1. Kim Min-jae é forte mas Korea concedeu 1 gol vs Tchéquia. λ=1.89 aponta para domínio mexicano." },
-            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.55,
-              justificativa: "λ_total=2.58. P=72.8%. Ambos venceram R1 e vão buscar a vitória para se classificar — sem ultra-defensiva possível. Son, Hwang Hee-chan, Lee Kang-in para a Coreia; Jimenez e Quiñones para o México." },
-            { cat: "conservadora", mercado: "Over 3.5 cartões no jogo", odd: 1.65,
-              justificativa: "Tejera: 5.24 cartões/jogo em média (um dos mais rigorosos do mundo). P(≥4 cartões | λ=5.24)=76.8%. Jogo de alto impacto entre dois times motivados, com o árbitro mais severo do torneio. Combinação ideal para cartões." },
-            { cat: "intermediaria", mercado: "Raul Jimenez marca", odd: 2.20,
-              justificativa: "λ_Jimenez=1.89×0.28=0.529. P=41.1%. 9G+3A na PL 25-26 (Wolves). Marcou vs África do Sul. Cobrador de pênaltis e boa movimentação na área — Kim Min-jae (Bayern) vai marcar mas o espaço aparece nos cruzamentos dos flancos mexicanos." },
-            { cat: "intermediaria", mercado: "Over 4.5 cartões no jogo", odd: 2.10,
-              justificativa: "P(≥5 cartões | λ=5.24)=60.2%. Com Tejera e dois times que necessitam vencer, as faltas táticas vão aparecer. Hwang In-beom (Feyenoord, com histórico de amarelos) e o tempamento dos mexicanos são bons candidatos às cartolinas." },
-            { cat: "intermediaria", mercado: "Ambas marcam", odd: 2.20,
-              justificativa: "P=0.849×0.498=0.423. λ_KOR=0.69 — Coreia marcou 2 vs Tchéquia. Son+Hwang Hee-chan num dia inspirado podem surpreender a defesa mexicana. Ambos os times vão atacar num jogo de alto nível." },
-            { cat: "loucura", mercado: "Son Heung-min marca", odd: 6.00,
-              justificativa: "λ_Son=0.69×0.28=0.193. P=17.6%. Son tem 60G+ pela seleção (artilheiro histórico). Em seu 4.º Mundial e em jogo decisivo, o capitão da Coreia vai aparecer — mesmo com 0G na MLS esta temporada, a qualidade se confirma em nível de seleção." },
-            { cat: "loucura", mercado: "Coreia do Sul vence", odd: 8.00,
-              justificativa: "P(KOR vence)=13.0%. Coreia virou de 0-1 para 2-1 vs Tchéquia — DNA de virada. Son+Lee Kang-in+Hwang Hee-chan é um trio de classe mundial. Em Guadalajara, o México pode não encontrar o ritmo e a Coreia pode resolver no contra-ataque." },
-            { cat: "loucura", mercado: "Quiñones e Jimenez ambos marcam", odd: 6.00,
-              justificativa: "P=P(Quiñones)×P(Jimenez)=(1−e^(−1.89×0.18))×0.411=(1−e^(−0.340})×0.411=0.288×0.411=0.118. Pernas correlacionadas: numa vitória mexicana confortável em casa, o duo de R1 vai repetir a parceria. Tejera pode conceder um pênalti que Jimenez converte." }
+            { cat: "conservadora", mercado: "México não perde (dupla hipótese)", odd: 1.35, resultado: "hit",
+              justificativa: "P(MEX+EMP)=87.0%. México venceu 1-0 com gol de Romo no 50'. Rangel defendeu duas vezes no 87' — vitória suada mas merecida no Akron." },
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.55, resultado: "miss",
+              justificativa: "λ_total=2.58. P=72.8%. Apenas 1 gol (Romo 50'). Jogo travado — México criou pouco e a Coreia foi contida pela organização defensiva mexicana." },
+            { cat: "conservadora", mercado: "Over 3.5 cartões no jogo", odd: 1.65, resultado: "miss",
+              justificativa: "Tejera (5.24 cartões/jogo) mostrou apenas 2 amarelos (Lee Kang-in + Paik Seung-ho). O 1-0 foi controlado — árbitro muito mais conservador do que o histórico indicava." },
+            { cat: "intermediaria", mercado: "Raul Jimenez marca", odd: 2.20, resultado: "miss",
+              justificativa: "Jimenez não marcou. O único gol foi de Romo (50') aproveitando erro do goleiro Kim Seung-gyu. Jimenez teve poucas chances no 1T travado." },
+            { cat: "intermediaria", mercado: "Over 4.5 cartões no jogo", odd: 2.10, resultado: "miss",
+              justificativa: "Apenas 2 amarelos no total — very below de qualquer projeção com Tejera. O jogo 1-0 foi equilibrado sem grandes conflitos físicos." },
+            { cat: "intermediaria", mercado: "Ambas marcam", odd: 2.20, resultado: "miss",
+              justificativa: "P=0.423. Coreia não marcou apesar das 2 chances no 87' (Rangel double save de Cho Gue-sung + Yang Hyun-jun). México 1-0 com clean sheet." },
+            { cat: "loucura", mercado: "Son Heung-min marca", odd: 6.00, resultado: "miss",
+              justificativa: "Son não marcou em derrota de 1-0. O capitão histórico não encontrou espaço contra a defesa mexicana organizada no Akron." },
+            { cat: "loucura", mercado: "Coreia do Sul vence", odd: 8.00, resultado: "miss",
+              justificativa: "P(KOR vence)=13.0%. Coreia perdeu 1-0. O DNA de virada (vs Tchéquia) não se repetiu — Rangel negou duas finalizações no 87' para preservar a vitória." },
+            { cat: "loucura", mercado: "Quiñones e Jimenez ambos marcam", odd: 6.00, resultado: "miss",
+              justificativa: "Nenhum dos dois marcou. O único gol foi de Romo (erro do goleiro). México venceu de forma torturada sem os atacantes titulares nas estatísticas de gol." }
+          ]
+        }
+      ]
+    }
+    ,{
+      data: "2026-06-19",
+      titulo: "Dia 9 — Grupos C e D: Brasil goleia, Saibari relâmpago, EUA avança, Paraguai ressurge",
+      contexto: "Grupos C e D encerram R2. Marrocos bateu a Escócia 1-0 em Boston com o gol mais rápido da Copa: Saibari em 71 segundos! Brasil demoliu o Haiti 3-0 em Filadélfia (Cunha 2G + Vinicius). EUA classifica em Seattle com 2-0 sobre a Austrália. Paraguai ressurgiu — Galarza marcou em 64 segundos contra a Turquia, o mais rápido da Copa. Grupo C: Brasil e Marrocos com 4 pts. Grupo D: EUA 6 pts (classifica), Austrália e Paraguai com 3 pts, Turquia praticamente eliminada.",
+      jogos: [
+        {
+          hora: "13h",
+          mandante: "Escócia",
+          visitante: "Marrocos",
+          grupo: "C",
+          local: "Gillette Stadium, Foxborough (Boston)",
+          placar: "0 × 1",
+          stats: "Saibari marcou o gol mais rápido da Copa 2026 — 71 segundos! Brahim Díaz abriu com passe por cima da defesa escocesa e Saibari finalizou no ângulo antes do estádio se acomodar (64.146 torcedores). Escócia dominou mas não converteu. Marrocos lidera o Grupo C no GD sobre o Brasil. Escócia com 3 pts ainda viva.",
+          numeros: [
+            { v: "0 × 1", l: "Placar final" },
+            { v: "71\"", l: "Gol Saibari — mais rápido WC26" },
+            { v: "64.146", l: "Espectadores no Gillette Stadium" },
+            { v: "4 pts", l: "Marrocos (lidera Grupo C no GD)" }
+          ],
+          dicas: []
+        },
+        {
+          hora: "16h",
+          mandante: "Brasil",
+          visitante: "Haiti",
+          grupo: "C",
+          local: "Lincoln Financial Field, Philadelphia",
+          placar: "3 × 0",
+          stats: "Brasil demoliu o Haiti. Cunha bisou no 1T (23' e 36') — o centroavante do Wolves/Atlético redimiu o silêncio na estreia. Vinicius Jr. selou no 45+3' com finalização da esquerda. Haiti eliminado sem pontos. Brasil empurra ao topo do Grupo C por diferença de gols sobre Marrocos.",
+          numeros: [
+            { v: "3 × 0", l: "Placar final" },
+            { v: "2", l: "Gols Cunha (23', 36')" },
+            { v: "45+3'", l: "Gol Vinicius Jr." },
+            { v: "0 pts", l: "Haiti eliminado" }
+          ],
+          dicas: []
+        },
+        {
+          hora: "19h",
+          mandante: "EUA",
+          visitante: "Austrália",
+          grupo: "D",
+          local: "Lumen Field, Seattle (Washington)",
+          placar: "2 × 0",
+          stats: "EUA classifica como 1.º do Grupo D em Seattle. Gol contra australiano abriu o placar. Alex Freeman cabeceou o 2-0 no 43' (deflexão de Dest num escanteio) — 1.º gol de Copa do jovem de 21 anos. Austrália precisava vencer mas não criou chances reais. EUA com 6 pts ao lado do México como primeira dupla a avançar.",
+          numeros: [
+            { v: "2 × 0", l: "Placar final" },
+            { v: "43'", l: "Gol Freeman (cabeçada, 21 anos)" },
+            { v: "6 pts", l: "EUA classifica como 1.º do Grupo D" },
+            { v: "OG", l: "Primeiro gol do jogo" }
+          ],
+          dicas: []
+        },
+        {
+          hora: "22h",
+          mandante: "Turquia",
+          visitante: "Paraguai",
+          grupo: "D",
+          local: "AT&T Stadium, Arlington (Dallas)",
+          placar: "0 × 1",
+          stats: "Gol mais rápido da Copa 2026 — 64 segundos de Matías Galarza! Cubas roubou a bola no meio, passou para Enciso, que lançou Galarza para bater entre as pernas de Demiral. Turquia dominou depois (30+ chutes, 0 gols — padrão já visto vs Austrália). Paraguai vivo com 3 pts. Turquia praticamente eliminada com apenas 1 gol marcado em 2 jogos.",
+          numeros: [
+            { v: "0 × 1", l: "Placar final" },
+            { v: "64\"", l: "Gol Galarza — mais rápido WC26 (bateu Saibari)" },
+            { v: "30+", l: "Chutes Turquia (0 gols — 2.º jogo)" },
+            { v: "3 pts", l: "Paraguai vivo no Grupo D" }
+          ],
+          dicas: []
+        }
+      ]
+    }
+    ,{
+      data: "2026-06-20",
+      titulo: "Dia 10 — Grupos E e F: Undav decide nos 94', Curação choca Equador, Holanda goleia",
+      contexto: "Grupos E e F encerram R2. Alemanha virou sobre a Costa do Marfim 2-1 nos acréscimos — Kessié abriu no 30' mas Undav (sub) bisou: 68' e gol de aniversário no 94'. Curaçao 0-0 com o Equador: debutantes em Copa seguraram o favorito absoluto do Grupo E — ponto histórico. Holanda 5-1 Suécia em Houston: Brobbey bisou em 12 minutos (5'/17'), Gakpo bisou no 2T (47'/54'), Summerville fechou 89'. Grupo E: Alemanha 6, Equador 4, CIV 1, Curaçao 1. Grupo F: Japão 4, Holanda 4, Suécia 3, Tunísia 0.",
+      jogos: [
+        {
+          hora: "14h",
+          mandante: "Holanda",
+          visitante: "Suécia",
+          grupo: "F",
+          local: "NRG Stadium, Houston (Texas)",
+          placar: "5 × 1",
+          stats: "Brobbey abriu o baile: dois gols nos primeiros 17' (5' e 17') — 4.º brace mais rápido na história da Copa. Elanga descontou no 59' para a Suécia. Gakpo dominou o 2T com brace (47', 54'). Summerville fechou no 89'. Holanda avança com 4 pts após empate na estreia; Suécia em 2.º (3 pts) aguarda R3. Gyokeres não marcou — Suécia perdeu o artilheiro da Copa.",
+          numeros: [
+            { v: "5 × 1", l: "Placar final" },
+            { v: "2", l: "Gols Brobbey (5', 17') — brace mais rápido da Copa" },
+            { v: "2", l: "Gols Gakpo (47', 54')" },
+            { v: "59'", l: "Gol Elanga (Suécia)" }
+          ],
+          dicas: []
+        },
+        {
+          hora: "17h",
+          mandante: "Alemanha",
+          visitante: "Costa do Marfim",
+          grupo: "E",
+          local: "BMO Field, Toronto (Canadá)",
+          placar: "2 × 1",
+          stats: "Kessié abriu para a Costa do Marfim no 30' — perigo de virada do Grupo E. Undav entrou como sub e empatou no 68' (voleio de cruzamento de Amiri). Nos acréscimos, Nmecha assistiu para Undav marcar o 2-1 no 94' com remate de fora da área. Undav: 5 contribuições em 56' de WC26. Alemanha avança para o mata-mata com 6 pts — 12 anos de espera encerrada.",
+          numeros: [
+            { v: "2 × 1", l: "Placar final" },
+            { v: "94'", l: "Gol vencedor Undav" },
+            { v: "30'", l: "Kessié abre para Costa do Marfim" },
+            { v: "6 pts", l: "Alemanha avança — 12 anos sem mata-mata" }
+          ],
+          dicas: []
+        },
+        {
+          hora: "21h",
+          mandante: "Equador",
+          visitante: "Curaçao",
+          grupo: "E",
+          local: "SoFi Stadium, Los Angeles (Inglewood)",
+          placar: "0 × 0",
+          stats: "Curaçao fez história: 0-0 com o Equador favorito absoluto do Grupo E! Debutantes em Copas aguentaram os 90' com organização defensiva exemplar. Equador, que havia interrompido série de 19 jogos invictos vs CIV (1-0 no R1), não consegue marcar contra o menor ranking da Copa. Grupo E em aberto: Equador 4 pts precisa de resultado no R3.",
+          numeros: [
+            { v: "0 × 0", l: "Placar final" },
+            { v: "1", l: "Ponto histórico Curaçao (2.º gol do torneio: 1G em 7-1 vs ALE R1)" },
+            { v: "4 pts", l: "Equador (2.º do Grupo E)" },
+            { v: "0", l: "Gols do Equador em 2 jogos contra equipes menores" }
+          ],
+          dicas: []
+        }
+      ]
+    }
+    ,{
+      data: "2026-06-21",
+      titulo: "Dia 11 — Grupos F-H: Japão histórico, Espanha goleada, Cabo Verde épico, Salah marca",
+      contexto: "Dia movimentado com 5 jogos. Japão 4-0 Tunísia (1.ª AFC com 4G em Copa — jogo #1.000 do torneio). Bélgica 0-0 Irã. Egito 3-1 NZ com gol de Salah (67') — 1.ª vitória egípcia em Copa. Espanha atropela Arábia Saudita 4-0: Yamal estreou em Copas (10', 8.º mais jovem da história), Oyarzabal bisou (21', 24'). Cabo Verde 2-2 Uruguai numa obra épica: Pina abriu com falta de 30m (21'), Uruguai virou com Araújo+Canobbio no 1T, Varela empatou no 61' aproveitando erro de Muslera.",
+      jogos: [
+        {
+          hora: "13h",
+          mandante: "Tunísia",
+          visitante: "Japão",
+          grupo: "F",
+          local: "Estadio BBVA, Guadalupe (Monterrey)",
+          placar: "0 × 4",
+          stats: "Jogo #1.000 da Copa 2026 e Japão marcou para a história. Kamada abriu no 4'. Ueda bisou (31' e 83'). Ito marcou no 69'. 1.ª seleção AFC a marcar 4 gols num jogo de Copa do Mundo. Tunísia eliminada com 0 pts. Japão lidera o Grupo F com 4 pts empatado com a Holanda.",
+          numeros: [
+            { v: "0 × 4", l: "Placar final" },
+            { v: "4'", l: "Gol Kamada" },
+            { v: "2", l: "Gols Ueda (31', 83')" },
+            { v: "1.000", l: "Jogo histórico da Copa 2026" }
+          ],
+          dicas: []
+        },
+        {
+          hora: "16h",
+          mandante: "Bélgica",
+          visitante: "Irã",
+          grupo: "G",
+          local: "AT&T Stadium, Arlington (Dallas)",
+          placar: "0 × 0",
+          stats: "Empate sem gols em Dallas. Bélgica (De Bruyne, Doku, Trossard) não furou o bloco iraniano. De Bruyne soma 2 jogos sem gol ou assistência. Irã mostrou solidez defensiva com Taremi mais recuado. Bélgica precisa vencer a Nova Zelândia no R3; Irã precisa de ponto contra o Egito. Grupo G: Egito 4, Bélgica e Irã com 1 pt.",
+          numeros: [
+            { v: "0 × 0", l: "Placar final" },
+            { v: "0G/0A", l: "De Bruyne (2 jogos, zero contribuição direta)" },
+            { v: "1 pt", l: "Bélgica e Irã no Grupo G" },
+            { v: "0", l: "Chutes no alvo da Bélgica" }
+          ],
+          dicas: []
+        },
+        {
+          hora: "16h",
+          mandante: "Espanha",
+          visitante: "Arábia Saudita",
+          grupo: "H",
+          local: "Hard Rock Stadium, Miami (Florida)",
+          placar: "4 × 0",
+          stats: "Yamal marcou o 1.º gol em Copa com 17 anos (10', slide no segundo poste) — 8.º mais jovem marcador da história do WC. Oyarzabal bisou em 3 minutos (21' e 24'). OG Al-Tambakti fechou no 2T. Yamal e Oyarzabal saíram no HT. Espanha avança com 4 pts — aguarda R3 para confirmar liderança vs Uruguai.",
+          numeros: [
+            { v: "4 × 0", l: "Placar final" },
+            { v: "10'", l: "1.º gol Yamal em Copa (17 anos, 8.º mais jovem da história)" },
+            { v: "2", l: "Gols Oyarzabal (21', 24')" },
+            { v: "4 pts", l: "Espanha avança no Grupo H" }
+          ],
+          dicas: []
+        },
+        {
+          hora: "19h",
+          mandante: "Nova Zelândia",
+          visitante: "Egito",
+          grupo: "G",
+          local: "BC Place, Vancouver (British Columbia)",
+          placar: "1 × 3",
+          stats: "1.ª vitória do Egito em Copas do Mundo! Surman abriu para a NZ de cabeça no 15' (escanteio). Zico igualou no 58' (cabeçada). Salah marcou o 2-1 no 67' — 68.º gol internacional, o mais velho do Egito a marcar em Copa (34 anos). Trézéguet fechou de cabeça no 82'. Egito 1.º do Grupo G com 4 pts.",
+          numeros: [
+            { v: "1 × 3", l: "Placar final" },
+            { v: "67'", l: "Gol Salah (68.º int'l — 34 anos, mais velho EGY em Copa)" },
+            { v: "4 pts", l: "Egito 1.º do Grupo G" },
+            { v: "1.ª", l: "Vitória do Egito em Copa do Mundo" }
+          ],
+          dicas: []
+        },
+        {
+          hora: "22h",
+          mandante: "Uruguai",
+          visitante: "Cabo Verde",
+          grupo: "H",
+          local: "Levi's Stadium, Santa Clara (San Francisco Bay Area)",
+          placar: "2 × 2",
+          stats: "Épico! Cabo Verde marcou os 1.ºs gols da história em Copa. Pina abriu com cobrança de falta de 30 metros no 21'. Araújo virou no 44' e Canobbio ampliou no 45+6'. Varela entrou no 2T e 5' depois aproveitou passe errado de Olivera com Muslera adiantado para empatar 2-2 no 61'. 2.º empate de Cabo Verde na Copa — fenomenal. Uruguai com 2 pts precisa vencer R3.",
+          numeros: [
+            { v: "2 × 2", l: "Placar final" },
+            { v: "21'", l: "Pina — 1.ºs gols de Cabo Verde em Copa (falta 30m)" },
+            { v: "61'", l: "Varela empata (Muslera adiantado, erro Olivera)" },
+            { v: "2 pts", l: "Uruguai (precisa vencer R3 vs Espanha)" }
+          ],
+          dicas: []
+        }
+      ]
+    },{
+      data: "2026-06-22",
+      titulo: "Dia 12 — Grupos I e J: Messi vs Rangnick, Mbappé artilheiro, Haaland de volta",
+      contexto: "Rodada 2 dos Grupos I e J. Jogo do dia: Argentina recebe a Áustria de Rangnick no AT&T Stadium às 14h (pM=79,5%) — vitória argentina confirma liderança do Grupo J com campanha perfeita. França vs Iraque às 18h é o duelo mais desequilibrado (pM=89,3%): Mbappé persegue artilharia após bisar no R1. Noruega vs Senegal às 21h no MetLife é o confronto mais equilibrado (pM=46,4%) — Senegal PRECISA vencer para qualquer chance de classificação. À meia-noite, Argélia vs Jordânia em Santa Clara fecha o dia num duelo de sobrevivência entre os dois eliminados do Grupo J.",
+      jogos: [
+        {
+          hora: "14h",
+          mandante: "Argentina",
+          visitante: "Áustria",
+          grupo: "J",
+          local: "AT&T Stadium, Arlington (Dallas)",
+          placar: null,
+          dicas: [
+            { cat: "conservadora", mercado: "Argentina não perde (dupla hipótese)", odd: 1.12,
+              justificativa: "Modelo: pM=79,5% e pE=15,0% — soma 94,5%. λM=2,27 vs λV=0,43 reflete diferença de Elo de 314 pontos (Argentina 2122,8 vs Áustria 1808,5). Messi vem de hat-trick vs Argélia em 76 minutos. Mesmo com pressão alta de Rangnick, o não-perde argentino é o mercado mais seguro do jogo." },
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.38,
+              justificativa: "λ_total = 2,27 + 0,43 = 2,70. P(≥2 gols) via Poisson ≈ 82,7%. Argentina marcou 3 vs Argélia; Áustria marcou 3 vs Jordânia. Ambas têm ataque funcional e disputam a liderança do grupo — nenhuma vai se fechar na defesa." },
+            { cat: "conservadora", mercado: "Argentina marca 2+ gols", odd: 1.65,
+              justificativa: "P(ARG≥2) com λM=2,27 ≈ 70,8%. Argentina marcou 3 no R1 em apenas 76 minutos de Messi. Áustria cedeu 3 gols vs Jordânia. Linha de 2 gols argentinos é bem suportada pelo modelo e pelo histórico recente da equipe." },
+            { cat: "intermediaria", mercado: "Lionel Messi marca a qualquer momento", odd: 2.20,
+              justificativa: "Hat-trick vs Argélia em 76 min no R1. Atribuindo 32% do λM=2,27 a Messi: P(marca) ≈ 51,8%. Jogo de liderança de grupo em Dallas — grande torcida argentina. Odds de 2,20 (imp. 45,5%) têm valor positivo sólido." },
+            { cat: "intermediaria", mercado: "Argentina vence a zero", odd: 2.15,
+              justificativa: "P = pM × e^(−λV) = 0,795 × e^(−0,43) ≈ 51,7%. λV=0,43 reflete como o modelo enxerga a fragilidade ofensiva austríaca contra defesa com Cristian Romero e Lisandro Martínez. Áustria marcou 3 vs Jordânia (Elo 1619,5) — bem mais fraca do que a Argentina." },
+            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 1.85,
+              justificativa: "P(≥3 gols) com λ_total=2,70 ≈ 48,0%. Ambas as equipes precisam atacar para confirmar a liderança do grupo. Gegenpressing de Rangnick pressiona alto mas também abre espaços para o contra-ataque argentino — cenário de jogo com muitos gols." },
+            { cat: "loucura", mercado: "Messi e Julián Álvarez ambos marcam", odd: 5.50,
+              justificativa: "P(Messi) × P(Álvarez) ≈ 0,518 × 0,435 ≈ 22,5% (independência aproximada, λ_Álvarez≈25% de 2,27≈0,57). Odds de 5,50 (imp. 18,2%) têm valor positivo. Depende de Messi manter ritmo de hat-trick e Álvarez encontrar espaços atrás da linha alta do gegenpressing austríaco." },
+            { cat: "loucura", mercado: "Argentina −1.5 handicap (vence por 2+)", odd: 3.50,
+              justificativa: "P(ARG vence por ≥2) ≈ 26% — soma dos P(ARG=k, AUT≤k−2) para k≥2 com λM=2,27 e λV=0,43. Odds de 3,50 (imp. 28,6%) ligeiramente abaixo do valor justo. Factível se Messi replicar nível do R1, mas Rangnick vai minimizar espaços." },
+            { cat: "loucura", mercado: "Romano Schmid marca", odd: 4.50,
+              justificativa: "Schmid abriu o placar no 21' vs Jordânia (R1) — único gol austríaco em campo naquele jogo. Meia de direita no 4-2-3-1 de Rangnick com liberdade para aparecer no gol. λV=0,43 reflete poucos gols esperados para a Áustria como coletivo, mas Schmid é o candidato mais provável dentro desse volume." }
+          ]
+        },
+        {
+          hora: "18h",
+          mandante: "França",
+          visitante: "Iraque",
+          grupo: "I",
+          local: "Lincoln Financial Field, Philadelphia",
+          placar: null,
+          dicas: [
+            { cat: "conservadora", mercado: "França vence", odd: 1.10,
+              justificativa: "pM=89,3% — jogo mais desequilibrado do dia. Elo França 2078,5 vs Iraque 1637,1 (Δ=441 pontos). λM=2,78 gols esperados. Iraque perdeu 1×4 vs Noruega no R1 e precisa vencer para sobreviver, mas a diferença técnica é enorme." },
+            { cat: "conservadora", mercado: "Kylian Mbappé marca a qualquer momento", odd: 1.55,
+              justificativa: "Mbappé bisou vs Senegal no R1 (66' e 90+6'), soma 58 gols pela seleção francesa. Atribuindo 30% do λM=2,78: P(marca) ≈ 56,6%. Persegue artilharia do torneio — motivação individual máxima contra o oponente de menor Elo do Grupo I." },
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.22,
+              justificativa: "λ_total = 2,78 + 0,25 = 3,03. P(≥2 gols) via Poisson ≈ 91,8%. França tem Mbappé, Griezmann, Dembélé, Barcola disponíveis — largura ofensiva que impossibilita bloqueio iraquiano por 90 minutos." },
+            { cat: "intermediaria", mercado: "França vence a zero", odd: 1.48,
+              justificativa: "P = pM × e^(−λV) = 0,893 × e^(−0,25) ≈ 69,6%. λV=0,25 é dos menores do torneio. Iraque marcou apenas 1 gol no R1 (Hussein 39' vs Noruega). Defesa francesa com Koundé, Hernandez, Upamecano é uma das mais sólidas da Copa." },
+            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 1.55,
+              justificativa: "P(≥3 gols) com λ_total=3,03 ≈ 59,8%. França marcou 3 vs Senegal no R1. Com Iraque forçado a atacar para sobreviver, mais espaços para os franceses em transição. Linha de 2,5 é o mercado-âncora do jogo." },
+            { cat: "intermediaria", mercado: "Bradley Barcola marca", odd: 2.75,
+              justificativa: "Barcola (PSG) joga como ponta-esquerda com velocidade devastadora no esquema de Deschamps. Atribuindo 18% do λM=2,78: P ≈ 39,4%. Odds de 2,75 (imp. 36,4%) têm leve valor positivo. Candidato natural ao gol quando o esquema francês gira pela esquerda." },
+            { cat: "loucura", mercado: "França marca 4+ gols", odd: 3.20,
+              justificativa: "P(FRA≥4) com λM=2,78 ≈ 30,3% (P(FRA≤3) ≈ 69,7% pelos somatórios Poisson). Odds de 3,20 (imp. 31,3%) próximos do valor justo. Contexto favorece: Iraque deve abrir para atacar, expondo espaços em transição para Mbappé e Barcola explorarem." },
+            { cat: "loucura", mercado: "Mbappé bissa (2+ gols)", odd: 4.50,
+              justificativa: "Com λ_Mbappé≈0,83 (30% de 2,78): P(≥2) = 1−e^(−0,83)×(1+0,83) ≈ 20,4%. Mbappé bisou no R1 e persegue a Chuteira de Ouro. Odds de 4,50 (imp. 22,2%) ligeiramente acima do valor calculado — a motivação individual sustenta a aposta." },
+            { cat: "loucura", mercado: "Iraque marca", odd: 4.00,
+              justificativa: "λV=0,25. P(IRQ≥1) = 1−e^(−0,25) ≈ 22,1%. Valor justo ≈ 4,52 — odds de 4,00 abaixo do justo, mas Iraque marcou de forma inesperada vs Noruega (Hussein 39') e pode encontrar gol de honra em transição quando a França relaxar com vantagem ampla." }
+          ]
+        },
+        {
+          hora: "21h",
+          mandante: "Noruega",
+          visitante: "Senegal",
+          grupo: "I",
+          local: "MetLife Stadium, East Rutherford (Nova York)",
+          placar: null,
+          dicas: [
+            { cat: "conservadora", mercado: "Noruega não perde (dupla hipótese)", odd: 1.48,
+              justificativa: "P(NOR+EMP) = pM + pE = 0,464 + 0,252 = 71,6%. Noruega tem Elo 1926,9 vs 1853,5 do Senegal (Δ=73 pontos) — favorita marginal com Haaland (2G+1A vs Iraque). O não-perde é o único mercado conservador num jogo genuinamente equilibrado." },
+            { cat: "conservadora", mercado: "Ambas as equipes marcam", odd: 1.72,
+              justificativa: "P(NOR≥1)=1−e^(−1,55)≈78,8%; P(SEN≥1)=1−e^(−1,16)≈68,6%. Produto≈54,1%. Senegal PRECISA vencer — vai jogar aberto forçosamente, aumentando a probabilidade de Noruega marcar em transição. Haaland contra linhas adiantadas senegalesas é ameaça constante." },
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.58,
+              justificativa: "λ_total = 1,55 + 1,16 = 2,71. P(≥2 gols) ≈ 82,4%. Jogo mais equilibrado do dia (pM=46,4%) com motivações assimétricas — Noruega quer liderança, Senegal precisa sobreviver. Qualidade ofensiva de ambos (Haaland + Mané) suporta a linha de 1,5." },
+            { cat: "intermediaria", mercado: "Erling Haaland marca a qualquer momento", odd: 2.00,
+              justificativa: "Haaland: 2G vs Iraque (29' e 43'), 55 gols em 50 jogos pela seleção. Atribuindo 35% do λM=1,55: P(marca) ≈ 42,1%. Senegal tem Koulibaly defensivamente sólido mas Haaland explora profundidade atrás de linhas adiantadas — e Senegal vai adiantar linhas por necessidade." },
+            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 2.05,
+              justificativa: "P(≥3 gols) com λ_total=2,71 ≈ 47,7%. Senegal jogando aberto por necessidade + Noruega em transição rápida com Haaland = cenário propício para jogo com muitos gols. Linha de 2,5 próxima do 50% em jogo com motivação assimétrica." },
+            { cat: "intermediaria", mercado: "Senegal vence", odd: 2.70,
+              justificativa: "pV=28,5%. Odds de 2,70 (imp. 37,0%) acima do valor calculado, mas o contexto favorece: times desesperados com qualidade (Mané, Sarr, Diatta) tendem a superar projeções Elo-based. Mané não marcou no R1 — vai estar altamente motivado para reverter o resultado." },
+            { cat: "loucura", mercado: "Senegal vence e ambas marcam", odd: 6.00,
+              justificativa: "P(SEN vence) × P(NOR≥1) ≈ 0,285 × 0,788 ≈ 22,5%. Odds de 6,00 (imp. 16,7%) têm valor positivo de ~35%. Exige vitória senegalesa + contra-ataque norueguês — possível se Haaland aparecer em transição mesmo com Senegal dominando." },
+            { cat: "loucura", mercado: "Haaland bissa (2+ gols)", odd: 5.00,
+              justificativa: "Com λ_Haaland≈0,54 (35% de 1,55): P(≥2) ≈ 10,0%. Odds de 5,00 (imp. 20,0%) superprecificam a probabilidade, mas Haaland bisou no R1 e define jogos com poucos toques. Exige que Senegal abra espaços por necessidade e Haaland os explore duas vezes." },
+            { cat: "loucura", mercado: "Empate 1 × 1", odd: 7.50,
+              justificativa: "P(exato 1×1) ≈ [e^(−1,55)×1,55] × [e^(−1,16)×1,16] ≈ 0,323 × 0,363 ≈ 11,7%. Odds de 7,50 (imp. 13,3%) ligeiramente acima do valor justo. Lógica tática: Senegal tende a defender bem e marcar por transição — quadro de empate baixo tem respaldo qualitativo." }
+          ]
+        },
+        {
+          hora: "0h",
+          mandante: "Argélia",
+          visitante: "Jordânia",
+          grupo: "J",
+          local: "Levi's Stadium, Santa Clara (San Francisco Bay Area)",
+          placar: null,
+          dicas: [
+            { cat: "conservadora", mercado: "Argélia não perde (dupla hipótese)", odd: 1.48,
+              justificativa: "pM + pE = 0,579 + 0,235 = 81,4%. Elo Argélia 1763,2 vs Jordânia 1619,5 (Δ=143 pontos). λM=1,74. Mahrez retorna como titular após ser poupado vs Argentina — o capitão argelino deve elevar o nível ofensivo num jogo de sobrevivência." },
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.60,
+              justificativa: "λ_total = 1,74 + 0,87 = 2,61. P(≥2 gols) ≈ 80,6%. Ambas PRECISAM vencer para qualquer chance de classificação — jogo de sobrevivência em que os dois times atacam com mais disposição do que em partidas de manutenção." },
+            { cat: "conservadora", mercado: "Argélia marca 2+ gols", odd: 2.10,
+              justificativa: "P(ARG≥2) com λM=1,74 ≈ 51,9%. Mahrez + Amoura + Gouiri representam ataque com velocidade e criatividade. Jordânia cedeu 3 gols vs Áustria. Linha de 2 gols argelinos está levemente acima de 50% — mercado defensável." },
+            { cat: "intermediaria", mercado: "Riyad Mahrez marca", odd: 2.80,
+              justificativa: "Mahrez retorna ao 11 inicial (poupado vs Argentina). 62 gols em 103 jogos pela seleção — taxa de 0,60 por partida. Atribuindo 25% do λM=1,74: P(marca) ≈ 35,5%. Odds de 2,80 (imp. 35,7%) praticamente no valor justo — justificado pela qualidade e motivação do capitão." },
+            { cat: "intermediaria", mercado: "Ambas as equipes marcam", odd: 2.10,
+              justificativa: "P(ARG≥1)≈82,4%; P(JOR≥1)=1−e^(−0,87)≈58,1%. Produto≈47,9%. Jordânia marcou seu 1.º gol histórico em Copa vs Áustria (Olwan 50'). Num jogo de sobrevivência, Jordânia vai atacar com tudo — probabilidade de marcar acima de 58% é relevante." },
+            { cat: "intermediaria", mercado: "Argélia vence e Jordânia marca", odd: 3.20,
+              justificativa: "P(ARG vence) × P(JOR≥1) ≈ 0,579 × 0,581 ≈ 33,6%. Odds de 3,20 (imp. 31,3%) têm leve valor positivo. Jordânia vai atacar por desespero — Olwan e Al-Taamari são ameaças reais em transição mesmo que a Argélia controle o jogo." },
+            { cat: "loucura", mercado: "Jordânia vence", odd: 4.80,
+              justificativa: "pV=18,5%. Odds de 4,80 (imp. 20,8%) ligeiramente acima do valor justo (5,41). Jordânia PRECISA vencer — empate não é suficiente com 0 pts. Times com motivação extrema de sobrevivência frequentemente superam o modelo Elo; Jordânia já mostrou coragem marcando vs Áustria." },
+            { cat: "loucura", mercado: "Mousa Olwan marca", odd: 5.00,
+              justificativa: "Olwan marcou o gol histórico da Jordânia no 50' vs Áustria — meia atacante com liberdade para aparecer no gol. Atribuindo 20% do λV=0,87: P≈16,1%. Odds de 5,00 (imp. 20,0%) acima do calculado mas há padrão de marcador recorrente — é a principal ameaça jordaniana." },
+            { cat: "loucura", mercado: "Placar exato 2 × 1 Argélia", odd: 9.00,
+              justificativa: "P(ARG=2, JOR=1) = [e^(−1,74)×1,74²/2] × [e^(−0,87)×0,87] ≈ 0,265 × 0,366 ≈ 9,7%. Odds de 9,00 (imp. 11,1%) abaixo do valor justo (10,3). Placar mais provável em jogo de sobrevivência mútua: Argélia controla mas sofre gol de transição jordaniana." }
           ]
         }
       ]
