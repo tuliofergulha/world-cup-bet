@@ -1,12 +1,12 @@
 // Copa 2026 — Painel de Análise. Atualizado diariamente pelo briefing das 8h.
 // Gerado automaticamente pela routine de análise (acessa sites + valida stats reais).
 const DATA = {
-  atualizadoEm: "2026-07-01T14:40:00-03:00",
+  atualizadoEm: "2026-07-02T10:32:00-03:00",
 
   // Campos não-deriváveis do placar — preenchidos pela routine. Totais (jogos/gols/média)
   // são auto-calculados pelo app a partir dos placares.
   estatisticasManuais: {
-    cartoesAmarelos: 111,
+    cartoesAmarelos: 118,
     escanteiosMed: "8.5"
   },
 
@@ -2541,34 +2541,32 @@ const DATA = {
           visitante: "RD Congo",
           fase: "16-avos de final",
           local: "Mercedes-Benz Stadium, Atlanta",
-          placar: null,
-          stats: "Inglaterra terminou a fase de grupos invicta e com 7 pontos (vitórias sobre Croácia e Panamá, empate sem gols com Gana), sob comando de Thomas Tuchel. RD Congo fez história ao voltar a uma Copa após 52 anos (última vez como Zaire, em 1974) e avançou como um dos melhores terceiros (4pts: 1-1 com Portugal, derrota para a Colômbia, 3-1 sobre o Uzbequistão, com 2 gols de Wissa). Duelo de artilheiros: Harry Kane e Yoane Wissa (companheiros de Premier League) chegam empatados com 3 gols cada nesta Copa. Reece James é dúvida na lateral direita inglesa por lesão no tendão; Aaron Wan-Bissaka (ex-Premier League) enfrenta seu país de adoção esportiva pela RD Congo. Árbitro: Adham Makhadmeh (JOR), em sua primeira Copa como principal — já apitou ESP 0×0 CPV e BEL 5×1 NZL na fase de grupos. Modelo Elo-Poisson (pós-reajuste) dá ampla vantagem à Inglaterra.",
+          placar: "2 × 1",
+          stats: "Susto e virada: Brian Cipenga abriu o placar para a RD Congo logo aos 6' do 1T. Inglaterra sofreu, mas Kane igualou aos 75' (30' do 2T) e decidiu aos 86' (41' do 2T), chegando a 13 gols em Copas — um a mais que Pelé. Posse: Inglaterra 60% x 40%. Finalizações: 16 (7 no gol) x 7 (2 no gol). Escanteios: 5 x 3. Faltas: 10 x 12. Amarelos: Bellingham (ING) e Sadiki (RDC) — só 2 no total, jogo fluiu como esperado. Wissa não balançou as redes, ficando devendo no duelo particular com Kane. Inglaterra avança para enfrentar o México nas oitavas.",
           numeros: [
-            { v: "78,2%", l: "pM(ING) — modelo Elo-Poisson após reajuste da rodada" },
-            { v: "2.23", l: "λ(ING) — expectativa de gols inglesa" },
-            { v: "0.45", l: "λ(RDC) — expectativa de gols congolesa" },
-            { v: "3G / 3G", l: "Kane e Wissa empatados na artilharia da Copa" },
-            { v: "52 anos", l: "Jejum de Copas do Mundo da RD Congo até esta edição" }
+            { v: "2×1", l: "Placar final — Kane vira no fim" },
+            { v: "2G", l: "Gols de Kane na partida (75' e 86') — 13 em Copas, supera Pelé" },
+            { v: "60%×40%", l: "Posse de bola — domínio inglês, mas sofrimento no placar" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Inglaterra vence", odd: 1.45, resultado: null,
-              justificativa: "pM=78,2% no modelo Elo-Poisson pós-reajuste — maior probabilidade entre os 3 jogos de hoje. Inglaterra 100% na fase de grupos vs uma RD Congo que sofreu 3 gols contra Colômbia. λ_ING=2,23 reflete a superioridade ofensiva." },
-            { cat: "conservadora", mercado: "Harry Kane marca", odd: 1.75, resultado: null,
-              justificativa: "Kane com 3 gols na Copa, empatado com Wissa na artilharia. Só 1 amarelo em 29 jogos pela Bundesliga nesta temporada mostra frieza — foco total em finalizar. RD Congo cedeu gols em 2 dos 3 jogos de grupo." },
-            { cat: "conservadora", mercado: "Menos de 3.5 cartões no jogo", odd: 1.85, resultado: null,
-              justificativa: "Kane (1 amarelo/29 jogos) e Saka (2/31) têm perfil disciplinar baixíssimo. Makhadmeh, árbitro estreante em Copas como principal, tende a deixar o jogo fluir em confrontos com favoritismo claro — apitou jogos com poucos cartões na fase de grupos." },
-            { cat: "intermediaria", mercado: "Inglaterra vence por 2+", odd: 2.70, resultado: null,
-              justificativa: "λ_ING=2,23 é a maior expectativa de gols entre os 3 jogos de hoje. RD Congo, mesmo com Wissa em bom momento, sofreu derrota para a Colômbia e tem defesa vulnerável fora de casa contra ataques de elite." },
-            { cat: "intermediaria", mercado: "Yoane Wissa marca", odd: 3.20, resultado: null,
-              justificativa: "Wissa (Newcastle, Premier League) com 3 gols nesta Copa, incluindo 2 no jogo decisivo contra o Uzbequistão. Reece James em dúvida na lateral direita inglesa pode abrir o corredor que Wissa explora." },
-            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 2.60, resultado: null,
-              justificativa: "λ_total=2,68 no modelo. Inglaterra ofensiva (Kane, Bellingham, Saka, Rashford) contra uma RD Congo que também tem ataque (Wissa, Bakambu) mas defesa exposta — tende a ser jogo com gols de ambos os lados." },
-            { cat: "loucura", mercado: "Kane e Wissa ambos marcam", odd: 6.50, resultado: null,
-              justificativa: "O duelo particular de artilheiros da Copa (3G cada) é a narrativa do jogo. P(Kane≥1)≈70% × P(Wissa≥1)≈35% (RD Congo joga fora, contra defesa inglesa sólida) ≈ 25% — odd 6,50 supera o fair de ~4,00, valor real." },
-            { cat: "loucura", mercado: "Inglaterra vence por 3+ gols", odd: 7.00, resultado: null,
-              justificativa: "λ_ING=2,23 alto e RD Congo com defesa exposta fora de casa. Se a Inglaterra tomar as rédeas cedo, o histórico de goleadas do torneio (5-0, 5-1, 4-1) mostra que o cenário de goleada é plausível nesta fase." },
-            { cat: "loucura", mercado: "RD Congo marca + Inglaterra vence", odd: 5.50, resultado: null,
-              justificativa: "Combo realista: Wissa em grande fase deve incomodar mesmo numa provável vitória inglesa. P(ING vence)×P(RDC≥1)≈78%×45%≈35% — odd 5,50 com valor sobre o fair estimado." }
+            { cat: "conservadora", mercado: "Inglaterra vence", odd: 1.45, resultado: "hit",
+              justificativa: "pM=78,2% no modelo Elo-Poisson pós-reajuste — maior probabilidade entre os 3 jogos do dia. Sofreu mas confirmou: 2×1 com virada de Kane." },
+            { cat: "conservadora", mercado: "Harry Kane marca", odd: 1.75, resultado: "hit",
+              justificativa: "Kane com 3 gols na Copa, empatado com Wissa na artilharia. Marcou os dois gols ingleses (75' e 86'), chegando a 13 em Copas — recorde." },
+            { cat: "conservadora", mercado: "Menos de 3.5 cartões no jogo", odd: 1.85, resultado: "hit",
+              justificativa: "Kane e Saka com perfil disciplinar baixo, Makhadmeh deixou o jogo fluir. Confirmado: só 2 amarelos (Bellingham e Sadiki)." },
+            { cat: "intermediaria", mercado: "Inglaterra vence por 2+", odd: 2.70, resultado: "miss",
+              justificativa: "λ_ING=2,23 indicava favoritismo, mas RD Congo segurou o placar em 2×1 — margem de apenas 1 gol." },
+            { cat: "intermediaria", mercado: "Yoane Wissa marca", odd: 3.20, resultado: "miss",
+              justificativa: "Wissa não conseguiu repetir a artilharia da fase de grupos; quem marcou pela RD Congo foi Cipenga." },
+            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 2.60, resultado: "hit",
+              justificativa: "λ_total=2,68 no modelo. Confirmado: 3 gols na partida (Cipenga, Kane x2)." },
+            { cat: "loucura", mercado: "Kane e Wissa ambos marcam", odd: 6.50, resultado: "miss",
+              justificativa: "Kane confirmou os dois gols, mas Wissa não balançou as redes — duelo de artilheiros ficou só para o lado inglês." },
+            { cat: "loucura", mercado: "Inglaterra vence por 3+ gols", odd: 7.00, resultado: "miss",
+              justificativa: "Apesar do domínio (16 finalizações x 7), Inglaterra só confirmou vitória por 1 gol de margem." },
+            { cat: "loucura", mercado: "RD Congo marca + Inglaterra vence", odd: 5.50, resultado: "hit",
+              justificativa: "Combo se confirmou: Cipenga abriu o placar pela RD Congo aos 6' e Inglaterra buscou a virada com Kane." }
           ]
         },
         {
@@ -2577,34 +2575,32 @@ const DATA = {
           visitante: "Senegal",
           fase: "16-avos de final",
           local: "Lumen Field, Seattle",
-          placar: null,
-          stats: "Primeiro confronto oficial da história entre as duas seleções. Bélgica avançou como líder do Grupo G após início devagar (1-1 EGI, 0-0 IRÃ) e explosão final (5-1 sobre a NZL) — De Bruyne (34 anos, ainda decisivo: 5G/2A em 18 jogos pela Roma na Serie A) e Lukaku confirmados e sem lesões. Senegal perdeu para França (1-3) e Noruega (2-3) mas se recuperou com a maior goleada da história africana em Copas (5-0 sobre o Iraque) e entrou como um dos melhores terceiros — porém perdeu o goleiro titular Édouard Mendy (lesão no joelho vs Noruega), Mory Diaw assume a meta. Árbitro: Said Martínez (Honduras). Curiosamente, o modelo Elo-Poisson pós-reajuste favorece levemente o Senegal — reflexo do baixo Elo inicial da Bélgica após dois tropeços na fase de grupos.",
+          placar: "3 × 2",
+          stats: "Virada histórica na prorrogação. Senegal fez 2-0 com Habib Diarra (24' do 1T) e Ismaïla Sarr (51', início do 2T) e chegou a 40' do 2T dominando. Rudi Garcia tirou De Bruyne e Doku e a Bélgica reagiu: Lukaku (41' do 2T) e Tielemans (44' do 2T) empataram em 3 minutos. Na prorrogação, Tielemans converteu pênalti sofrido em carrinho de Camara sobre ele, aos 20' do 2T da prorrogação, fechando 3×2. Posse: Bélgica 51% x 49%. Escanteios: 4 x 2. Amarelos: Rudi Garcia (comissão técnica) e Mechele (BEL), Camara (SEN). Bélgica avança para enfrentar os EUA nas oitavas.",
           numeros: [
-            { v: "42,5%", l: "pV(SEN) — modelo favorece Senegal, mesmo como 'azarão' de mercado" },
-            { v: "33,2%", l: "pM(BEL) — abaixo do Senegal pelo Elo pós-reajuste" },
-            { v: "1.38 / 1.59", l: "λ(BEL) / λ(SEN) — expectativas de gols equilibradas" },
-            { v: "0-0", l: "H2H — nunca se enfrentaram antes na história" },
-            { v: "5×0", l: "Goleada do Senegal sobre o Iraque — recorde africano em Copas" }
+            { v: "3×2", l: "Placar final — Bélgica vira na prorrogação" },
+            { v: "2 gols", l: "Tielemans decide com dobradinha (2T e prorrogação)" },
+            { v: "0-2", l: "Senegal chegou a vencer até os 40' do 2T" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "Ambas marcam", odd: 1.75, resultado: null,
-              justificativa: "λ_BEL=1,38 e λ_SEN=1,59 equilibrados. Bélgica sempre marcou nesta Copa (1, 0, 5 gols); Senegal marcou em todos os jogos (1, 2, 5 gols). Mendy fora (lesão) enfraquece a defesa senegalesa." },
-            { cat: "conservadora", mercado: "Over 2.5 gols", odd: 2.05, resultado: null,
-              justificativa: "λ_total=2,97 — o maior total combinado entre os 3 jogos de hoje. Bélgica goleou 5-1 na última rodada; Senegal fez 5-0. Ambos os ataques em confiança máxima." },
-            { cat: "conservadora", mercado: "Kevin De Bruyne marca ou dá assistência", odd: 2.20, resultado: null,
-              justificativa: "De Bruyne com 5 gols e 2 assistências em 18 jogos na Roma nesta temporada, ainda decisivo aos 34 anos. Contra uma defesa senegalesa badalada mas sem o titular Mendy, tende a ter espaço para criar." },
-            { cat: "intermediaria", mercado: "Senegal vence", odd: 3.00, resultado: null,
-              justificativa: "pV=42,5% no modelo pós-reajuste — Elo aponta Senegal como levemente favorito, algo que o mercado provavelmente não precifica (Bélgica tradicionalmente mais badalada). Fair odd ~2,35 — a odd de 3,00 destrava valor real." },
-            { cat: "intermediaria", mercado: "Sadio Mané marca", odd: 3.50, resultado: null,
-              justificativa: "Mané como capitão e referência ofensiva senegalesa, decisivo na goleada sobre o Iraque (criou a jogada da expulsão). Bélgica com zaga em reconstrução pode ceder espaços nas transições rápidas do Senegal." },
-            { cat: "intermediaria", mercado: "Romelu Lukaku marca", odd: 3.80, resultado: null,
-              justificativa: "Lukaku recuperado fisicamente e confirmado no time titular. Precisa mostrar serviço numa possível última Copa relevante — defesa senegalesa sem o titular da meta é motivação extra para o centroavante." },
-            { cat: "loucura", mercado: "Jogo empata no tempo normal (vai à prorrogação/pênaltis)", odd: 5.50, resultado: null,
-              justificativa: "pE=24,3% no modelo — a maior probabilidade de empate entre os 3 jogos de hoje, reforçada pelo equilíbrio real das forças. Tendência recente da fase: 2 dos últimos 3 jogos de 16-avos foram a pênaltis (Alemanha-Paraguai, Holanda-Marrocos)." },
-            { cat: "loucura", mercado: "Senegal vence + ambas marcam", odd: 6.50, resultado: null,
-              justificativa: "Combo apoiado na leitura do modelo (Senegal favorito pelo Elo) com o padrão de jogo aberto que ambas as seleções vêm exibindo. P(SEN vence)×P(BEL≥1)≈42,5%×70%≈30%." },
-            { cat: "loucura", mercado: "Ismaïla Sarr marca", odd: 7.00, resultado: null,
-              justificativa: "Sarr como opção de velocidade nas transições senegalesas, já balançou as redes contra o Iraque. Zaga belga em reconstrução (Theate, Mechele) pode ser explorada nos contra-ataques." }
+            { cat: "conservadora", mercado: "Ambas marcam", odd: 1.75, resultado: "hit",
+              justificativa: "λ_BEL=1,38 e λ_SEN=1,59 equilibrados. Confirmado: Senegal fez 2 (Diarra, Sarr) e Bélgica fez 3 (Lukaku, Tielemans x2)." },
+            { cat: "conservadora", mercado: "Over 2.5 gols", odd: 2.05, resultado: "hit",
+              justificativa: "λ_total=2,97 — o maior total combinado do dia. Confirmado com folga: 5 gols na partida." },
+            { cat: "conservadora", mercado: "Kevin De Bruyne marca ou dá assistência", odd: 2.20, resultado: "miss",
+              justificativa: "De Bruyne foi substituído por Rudi Garcia antes da reação belga — não participou dos gols de Lukaku e Tielemans." },
+            { cat: "intermediaria", mercado: "Senegal vence", odd: 3.00, resultado: "miss",
+              justificativa: "pV=42,5% no modelo apontava Senegal como levemente favorito e a seleção chegou a vencer por 2-0, mas a Bélgica virou na prorrogação." },
+            { cat: "intermediaria", mercado: "Sadio Mané marca", odd: 3.50, resultado: "miss",
+              justificativa: "Mané não balançou as redes — os gols senegaleses saíram com Diarra e Sarr." },
+            { cat: "intermediaria", mercado: "Romelu Lukaku marca", odd: 3.80, resultado: "hit",
+              justificativa: "Lukaku confirmado no time titular e decisivo: marcou aos 41' do 2T, iniciando a reação belga." },
+            { cat: "loucura", mercado: "Jogo empata no tempo normal (vai à prorrogação/pênaltis)", odd: 5.50, resultado: "hit",
+              justificativa: "pE=24,3% no modelo — se confirmou: 2-2 ao fim do tempo normal, decidido só na prorrogação com pênalti de Tielemans." },
+            { cat: "loucura", mercado: "Senegal vence + ambas marcam", odd: 6.50, resultado: "miss",
+              justificativa: "Ambas marcaram, mas o Senegal não segurou a vantagem de 2-0 e acabou eliminado na prorrogação." },
+            { cat: "loucura", mercado: "Ismaïla Sarr marca", odd: 7.00, resultado: "hit",
+              justificativa: "Sarr confirmou, ampliando para 2-0 do Senegal logo no início do 2º tempo (51')." }
           ]
         },
         {
@@ -2613,34 +2609,111 @@ const DATA = {
           visitante: "Bósnia e Herz.",
           fase: "16-avos de final",
           local: "Levi's Stadium, Santa Clara",
-          placar: null,
-          stats: "EUA garantiu a liderança do Grupo D com uma rodada de antecedência (goleada de 4-1 sobre o Paraguai, 2-0 sobre a Austrália) e rodou o time no revés por 3-2 para a Turquia. Pulisic, que sofreu susto na panturrilha na estreia, está 100% recuperado. Bósnia, 12 anos após sua estreia em Copas, garantiu vaga inédita no mata-mata entre os melhores terceiros, liderada pelo veterano Edin Dzeko (40 anos, 6G/3A em 11 jogos pelo Schalke 04 nesta temporada), disputando provavelmente sua última Copa do Mundo. Árbitro: Raphael Claus (BRA), que mantém média de 4,11 cartões por jogo na temporada 2025/26 — uma das mais altas entre árbitros de expressão internacional. Modelo Elo-Poisson (com bônus de sede para os EUA) projeta ampla vantagem norte-americana.",
+          placar: "2 × 0",
+          stats: "Balogun abriu o placar aos 45' do 1T (assistência de Tillman), mas foi expulso por entrada dura em Muharemovic aos 18' do 2T (revisão do VAR, vermelho direto). Mesmo com um a menos, os EUA seguraram e ampliaram com Tillman em cobrança de falta aos 36' do 2T. Amarelos: Sergei Barbarez e Radeljic (BIH) — árbitro Raphael Claus mostrou apenas 3 cartões no total (1 vermelho + 2 amarelos), abaixo da sua média de temporada. Pulisic não participou diretamente dos gols. EUA avança para enfrentar a Bélgica nas oitavas.",
           numeros: [
-            { v: "72,2%", l: "pM(EUA) — modelo com bônus de sede" },
-            { v: "2.04", l: "λ(EUA) — expectativa de gols americana" },
-            { v: "0.57", l: "λ(BIH) — expectativa de gols bósnia" },
-            { v: "40 anos", l: "Idade de Edin Dzeko — provável última Copa" },
-            { v: "4,11", l: "Média de cartões por jogo do árbitro Raphael Claus na temporada" }
+            { v: "2×0", l: "Placar final — EUA controla mesmo com um a menos" },
+            { v: "18'", l: "Minuto da expulsão de Balogun no 2T, após marcar o 1º gol" },
+            { v: "3", l: "Cartões no total (1 vermelho + 2 amarelos) — abaixo do esperado" }
           ],
           dicas: [
-            { cat: "conservadora", mercado: "EUA vence", odd: 1.55, resultado: null,
-              justificativa: "pM=72,2% com bônus de sede no modelo. EUA já demonstrou poder de fogo (4-1 vs PAR, 2-0 vs AUS) mesmo rodando o elenco contra a Turquia. Bósnia com defesa mais frágil, dependente do fôlego de Dzeko aos 40 anos." },
-            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.50, resultado: null,
-              justificativa: "λ_total=2,61. EUA ofensivo com Pulisic recuperado e Balogun em grande fase (2 gols vs Paraguai). Bósnia precisa atacar para não ser eliminada cedo, o que abre espaços." },
-            { cat: "conservadora", mercado: "EUA marca no 1T", odd: 1.65, resultado: null,
-              justificativa: "λ_EUA=2,04 é a 2ª maior expectativa de gols do dia. Time titular de volta a campo (após poupar contra a Turquia) deve começar em ritmo forte diante da torcida em casa na Califórnia." },
-            { cat: "intermediaria", mercado: "EUA vence por 2+", odd: 2.70, resultado: null,
-              justificativa: "P(EUA vence por ≥2)≈45%+ dado λ_EUA=2,04 contra λ_BIH=0,57, a menor expectativa ofensiva entre os 3 jogos de hoje. Bósnia sofre historicamente fora de casa contra seleções com maior intensidade física." },
-            { cat: "intermediaria", mercado: "Christian Pulisic marca ou dá assistência", odd: 2.80, resultado: null,
-              justificativa: "Pulisic com 8 gols em 30 jogos na Serie A nesta temporada, de volta à boa forma após o susto na estreia. Capitão americano tende a ser protagonista jogando em casa na Califórnia." },
-            { cat: "intermediaria", mercado: "Mais de 3.5 cartões no jogo", odd: 3.00, resultado: null,
-              justificativa: "Raphael Claus mantém média de 4,11 cartões por jogo na temporada 2025/26 — perfil de árbitro rigoroso. Dzeko, aos 40 anos, tende a usar experiência e faltas táticas para conter o ritmo americano." },
-            { cat: "loucura", mercado: "Edin Dzeko marca (provável última Copa)", odd: 8.00, resultado: null,
-              justificativa: "Dzeko com 6G/3A em 11 jogos pelo Schalke 04 nesta temporada — segue decisivo mesmo aos 40. Narrativa de despedida move o veterano; se a Bósnia tiver uma chance, é dele para finalizar." },
-            { cat: "loucura", mercado: "EUA vence por 3+ gols + Pulisic decisivo", odd: 7.00, resultado: null,
-              justificativa: "Combo apoiado na folga estatística do modelo (λ_EUA=2,04 vs λ_BIH=0,57) com o capitão americano em grande fase de forma. Cenário de goleada em casa, como já visto em outros jogos desta fase." },
-            { cat: "loucura", mercado: "Folarin Balogun marca", odd: 6.50, resultado: null,
-              justificativa: "Balogun foi o nome da goleada sobre o Paraguai (2 gols) e é o 1º americano a marcar 2 num jogo de Copa desde 1930. Contra a defesa mais frágil do dia (λ_BIH=0,57), tem no perfil ideal para repetir a dose." }
+            { cat: "conservadora", mercado: "EUA vence", odd: 1.55, resultado: "hit",
+              justificativa: "pM=72,2% com bônus de sede no modelo. Confirmado 2×0, mesmo com expulsão de Balogun no 2T." },
+            { cat: "conservadora", mercado: "Over 1.5 gols", odd: 1.50, resultado: "hit",
+              justificativa: "λ_total=2,61. Confirmado com os 2 gols de Balogun e Tillman." },
+            { cat: "conservadora", mercado: "EUA marca no 1T", odd: 1.65, resultado: "hit",
+              justificativa: "λ_EUA=2,04, 2ª maior expectativa de gols do dia. Balogun abriu o placar aos 45' do 1T." },
+            { cat: "intermediaria", mercado: "EUA vence por 2+", odd: 2.70, resultado: "hit",
+              justificativa: "Mesmo jogando com um a menos boa parte do 2T, os EUA seguraram e ampliaram para 2×0 com Tillman de falta." },
+            { cat: "intermediaria", mercado: "Christian Pulisic marca ou dá assistência", odd: 2.80, resultado: "miss",
+              justificativa: "Quem deu a assistência do 1º gol foi Tillman, não Pulisic — capitão não participou diretamente dos gols." },
+            { cat: "intermediaria", mercado: "Mais de 3.5 cartões no jogo", odd: 3.00, resultado: "miss",
+              justificativa: "Apesar da expulsão de Balogun, o jogo teve só 3 cartões no total (1 vermelho + 2 amarelos), abaixo da média de 4,11 de Raphael Claus." },
+            { cat: "loucura", mercado: "Edin Dzeko marca (provável última Copa)", odd: 8.00, resultado: "miss",
+              justificativa: "Dzeko não conseguiu marcar; a defesa americana, mesmo com um a menos, segurou o veterano bósnio." },
+            { cat: "loucura", mercado: "EUA vence por 3+ gols + Pulisic decisivo", odd: 7.00, resultado: "miss",
+              justificativa: "EUA venceu por só 2 gols de margem e Pulisic não foi decisivo nos gols — combo não se completou." },
+            { cat: "loucura", mercado: "Folarin Balogun marca", odd: 6.50, resultado: "hit",
+              justificativa: "Balogun confirmou o gol aos 45' do 1T antes de ser expulso no 2T — decisivo mesmo em jogo conturbado." }
+          ]
+        }
+      ]
+    },
+    {
+      data: "2026-07-02",
+      titulo: "Dia 22 — Yamal contra a zaga mais vazada dos 16-avos, Ronaldo busca história em Toronto",
+      contexto: "Quarto dia dos 16-avos com dois jogos (o terceiro, Suíça x Argélia, cai já na madrugada de sexta em horário de Brasília e entra no próximo boletim). Em Los Angeles, a atual campeã europeia Espanha — única seleção ao lado do México sem sofrer gols na fase de grupos — enfrenta a estreante-de-volta Áustria, que tem a defesa mais vazada entre os classificados (6 gols sofridos em 3 jogos) mas conta com Marko Arnautovic, maior artilheiro da história do país. Nico Williams é desfalque espanhol por lesão no adutor, abrindo ainda mais espaço para Lamine Yamal. À noite, em Toronto, Portugal de Cristiano Ronaldo (41 anos, já o maior artilheiro luso em Copas, mirando ser o primeiro a marcar em 6 edições diferentes) enfrenta a Croácia envelhecida mas experiente de Modric (40) e Perišić (37) — primeiro confronto direto entre as duas seleções em Copas do Mundo, com equilíbrio real segundo o modelo Elo-Poisson pós-reajuste da rodada.",
+      jogos: [
+        {
+          hora: "16h",
+          mandante: "Espanha",
+          visitante: "Áustria",
+          fase: "16-avos de final",
+          local: "SoFi Stadium, Los Angeles",
+          placar: null,
+          stats: "Espanha fechou o Grupo H invicta, líder e sem sofrer gols (0-0 CPV, 4-0 ARS, 1-0 URU), atual campeã europeia. Nico Williams está fora por lesão no adutor direito (sofrida contra o Uruguai), abrindo espaço para Lamine Yamal, artilheiro assistente da La Liga nesta temporada (16G/11A pelo Barcelona, +6G/4A na Champions). Áustria avançou em 2º no Grupo J atrás da Argentina (3-1 JOR, 0-2 ARG, 3-3 ARG) com a defesa mais vazada entre os 32 classificados — 6 gols sofridos em 3 jogos — mas conta com Marko Arnautovic, aos 37 anos o maior artilheiro da história austríaca (47 gols em 133 jogos, recorde batido nesta campanha de eliminatórias com 4 gols contra San Marino). H2H histórico muito favorável à Espanha (9V-3E-4D em 16 jogos), único confronto em Copas foi em 1978 (vitória austríaca por 2-1). Árbitro: Glenn Nyberg (SUE), apitou URU 2×2 CPV na fase de grupos, perfil que costuma deixar o jogo fluir. Modelo Elo-Poisson pós-reajuste dá ampla vantagem espanhola.",
+          numeros: [
+            { v: "83,4%", l: "pM(ESP) — modelo Elo-Poisson pós-reajuste" },
+            { v: "2.43", l: "λ(ESP) — expectativa de gols espanhola" },
+            { v: "0.36", l: "λ(AUT) — expectativa de gols austríaca" },
+            { v: "6 gols", l: "Sofridos pela Áustria em 3 jogos — pior defesa entre os classificados" },
+            { v: "0 gols", l: "Sofridos pela Espanha na fase de grupos" }
+          ],
+          dicas: [
+            { cat: "conservadora", mercado: "Espanha vence", odd: 1.30, resultado: null,
+              justificativa: "pM=83,4% no modelo Elo-Poisson pós-reajuste — maior probabilidade entre os jogos de hoje. Espanha invicta e sem sofrer gols na fase de grupos, atual campeã europeia, contra Áustria com a pior defesa dos 16-avos." },
+            { cat: "conservadora", mercado: "Espanha vence a zero", odd: 1.65, resultado: null,
+              justificativa: "Espanha não sofreu nenhum gol em 3 jogos da fase de grupos (0-0 CPV, 4-0 ARS, 1-0 URU). Áustria marcou pouco fora de casa contra defesas organizadas — ataque depende quase só de Arnautovic." },
+            { cat: "conservadora", mercado: "Lamine Yamal marca ou dá assistência", odd: 1.85, resultado: null,
+              justificativa: "Yamal com 16G/11A na La Liga e 6G/4A na Champions nesta temporada — melhor assistente do campeonato espanhol. Com Nico Williams fora por lesão, deve receber ainda mais protagonismo ofensivo." },
+            { cat: "intermediaria", mercado: "Espanha vence por 2+", odd: 2.20, resultado: null,
+              justificativa: "Modelo aponta ~60,8% de chance de vitória espanhola por 2+ gols (λ_ESP=2,43 x λ_AUT=0,36, maior diferença entre os jogos de hoje). Áustria sofreu 6 gols em 3 jogos de grupo." },
+            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 2.60, resultado: null,
+              justificativa: "Modelo aponta 52,8% de probabilidade. λ_total=2,79 puxado pelo ataque espanhol (Yamal, Oyarzabal, Pedri) contra a defesa mais vazada da fase eliminatória." },
+            { cat: "intermediaria", mercado: "Marko Arnautovic marca", odd: 4.00, resultado: null,
+              justificativa: "Maior artilheiro da história austríaca (47 gols/133 jogos), decisivo nas eliminatórias com 4 gols contra San Marino. Mesmo aos 37, é a única referência ofensiva contra a defesa espanhola que não sofreu gols na fase de grupos." },
+            { cat: "loucura", mercado: "Espanha vence por 3+ gols e Lamine Yamal marca", odd: 7.50, resultado: null,
+              justificativa: "Combo apoiado na folga estatística do modelo (λ_ESP=2,43 vs λ_AUT=0,36) com o momento de Yamal como principal criador espanhol. Cenário de goleada plausível dado o histórico de resultados elásticos nesta fase (5-0, 5-1, 4-1)." },
+            { cat: "loucura", mercado: "Ambas marcam e Espanha vence", odd: 6.00, resultado: null,
+              justificativa: "Combo: modelo aponta ~27,6% de ambas marcarem, e Espanha como favorita esmagadora (pM=83,4%). P(ambas marcam)×P(ESP vence)≈27,6%×83%≈23% — odd 6,00 destrava valor sobre o fair estimado." },
+            { cat: "loucura", mercado: "Jogo tem cartão vermelho", odd: 9.00, resultado: null,
+              justificativa: "Diante da diferença técnica, a Áustria pode recorrer a faltas táticas duras para conter Yamal e o meio-campo espanhol — risco elevado de expulsão em jogo de mata-mata com favoritismo claro." }
+          ]
+        },
+        {
+          hora: "20h",
+          mandante: "Portugal",
+          visitante: "Croácia",
+          fase: "16-avos de final",
+          local: "BMO Field, Toronto",
+          placar: null,
+          stats: "Portugal terminou em 2º no Grupo K (5 pts: 1-1 com RD Congo, 5-0 sobre o Uzbequistão, 0-0 com a Colômbia), atrás da própria Colômbia. Cristiano Ronaldo, aos 41 anos, já é o maior artilheiro português em Copas (2 gols nesta edição, ambos contra o Uzbequistão) e mira ser o primeiro jogador da história a marcar em 6 edições diferentes do torneio — vem de temporada com 28 gols em 30 jogos pelo Al-Nassr, campeão saudita. Bruno Fernandes quebrou o recorde de assistências numa temporada da Premier League (21) e soma 9 gols. Croácia avançou em 2º no Grupo L, após perder para a Inglaterra na estreia e reagir com vitórias sobre Panamá e Gana — segue apoiada nos veteranos Luka Modric (40 anos, 5ª Copa, 2G/1A no torneio) e Ivan Perišić (37, 38 gols pela seleção, maior artilheiro do elenco atual), com Andrej Kramarić (34, artilheiro das eliminatórias com 6 gols) na frente. Primeiro confronto direto entre as seleções em Copas — no retrospecto geral, Portugal leva vantagem (7V-2E-1D em 10 jogos, 15 a 8 em gols). Árbitro: Espen Eskas (NOR), apitou URU 2×2 CPV na fase de grupos. Modelo Elo-Poisson pós-reajuste aponta jogo equilibrado, com ligeiro favoritismo português.",
+          numeros: [
+            { v: "46,6%", l: "pM(POR) — modelo Elo-Poisson pós-reajuste" },
+            { v: "25,1% / 28,2%", l: "pE / pV — jogo mais equilibrado do dia" },
+            { v: "1.56 / 1.15", l: "λ(POR) / λ(CRO) — expectativas de gols" },
+            { v: "7V-2E-1D", l: "Retrospecto geral de Portugal sobre a Croácia (15-8 em gols)" },
+            { v: "41 / 40 / 37", l: "Idades de Ronaldo, Modric e Perišić — duelo de veteranos" }
+          ],
+          dicas: [
+            { cat: "conservadora", mercado: "Portugal não perde (dupla hipótese)", odd: 1.50, resultado: null,
+              justificativa: "pM+pE=71,7% no modelo pós-reajuste. Portugal não perde para a Croácia há 4 dos últimos 6 confrontos, com histórico geral de 7V-2E-1D." },
+            { cat: "conservadora", mercado: "Ambas marcam", odd: 1.75, resultado: null,
+              justificativa: "Modelo aponta 54,0% de probabilidade — o maior BTTS entre os jogos de hoje. λ_POR=1,56 e λ_CRO=1,15 equilibrados; Croácia marcou em todos os jogos da fase de grupos." },
+            { cat: "conservadora", mercado: "Cristiano Ronaldo marca", odd: 2.20, resultado: null,
+              justificativa: "CR7 com 2 gols nesta Copa (ambos vs Uzbequistão), 28 gols em 30 jogos pelo Al-Nassr nesta temporada e mira ser o 1º a marcar em 6 Copas diferentes — motivação extra de recorde histórico." },
+            { cat: "intermediaria", mercado: "Portugal vence", odd: 2.50, resultado: null,
+              justificativa: "pM=46,6% no modelo, ligeira vantagem lusa em confronto real equilibrado (Elo 1988,9 x 1913,9). Croácia com defesa mais frágil que nas últimas edições (11 gols sofridos nos últimos 6 jogos)." },
+            { cat: "intermediaria", mercado: "Over 2.5 gols", odd: 2.70, resultado: null,
+              justificativa: "Modelo aponta 50,9% de probabilidade, λ_total=2,71. Ambos ataques com referências de nível mundial (Ronaldo/Bruno Fernandes x Kramarić/Perišić) e defesas testadas na fase de grupos." },
+            { cat: "intermediaria", mercado: "Luka Modric dá assistência", odd: 4.50, resultado: null,
+              justificativa: "Modric soma 26 assistências pela seleção croata e já deu 1 assistência nesta Copa aos 40 anos, seguindo como o principal criador croata mesmo com a idade avançada." },
+            { cat: "loucura", mercado: "Cristiano Ronaldo marca e Portugal vence", odd: 5.50, resultado: null,
+              justificativa: "Combo alinhado com a narrativa do jogo: CR7 decisivo em busca de recorde histórico (6 Copas com gol) numa vitória portuguesa. P(CR7 marca)≈40%×P(POR vence)≈46,6%≈19% — odd 5,50 com valor sobre o fair estimado." },
+            { cat: "loucura", mercado: "Jogo empata no tempo normal (vai à prorrogação/pênaltis)", odd: 5.00, resultado: null,
+              justificativa: "pE=25,1% no modelo, reforçado pelo equilíbrio real entre as duas seleções e o peso histórico dos duelos entre veteranos. Padrão da fase: 2 dos últimos 4 jogos de 16-avos foram decididos após os 90 minutos." },
+            { cat: "loucura", mercado: "Andrej Kramarić marca + ambas marcam", odd: 8.00, resultado: null,
+              justificativa: "Kramarić foi o artilheiro croata nas eliminatórias (6 gols) e seguiu decisivo na fase de grupos. Combo reforça a leitura de jogo aberto entre dois ataques historicamente afiados (BTTS=54% no modelo)." }
           ]
         }
       ]
